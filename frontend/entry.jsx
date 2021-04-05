@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
+import Root from './components/root';
 
 //TESTING
 import { signUp, signIn, signOut } from './actions/session_actions';
+//TESTING
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById("root");
@@ -16,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  //TESTING
 
-  ReactDOM.render(<h1>Hi I'm in the entry file</h1>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });
