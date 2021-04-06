@@ -69,8 +69,12 @@ class SessionForm extends React.Component {
       "Sign Up" : "Log In";
    
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="session-form-container">
+        <div className="form-logo">
+          <p>i am in form logo</p>
+        </div>
+
+        <form className="session-form" onSubmit={this.handleSubmit}>
           <h3>{formType}</h3>
           <br/>
 

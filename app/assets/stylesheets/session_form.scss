@@ -1,8 +1,19 @@
-.session-form {
+.session-form-container {
   background-color: turquoise;
 }
 
 .form-logo {
   background-color: pink;
-  // background-image: image_url('logo_light.png') ;
+  background-image: image_url('logo_light.png') ;
+  // background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 70% 0;
+  display: block;
+  height: 500px;
+  width: 100%;
+}
+
+.session-form {
+  background-color: purple;
+  display: block;
 }
