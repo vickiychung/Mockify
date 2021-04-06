@@ -20,6 +20,22 @@ class SessionForm extends React.Component {
     });
   }
 
+  renderErrors() {
+    let errors = this.props.errors.map((error, i) => {
+      return (
+        <li key={`error-${i}`}>
+          {error}
+        </li>
+      );
+    });
+
+    return (
+      <ul>
+        {errors}
+      </ul>
+    );
+  }
+
   render() {
     const { errors, formType, navLink } = this.props;
     const buttonText = (formType === "Sign up for free to start listening.") ? 
