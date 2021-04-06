@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.action(user);
+    this.props.action(user).then(() => this.props.history.push("/"));
   }
 
   update(field) {
@@ -24,9 +24,7 @@ class SessionForm extends React.Component {
     const { errors, formType, navLink } = this.props;
     const buttonText = (formType === "Sign up for free to start listening.") ? 
       "Sign Up" : "Log In";
-    const linkText = (formType === "Sign up for free to start listening.") ?
-      "Log In" : "Sign Up";
-
+   
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
