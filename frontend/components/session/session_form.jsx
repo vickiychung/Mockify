@@ -103,7 +103,9 @@ class SessionForm extends React.Component {
           </label>
           <br/>
 
-          {this.renderErrors()}
+          <div className="session-errors">
+            {this.renderErrors()}
+          </div>
 
           <button className="session-button" type="submit">{buttonText}</button>
         </form>
