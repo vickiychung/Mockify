@@ -8,7 +8,7 @@ const mapStateToProps = state => {
   return {
     errors: state.errors.sessionErrors,
     formType: "To continue, log in to Mockify.",
-    navLink: <Link to="/signup">sign up for mockify</Link>
+    navLink: <Link to="/signup" style={{textDecoration: 'none'}}>sign up for mockify</Link>
   };
 };
 

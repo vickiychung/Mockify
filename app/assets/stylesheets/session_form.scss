@@ -1,19 +1,112 @@
 .session-form-container {
   background-color: turquoise;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-logo {
-  background-color: pink;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
   background-image: image_url('logo_light.png') ;
-  // background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: 70% 0;
-  display: block;
-  height: 500px;
+  background-position: center;
+  display: flex;
+  height: 100px;
   width: 100%;
 }
 
 .session-form {
-  background-color: purple;
-  display: block;
+  background-color: pink;
+  border-bottom: 1px solid lightgray;
+  width: 500px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 10px;
+  font-weight: 600;
+}
+
+.form-input {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.session-button {
+  background-color: #1db954;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 500px;
+  border-style: none;
+  border-width: 0;
+  outline: none;
+  white-space: normal;
+  margin: 20px;
+  padding: 16px 48px 18px;
+  min-width: 160px;
+  transition-duration: .3s;
+}
+
+.session-button:hover {
+  background-color: #1ed760;
+  cursor: pointer;
+}
+
+.guest-button {
+  background-color: white;
+  color: #616467;
+  border-color: #adadad;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 500px;
+  border-style: solid;
+  border-width: 2px;
+  outline: none;
+  white-space: normal;
+  margin: 20px;
+  padding: 16px 48px 18px;
+  min-width: 160px;
+  transition-duration: .3s;
+}
+
+.guest-button:hover {
+  background-color: #616467;
+  color: white;
+  cursor: pointer;
+}
+
+.alt-link-text {
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.alt-link-button {
+  margin: 20px;
 }

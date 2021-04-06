@@ -67,46 +67,54 @@ class SessionForm extends React.Component {
     const { formType, navLink } = this.props;
     const buttonText = (formType === "Sign up for free to start listening.") ? 
       "Sign Up" : "Log In";
+    const altLinkText = (formType === "Sign up for free to start listening.") ?
+      "Have an account?" : "Don't have an account?";
    
     return (
       <div className="session-form-container">
-        <div className="form-logo">
-          <p>i am in form logo</p>
-        </div>
+        <div className="form-logo"></div>
 
         <form className="session-form" onSubmit={this.handleSubmit}>
-          <h3>{formType}</h3>
+          <h3 className="form-title">{formType}</h3>
           <br/>
 
-          <label>Username
+          <button className="guest-button" onClick={this.handleGuest}>
+            continue with guest login
+          </button>
+          <br/>
+
+          <label className="form-label">Username
             <input type="text"
               value={this.state.username}
               onChange={this.update("username")}
               placeholder="Username"
+              className="form-input"
             />
           </label>
           <br/>
 
-          <label>Password
+          <label className="form-label">Password
             <input type="password"
               value={this.state.password}
               onChange={this.update("password")}
               placeholder="Password"
+              className="form-input"
             />
           </label>
           <br/>
 
           {this.renderErrors()}
 
-          <button type="submit">{buttonText}</button>
-          <br/>
-
-          <p>or {navLink}</p>
+          <button className="session-button" type="submit">{buttonText}</button>
         </form>
 
-        <div>
-          <p>Just visiting?</p>
-          <button onClick={this.handleGuest}>Guest Log In</button>
+        <div className="alt-link-text">
+          {altLinkText}
+        </div>
+        <br/>
+
+        <div className="alt-link-button">
+          {navLink}
         </div>
       </div>
     );

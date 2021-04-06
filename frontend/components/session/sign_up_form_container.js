@@ -8,7 +8,7 @@ const mapStateToProps = state => {
   return {
     errors: state.errors.sessionErrors,
     formType: "Sign up for free to start listening.",
-    navLink: <Link to="/signin">Log in</Link>
+    navLink: <Link to="/signin" style={{ textDecoration: 'none' }}>Log in</Link>
   };
 };
 
