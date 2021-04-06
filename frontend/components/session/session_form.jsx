@@ -6,6 +6,11 @@ class SessionForm extends React.Component {
     this.state = { username: "", password: "" };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -21,23 +26,45 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    let errors = this.props.errors.map((error, i) => {
-      return (
-        <li key={`error-${i}`}>
-          {error}
-        </li>
-      );
-    });
-
     return (
       <ul>
-        {errors}
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
       </ul>
     );
   }
 
+  handleGuest() {
+    let guestUsername = "guest".split("");
+    let guestPassword = "password".split("");
+    this.guestSignIn(guestUsername, guestPassword);
+  }
+
+  guestSignIn(guestUsername, guestPassword) {
+    // autofill username => autofill password => auto login
+    
+    if (guestUsername.length > 0) {
+      this.setState({ username: this.state.username + guestUsername.shift() },
+        () => setTimeout(() => this.guestSignIn(guestUsername, guestPassword), 100)
+      );
+    } else if (guestPassword.length > 0) {
+      this.setState({ password: this.state.password + guestPassword.shift() },
+        () => setTimeout(() => this.guestSignIn(guestUsername, guestPassword), 100)
+      );
+    } else {
+      if (this.props.formType === "Sign up for free to start listening.") {
+        this.props.signIn(this.state);
+      } else {
+        this.props.action(this.state);
+      }
+    }
+  }
+
   render() {
-    const { errors, formType, navLink } = this.props;
+    const { formType, navLink } = this.props;
     const buttonText = (formType === "Sign up for free to start listening.") ? 
       "Sign Up" : "Log In";
    
@@ -51,6 +78,7 @@ class SessionForm extends React.Component {
             <input type="text"
               value={this.state.username}
               onChange={this.update("username")}
+              placeholder="Username"
             />
           </label>
           <br/>
@@ -59,15 +87,23 @@ class SessionForm extends React.Component {
             <input type="password"
               value={this.state.password}
               onChange={this.update("password")}
+              placeholder="Password"
             />
           </label>
           <br/>
+
+          {this.renderErrors()}
 
           <button type="submit">{buttonText}</button>
           <br/>
 
           <p>or {navLink}</p>
         </form>
+
+        <div>
+          <p>Just visiting?</p>
+          <button onClick={this.handleGuest}>Guest Log In</button>
+        </div>
       </div>
     );
   }
