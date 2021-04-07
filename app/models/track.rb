@@ -13,4 +13,6 @@ class Track < ApplicationRecord
   validates :album_id, :name, :length, presence: true
 
   # add belongs_to :album
+
+  has_one_attached :track_file
 end
