@@ -81,10 +81,10 @@ class SessionForm extends React.Component {
           <h3 className="form-title">{formType}</h3>
           <br/>
 
-          <button className="guest-button" onClick={this.handleGuest}>
+          {/* <button className="guest-button" onClick={this.handleGuest}>
             continue with guest login
           </button>
-          <br/>
+          <br/> */}
 
           <label className="form-label">Username
             <input type="text"
@@ -121,6 +121,11 @@ class SessionForm extends React.Component {
         <div>
           {navLink}
         </div>
+        <br/>
+
+        <button className="guest-button" onClick={this.handleGuest}>
+          continue with guest login
+          </button>
       </div>
     );
   }
