@@ -10,4 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Track < ApplicationRecord
+  validates :album_id, :name, :length, presence: true
+
+  # add belongs_to :album
 end
