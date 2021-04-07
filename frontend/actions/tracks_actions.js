@@ -16,3 +16,22 @@ export const fetchTrack = trackId => {
     );
   });
 };
+
+// maybe temporary
+export const RECEIVE_TRACKS = "RECEIVE_TRACKS";
+
+const receiveTracks = tracks => {
+  return {
+    type: RECEIVE_TRACKS,
+    tracks
+  };
+};
+
+export const fetchTracks = () => {
+  return (dispatch => {
+    return (
+      TracksAPIUtil.fetchTracks().then(tracks => dispatch(receiveTracks(tracks)))
+    );
+  });
+};
+// maybe temporary

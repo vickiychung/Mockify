@@ -4,3 +4,12 @@ export const fetchTrack = trackId => {
     url: `/api/tracks/${trackId}`
   });
 };
+
+// maybe temporary
+export const fetchTracks = () => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/tracks"
+  });
+};
+// maybe temporary
