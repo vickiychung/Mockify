@@ -20,7 +20,7 @@ class Splash extends React.Component {
         </div>
 
         <div className="splash-main">
-
+          <img src={window.splashURL} alt="splash-img"/>
         </div>
       </div>
     );
