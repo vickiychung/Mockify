@@ -37,7 +37,8 @@ class SessionForm extends React.Component {
     );
   }
 
-  handleGuest() {
+  handleGuest(e) {
+    e.preventDefault();
     let guestUsername = "guest".split("");
     let guestPassword = "password".split("");
     this.guestSignIn(guestUsername, guestPassword);
@@ -45,15 +46,16 @@ class SessionForm extends React.Component {
 
   guestSignIn(guestUsername, guestPassword) {
     // autofill username => autofill password => auto login
-    
     if (guestUsername.length > 0) {
       this.setState({ username: this.state.username + guestUsername.shift() },
-        () => setTimeout(() => this.guestSignIn(guestUsername, guestPassword), 100)
+        () => window.setTimeout(() => this.guestSignIn(guestUsername, guestPassword), 100)
       );
+
     } else if (guestPassword.length > 0) {
       this.setState({ password: this.state.password + guestPassword.shift() },
-        () => setTimeout(() => this.guestSignIn(guestUsername, guestPassword), 100)
+        () => window.setTimeout(() => this.guestSignIn(guestUsername, guestPassword), 100)
       );
+
     } else {
       if (this.props.formType === "Sign up for free to start listening.") {
         this.props.signIn(this.state);
