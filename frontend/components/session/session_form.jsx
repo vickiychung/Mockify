@@ -115,7 +115,8 @@ class SessionForm extends React.Component {
         </div>
         <br/>
 
-        <div className="alt-link-button">
+        {/* <button className="alt-link-button" component={navLink}>test</button> */}
+        <div>
           {navLink}
         </div>
       </div>
