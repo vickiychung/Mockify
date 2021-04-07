@@ -74,7 +74,8 @@ class SessionForm extends React.Component {
    
     return (
       <div className="session-form-container">
-        <div className="form-logo"></div>
+        <div className="form-logo" onClick={() => this.props.history.push("/")}>
+        </div>
 
         <form className="session-form" onSubmit={this.handleSubmit}>
           <h3 className="form-title">{formType}</h3>
