@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Splash from './splash';
 
 const Home = ({ currentUser, signOut }) => {
   const signedIn = () => {
@@ -13,10 +13,7 @@ const Home = ({ currentUser, signOut }) => {
 
   const signedOut = () => {
     return (
-      <div>
-        <h2>I am in signed out homepage</h2>
-        <Link to="/signin">Go to Sign In</Link>
-      </div>
+      <Splash />
     );
   };
 
