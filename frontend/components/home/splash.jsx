@@ -7,7 +7,16 @@ class Splash extends React.Component {
     return (
       <div>
         <div className="splash-header">
-          <img src={window.logoDarkURL} alt="logo-dark"/>
+          <div className="splash-header-logo">
+            <Link to="/">
+              <img src={window.logoDarkURL} alt="logo-dark"/>
+            </Link>
+          </div>
+
+          <div className="splash-header-links">
+            <Link id="signup" to="/signup">Sign up</Link>
+            <Link id="signin" to="/signin">Log in</Link>
+          </div>
         </div>
 
         <div className="splash-main">
