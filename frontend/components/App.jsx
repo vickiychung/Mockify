@@ -2,9 +2,10 @@ import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 
 import HomeContainer from './home/home_container';
-import SignInFormContainer from '../components/session/sign_in_form_container';
-import SignUpFormContainer from '../components/session/sign_up_form_container';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import SignInFormContainer from './session/sign_in_form_container';
+import SignUpFormContainer from './session/sign_up_form_container';
+import { AuthRoute } from '../util/route_util';
+// ProtectedRoute
 
 const App = () => {
   return (
