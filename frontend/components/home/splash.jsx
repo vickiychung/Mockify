@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 class Splash extends React.Component {
 
   render() {
@@ -20,7 +21,20 @@ class Splash extends React.Component {
         </div>
 
         <div className="splash-main">
-          <img src={window.splashURL} alt="splash-img"/>
+          <div className="splash-txt">
+            <p>Music is</p>
+            <p>everything</p>
+          </div>
+        </div>
+
+        <div className="splash-footer">
+          <a href="https://github.com/vickiychung">
+            <img src={window.githubURL} alt="github-logo" />
+          </a>
+
+          <a href="https://www.linkedin.com/in/vickiychung/">
+            <img src={window.linkedinURL} alt="linkedin-logo" />
+          </a>
         </div>
       </div>
     );

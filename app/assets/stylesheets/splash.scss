@@ -1,3 +1,7 @@
+// splash photo from https://unsplash.com/photos/KoKAXLKJwhk?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+// github icon from <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+// linkedin icon from <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 .splash-header {
   position: fixed;
   top: 0;
@@ -8,6 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 }
 
 .splash-header img {
@@ -33,12 +38,48 @@
 }
 
 .splash-main {
-  width: 100%;
-  height: 500px;
-  background-color: blue;
+  display: flex;
+  justify-content: center;
 }
 
-.splash-main img {
-  height: 800px;
+.splash-main {
+  background-image: image_url('splash_praise.jpg') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-y: hidden;
+  top: 54px;
+  height: 100vh;
   width: 100%;
+  opacity: 0.8;
+}
+
+.splash-txt {
+  font-size: 100px;
+  color:white;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.splash-footer {
+  background-color: black;
+  min-height: 54px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 50px;
+}
+
+.splash-footer img {
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+}
+
+.splash-footer img:hover {
+  cursor: pointer;
 }
