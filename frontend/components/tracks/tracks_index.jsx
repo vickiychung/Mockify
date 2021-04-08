@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import TracksIndexItem from './tracks_index_item';
 
 class TracksIndex extends React.Component {
@@ -24,6 +25,7 @@ class TracksIndex extends React.Component {
             <div className="album-photo">
               <p>album photo can be here</p>
               <p>how do I have background color adjusts with the photo accordingly?</p>
+              <Link to="/">temporary link to go back to home</Link>
             </div>
 
             <ul className="tracks-container">
