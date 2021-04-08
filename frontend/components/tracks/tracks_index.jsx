@@ -15,7 +15,12 @@ class TracksIndex extends React.Component {
     
     return (
       <div>
-        <ul>
+        <div className="album-photo">
+          <p>album photo can be here</p>
+          <p>how do I have background color adjusts with the photo accordingly?</p>
+        </div>
+
+        <ul className="tracks-container">
           {
             tracks.map(track => <TracksIndexItem 
               key = {track.id}

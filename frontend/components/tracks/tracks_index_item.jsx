@@ -3,10 +3,11 @@ import React from 'react';
 const TracksIndexItem = ({ track, trackUrl }) => {
   return (
     <div>
-      <h3>{track.name}</h3>
-      <br/>
-
-      <audio src={trackUrl} controls />
+      <li className="single-track-container">
+        <p className="track-name">{track.name}</p>
+        <p className="track-length">{track.length.toFixed(2)}</p>
+        <audio src={trackUrl} controls />
+      </li>
     </div>
   );
 };

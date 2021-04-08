@@ -1,0 +1,37 @@
+.tracks-container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  background-color: pink;
+}
+
+.album-photo {
+  background-color: rgb(73, 3, 3);
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  height: 300px;
+  font-size: 30px;
+}
+
+.single-track-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.track-name {
+  color: black;
+  width: 225px;
+  padding-left: 15px;
+}
+
+.track-length {
+  color: black;
+  padding-left: 0;
+}
+
+audio {
+  padding-right: 15px;
+}
