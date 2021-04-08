@@ -1,11 +1,15 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
+import { AuthRoute } from '../util/route_util';
+// ProtectedRoute?
 
 import HomeContainer from './home/home_container';
 import SignInFormContainer from './session/sign_in_form_container';
 import SignUpFormContainer from './session/sign_up_form_container';
-import { AuthRoute } from '../util/route_util';
-// ProtectedRoute
+
+// maybe temp
+import TracksIndexContainer from './tracks/tracks_index_container';
+// maybe temp
 
 const App = () => {
   return (
@@ -13,6 +17,7 @@ const App = () => {
       <Switch>
         <AuthRoute exact path="/signin" component={SignInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+        <Route exact path="/tracks" component={TracksIndexContainer} />
         <Route exact path="/" component={HomeContainer} />
         <Redirect to="/" />
       </Switch>

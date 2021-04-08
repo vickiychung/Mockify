@@ -1,4 +1,5 @@
 import React from 'react';
+import TracksIndexItem from './tracks_index_item';
 
 class TracksIndex extends React.Component {
   constructor(props) {
@@ -13,8 +14,17 @@ class TracksIndex extends React.Component {
     const { tracks } = this.props;
     
     return (
-      
-    )
+      <div>
+        <ul>
+          {
+            tracks.map(track => <TracksIndexItem 
+              key = {track.id}
+              track = {track}
+            />)
+          }
+        </ul>
+      </div>
+    );
   }
 }
 
