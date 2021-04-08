@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TracksIndexItem from './tracks_index_item';
+import WebPlayer from '../web_player/web_player';
 
 class TracksIndex extends React.Component {
   constructor(props) {
@@ -41,9 +42,7 @@ class TracksIndex extends React.Component {
         </div>
 
         <div className="webplayer-container">
-          <p>I will be webplayer</p>
-          <br/>
-          <p>thank you walker!</p>
+          <WebPlayer />
         </div>
       </div>
     );
