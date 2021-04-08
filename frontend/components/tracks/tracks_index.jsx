@@ -20,6 +20,7 @@ class TracksIndex extends React.Component {
             tracks.map(track => <TracksIndexItem 
               key = {track.id}
               track = {track}
+              trackUrl = {track.trackUrl}
             />)
           }
         </ul>

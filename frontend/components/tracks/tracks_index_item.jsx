@@ -1,8 +1,13 @@
 import React from 'react';
 
-const TracksIndexItem = ({ track }) => {
+const TracksIndexItem = ({ track, trackUrl }) => {
   return (
-    <p>Hello I am in tracks index item</p>
+    <div>
+      <h3>{track.name}</h3>
+      <br/>
+
+      <audio src={trackUrl} controls />
+    </div>
   );
 };
 
