@@ -1,8 +1,11 @@
 class Api::TracksController < ApplicationController
-  before_action :require_logged_in!
+  def index
+    @tracks = Track.all
+    render :index
+  end
 
   def show
-    @track = Track.find(id: params[:id])
+    @track = Track.find_by(id: params[:id])
     render :show
   end
 end

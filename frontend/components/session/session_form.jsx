@@ -81,11 +81,6 @@ class SessionForm extends React.Component {
           <h3 className="form-title">{formType}</h3>
           <br/>
 
-          {/* <button className="guest-button" onClick={this.handleGuest}>
-            continue with guest login
-          </button>
-          <br/> */}
-
           <label className="form-label">Username
             <input type="text"
               value={this.state.username}
