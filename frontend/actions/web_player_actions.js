@@ -1,14 +1,30 @@
-export const PLAY_TRACK = "PLAY_TRACK";
-export const PAUSE_TRACK = "PAUSE_TRACK";
+// export const PLAY_TRACK = "PLAY_TRACK";
+// export const PAUSE_TRACK = "PAUSE_TRACK";
 
-export const playTrack = () => {
+// export const playTrack = () => {
+//   return {
+//     type: PLAY_TRACK
+//   };
+// };
+
+// export const pauseTrack = () => {
+//   return {
+//     type: PAUSE_TRACK
+//   };
+// };
+
+export const TOGGLE_PLAY = "TOGGLE_PLAY";
+export const SELECT_TRACK = "SELECT_TRACK";
+
+export const togglePlayTrack = () => {
   return {
-    type: PLAY_TRACK
+    type: TOGGLE_PLAY
   };
 };
 
-export const pauseTrack = () => {
+export const selectTrack = trackId => {
   return {
-    type: PAUSE_TRACK
+    type: SELECT_TRACK,
+    trackId
   };
 };

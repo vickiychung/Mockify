@@ -13,7 +13,7 @@ class TracksIndex extends React.Component {
   }
   
   render() {
-    const { tracks, currentTrackId, status } = this.props;
+    const { tracks, currentTrackId, status, togglePlayTrack, selectTrack } = this.props;
     
     return (
       <div className="home-wrapper">
@@ -36,6 +36,8 @@ class TracksIndex extends React.Component {
                   trackUrl = {track.trackUrl}
                   currentTrackId = {currentTrackId}
                   status = {status}
+                  togglePlayTrack = {togglePlayTrack}
+                  selectTrack = {selectTrack}
                 />)}
             </ul>
           </div>

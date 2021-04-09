@@ -3,32 +3,29 @@ import React from 'react';
 class TracksIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentTrackId: null,
-      status: ""
-    };
+    // this.state = {
+    //   currentTrackId: null,
+    //   status: false
+    // };
 
     this.handlePlay = this.handlePlay.bind(this);
   }
 
-  handlePlay(e) {
-    e.preventDefault();
-    this.setState({
-      currentTrackId: 1,
-      status: "playing"
-    });
-    // alert("click");
+  handlePlay(trackId) {
+    // e.preventDefault();
+    this.props.togglePlayTrack();
+    this.props.selectTrack(trackId);
   }
 
   render() {
-    const { track, trackUrl, currentTrackId, status } = this.props;
+    const { track, trackUrl, currentTrackId, status, togglePlayTrack } = this.props;
     
     return (
       <div>
         <li className="single-track-container">
           <p className="track-name">{track.name}</p>
           <p className="track-length">{track.length.toFixed(2)}</p>
-          <button onClick={this.handlePlay}>Play</button>
+          <button onClick={() => this.handlePlay(track.id)}>Play</button>
           <audio src={trackUrl} controls>
             Your browser does not support the audio element.
           </audio>

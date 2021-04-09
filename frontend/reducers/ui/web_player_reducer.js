@@ -1,8 +1,9 @@
-import { PLAY_TRACK, PAUSE_TRACK } from '../../actions/web_player_actions';
+// import { PLAY_TRACK, PAUSE_TRACK } from '../../actions/web_player_actions';
+import { TOGGLE_PLAY, SELECT_TRACK } from '../../actions/web_player_actions';
 
 const _initialState = Object.freeze({
   currentTrackId: null,
-  status: ""
+  playStatus: false
 });
 
 const webPlayerReducer = (oldState = _initialState, action) => {
@@ -10,12 +11,20 @@ const webPlayerReducer = (oldState = _initialState, action) => {
   let newState = Object.assign({}, oldState);
 
   switch (action.type) {
-    case PLAY_TRACK:
-      newState.status = "playing"
-      return newState;
+    // case PLAY_TRACK:
+    //   newState.playStatus = "playing"
+    //   return newState;
     
-    case PAUSE_TRACK:
-      newState.status = "paused"
+    // case PAUSE_TRACK:
+    //   newState.playStatus = "paused"
+    //   return newState;
+    
+    case TOGGLE_PLAY:
+      newState.playStatus = !oldState.playStatus;
+      return newState;
+
+    case SELECT_TRACK:
+      newState.currentTrackId = action.trackId
       return newState;
 
     default:
