@@ -5,7 +5,9 @@ import TracksIndex from './tracks_index';
 
 const mapStateToProps = state => {
   return {
-    tracks: Object.values(state.entities.tracks)
+    tracks: Object.values(state.entities.tracks),
+    currentTrackId: state.ui.webPlayer.currentTrackId,
+    status: state.ui.webPlayer.status
   };
 };
 

@@ -13,7 +13,7 @@ class TracksIndex extends React.Component {
   }
   
   render() {
-    const { tracks } = this.props;
+    const { tracks, currentTrackId, status } = this.props;
     
     return (
       <div className="home-wrapper">
@@ -34,6 +34,8 @@ class TracksIndex extends React.Component {
                   key = {track.id}
                   track = {track}
                   trackUrl = {track.trackUrl}
+                  currentTrackId = {currentTrackId}
+                  status = {status}
                 />)}
             </ul>
           </div>
