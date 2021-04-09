@@ -45,8 +45,9 @@ class TracksIndex extends React.Component {
         <div className="webplayer-container">
           <WebPlayer
             currentTrack = {currentTrack}
-            togglePlayTrack = {togglePlayTrack}
             playStatus = {playStatus}
+            togglePlayTrack = {togglePlayTrack}
+            queue = {tracks}
           />
         </div>
       </div>
