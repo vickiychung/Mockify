@@ -1,4 +1,8 @@
-import { TOGGLE_PLAY, SELECT_TRACK } from '../../actions/web_player_actions';
+import {
+  TOGGLE_PLAY,
+  SELECT_TRACK,
+  PLAY_NEXT
+} from '../../actions/web_player_actions';
 
 const _initialState = Object.freeze({
   currentTrackId: null,
@@ -17,6 +21,21 @@ const webPlayerReducer = (oldState = _initialState, action) => {
     case SELECT_TRACK:
       newState.currentTrackId = action.trackId
       return newState;
+
+    case PLAY_NEXT:
+      let currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrackId);
+      let currentQueueId = action.queue.indexOf(currentTrack);
+      let nextQueueId, nextTrack, nextTrackId;
+
+      if (currentQueueId + 1 < action.queue.length) {
+        nextQueueId = currentQueueId + 1;
+        nextTrack = action.queue[nextQueueId];
+        nextTrackId = nextTrack.id;
+        newState.currentTrackId = nextTrackId;
+        return newState;
+      } else if (currentQueueId + 1 === action.queue.length) {
+        return _initialState;
+      }
 
     default:
       return oldState;

@@ -5,6 +5,8 @@ import { faPlayCircle, faPauseCircle } from "@fortawesome/free-solid-svg-icons";
 class WebPlayer extends React.Component {
   constructor(props) {
     super(props);
+
+    this.playNext = this.playNext.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -14,12 +16,19 @@ class WebPlayer extends React.Component {
         if (this.props.playStatus === false) {
           this.props.togglePlayTrack();
         }
+      } else {
+        this.player.pause();
       }
     } 
   }
 
+  playNext(e) {
+    e.preventDefault();
+    this.props.playNextTrack(this.props.queue);
+  }
+
   render() {
-    const { currentTrack, playStatus, queue } = this.props;
+    const { currentTrack, playStatus } = this.props;
 
     let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} />
 
@@ -33,13 +42,15 @@ class WebPlayer extends React.Component {
         playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} />
         this.player.pause();
       }
-    }
+    } 
 
     return (
       <div>
         <p>this is web player</p>
 
         {playPauseIcon}
+
+        <button onClick={this.playNext}>next</button>
 
         <audio ref={ref => this.player = ref}>
           Your browser does not support the audio element.

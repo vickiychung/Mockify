@@ -13,7 +13,14 @@ class TracksIndex extends React.Component {
   }
   
   render() {
-    const { tracks, currentTrack, playStatus, togglePlayTrack, selectTrack } = this.props;
+    const {
+      tracks, 
+      currentTrack, 
+      playStatus, 
+      togglePlayTrack, 
+      selectTrack, 
+      playNextTrack
+    } = this.props;
 
     const list = tracks.map(track => <TracksIndexItem
       key={track.id}
@@ -48,6 +55,7 @@ class TracksIndex extends React.Component {
             playStatus = {playStatus}
             togglePlayTrack = {togglePlayTrack}
             queue = {tracks}
+            playNextTrack = {playNextTrack}
           />
         </div>
       </div>
