@@ -13,7 +13,15 @@ class TracksIndex extends React.Component {
   }
   
   render() {
-    const { tracks, currentTrackId, status, togglePlayTrack, selectTrack } = this.props;
+    const { tracks, currentTrack, playStatus, togglePlayTrack, selectTrack } = this.props;
+
+    const list = tracks.map(track => <TracksIndexItem
+      key={track.id}
+      track={track}
+      trackUrl={track.trackUrl}
+      togglePlayTrack={togglePlayTrack}
+      selectTrack={selectTrack}
+    />);
     
     return (
       <div className="home-wrapper">
@@ -25,28 +33,21 @@ class TracksIndex extends React.Component {
           <div className="main-container">
             <div className="album-photo">
               <p>album photo can be here</p>
-              <p>how do I have background color adjusts with the photo accordingly?</p>
               <Link to="/">temporary link to go back to home</Link>
             </div>
 
             <ul className="tracks-container">
-              {tracks.map(track => <TracksIndexItem 
-                  key = {track.id}
-                  track = {track}
-                  trackUrl = {track.trackUrl}
-                  currentTrackId = {currentTrackId}
-                  status = {status}
-                  togglePlayTrack = {togglePlayTrack}
-                  selectTrack = {selectTrack}
-                />)}
+              {list}
             </ul>
           </div>
           <br/>
-
         </div>
 
         <div className="webplayer-container">
-          <WebPlayer />
+          <WebPlayer
+            currentTrack = {currentTrack}
+            playStatus = {playStatus}
+          />
         </div>
       </div>
     );

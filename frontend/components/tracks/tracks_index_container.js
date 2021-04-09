@@ -5,9 +5,14 @@ import { togglePlayTrack, selectTrack } from '../../actions/web_player_actions';
 import TracksIndex from './tracks_index';
 
 const mapStateToProps = state => {
+  let selectedTrackId;
+  if (state.ui.webPlayer.currentTrackId) {
+    selectedTrackId = state.ui.webPlayer.currentTrackId;
+  }
+
   return {
     tracks: Object.values(state.entities.tracks),
-    currentTrackId: state.ui.webPlayer.currentTrackId,
+    currentTrack: state.entities.tracks[selectedTrackId],
     playStatus: state.ui.webPlayer.playStatus
   };
 };
