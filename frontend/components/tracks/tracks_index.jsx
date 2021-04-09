@@ -18,7 +18,6 @@ class TracksIndex extends React.Component {
     const list = tracks.map(track => <TracksIndexItem
       key={track.id}
       track={track}
-      trackUrl={track.trackUrl}
       togglePlayTrack={togglePlayTrack}
       selectTrack={selectTrack}
     />);
@@ -46,6 +45,7 @@ class TracksIndex extends React.Component {
         <div className="webplayer-container">
           <WebPlayer
             currentTrack = {currentTrack}
+            togglePlayTrack = {togglePlayTrack}
             playStatus = {playStatus}
           />
         </div>

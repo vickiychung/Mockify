@@ -8,12 +8,12 @@ class TracksIndexItem extends React.Component {
   }
 
   handlePlay(trackId) {
-    this.props.togglePlayTrack();
+    // this.props.togglePlayTrack();
     this.props.selectTrack(trackId);
   }
 
   render() {
-    const { track, trackUrl } = this.props;
+    const { track } = this.props;
     
     return (
       <div>
@@ -21,9 +21,6 @@ class TracksIndexItem extends React.Component {
           <p className="track-name">{track.name}</p>
           <p className="track-length">{track.length.toFixed(2)}</p>
           <button onClick={() => this.handlePlay(track.id)}>Play</button>
-          <audio src={trackUrl} controls>
-            Your browser does not support the audio element.
-          </audio>
         </li>
       </div>
     );
