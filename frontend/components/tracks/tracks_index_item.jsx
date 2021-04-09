@@ -8,7 +8,7 @@ class TracksIndexItem extends React.Component {
   }
 
   handlePlay(trackId) {
-    // this.props.togglePlayTrack();
+    this.props.togglePlayTrack();
     this.props.selectTrack(trackId);
   }
 
