@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPlayCircle, 
   faPauseCircle,
-  faStepForward
+  faStepForward,
+  faStepBackward
  } from "@fortawesome/free-solid-svg-icons";
 
 class WebPlayer extends React.Component {
@@ -40,16 +41,17 @@ class WebPlayer extends React.Component {
   render() {
     const { currentTrack, playStatus } = this.props;
 
-    let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playNext} />
+    // play first track on initial click
+    let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playNext}/>
 
     if (currentTrack) {
       this.player.src = currentTrack.trackUrl;
       
       if (playStatus === true) {
-        playPauseIcon = <FontAwesomeIcon icon={faPauseCircle} onClick={this.playPause} />
+        playPauseIcon = <FontAwesomeIcon icon={faPauseCircle} onClick={this.playPause}/>
         this.player.play();
       } else {
-        playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playPause} />
+        playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playPause}/>
         this.player.pause();
       }
     } 
@@ -57,6 +59,8 @@ class WebPlayer extends React.Component {
     return (
       <div>
         <p>this is web player</p>
+
+        <FontAwesomeIcon icon={faStepBackward}/>
 
         {playPauseIcon}
 

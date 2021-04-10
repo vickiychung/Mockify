@@ -19,7 +19,8 @@ class TracksIndex extends React.Component {
       playStatus, 
       togglePlayTrack, 
       selectTrack, 
-      playNextTrack
+      playNextTrack,
+      playPrevTrack
     } = this.props;
 
     const list = tracks.map(track => <TracksIndexItem
@@ -56,6 +57,7 @@ class TracksIndex extends React.Component {
             togglePlayTrack = {togglePlayTrack}
             queue = {tracks}
             playNextTrack = {playNextTrack}
+            playPrevTrack = {playPrevTrack}
           />
         </div>
       </div>
