@@ -4,7 +4,9 @@ import {
   faPlayCircle, 
   faPauseCircle,
   faStepForward,
-  faStepBackward
+  faStepBackward,
+  faRandom,
+  faRetweet
  } from "@fortawesome/free-solid-svg-icons";
 
 class WebPlayer extends React.Component {
@@ -13,6 +15,10 @@ class WebPlayer extends React.Component {
     
     // local state for shuffling tracks
     this.state = { queue: [] };
+
+    // class name var for css
+    this.shuffling = "";
+    this.looping = "";
 
     this.playPause = this.playPause.bind(this);
     this.playNext = this.playNext.bind(this);
@@ -62,6 +68,13 @@ class WebPlayer extends React.Component {
   toggleShuffle(e) {
     e.preventDefault();
     this.props.toggleShuffle();
+    
+    // highlight shuffle icon
+    if (!this.props.shuffleOn) {
+      this.shuffling = "shuffle-on";
+    } else {
+      this.shuffling = "";
+    }
 
     const _ = require("lodash");
     let _tracks = this.props.tracks;
@@ -72,13 +85,21 @@ class WebPlayer extends React.Component {
   toggleLoop(e) {
     e.preventDefault();
     this.props.toggleLoop();
+
+    // highlight loop icon
+    if (!this.props.loopOn) {
+      this.looping = "loop-on";
+    } else {
+      this.looping = "";
+    }
   }
 
   render() {
     const { currentTrack, playStatus } = this.props;
 
     // play first track on initial click
-    let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playNext}/>
+    let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} 
+      onClick={this.playNext}/>
 
     if (currentTrack) {
       this.player.src = currentTrack.trackUrl;
@@ -96,15 +117,17 @@ class WebPlayer extends React.Component {
       <div>
         <p>this is web player</p>
 
+        <FontAwesomeIcon icon={faRandom} className={this.shuffling} 
+          onClick={this.toggleShuffle}/>
+
         <FontAwesomeIcon icon={faStepBackward} onClick={this.playPrev}/>
 
         {playPauseIcon}
 
         <FontAwesomeIcon icon={faStepForward} onClick={this.playNext}/>
 
-        <button onClick={this.toggleShuffle}>shuffle</button>
-
-        <button onClick={this.toggleLoop}>loop</button>
+        <FontAwesomeIcon icon={faRetweet} className={this.looping} 
+          onClick={this.toggleLoop} />
 
         <audio ref={ref => this.player = ref}>
           Your browser does not support the audio element.
