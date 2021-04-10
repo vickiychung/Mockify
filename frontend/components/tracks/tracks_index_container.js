@@ -6,7 +6,8 @@ import {
   selectTrack, 
   playNextTrack,
   playPrevTrack,
-  addToQueue
+  toggleShuffle
+  // addToQueue
 } from '../../actions/web_player_actions';
 import TracksIndex from './tracks_index';
 
@@ -19,7 +20,9 @@ const mapStateToProps = state => {
   return {
     tracks: Object.values(state.entities.tracks),
     currentTrack: state.entities.tracks[selectedTrackId],
-    playStatus: state.ui.webPlayer.playStatus
+    playStatus: state.ui.webPlayer.playStatus,
+    shuffleOn: state.ui.webPlayer.shuffleOn
+    // queue: state.ui.webPlayer.queue
   };
 };
 
@@ -30,7 +33,8 @@ const mapDispatchToProps = dispatch => {
     selectTrack: trackId => dispatch(selectTrack(trackId)),
     playNextTrack: queue => dispatch(playNextTrack(queue)),
     playPrevTrack: queue => dispatch(playPrevTrack(queue)),
-    addToQueue: tracks => dispatch(addToQueue(tracks))
+    toggleShuffle: () => dispatch(toggleShuffle())
+    // addToQueue: tracks => dispatch(addToQueue(tracks))
   };
 };
 

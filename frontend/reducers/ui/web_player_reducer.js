@@ -3,13 +3,15 @@ import {
   SELECT_TRACK,
   PLAY_NEXT,
   PLAY_PREV,
-  ADD_TO_QUEUE
+  TOGGLE_SHUFFLE
+  // ADD_TO_QUEUE
 } from '../../actions/web_player_actions';
 
 const _initialState = Object.freeze({
   currentTrackId: null,
   playStatus: false,
-  queue: []
+  shuffleOn: false
+  // queue: []
 });
 
 const webPlayerReducer = (oldState = _initialState, action) => {
@@ -56,9 +58,13 @@ const webPlayerReducer = (oldState = _initialState, action) => {
         return _initialState;
       }
 
-    case ADD_TO_QUEUE:
-      newState.queue = action.tracks;
+    case TOGGLE_SHUFFLE:
+      newState.shuffleOn = !oldState.shuffleOn;
       return newState;
+
+    // case ADD_TO_QUEUE:
+    //   newState.queue = action.tracks;
+    //   return newState;
 
     default:
       return oldState;

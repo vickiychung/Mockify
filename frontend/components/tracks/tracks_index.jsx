@@ -11,7 +11,7 @@ class TracksIndex extends React.Component {
   componentDidMount() {
     this.props.fetchTracks();
   }
-  
+
   render() {
     const {
       tracks, 
@@ -21,6 +21,9 @@ class TracksIndex extends React.Component {
       selectTrack, 
       playNextTrack,
       playPrevTrack,
+      toggleShuffle,
+      shuffleOn
+      // addToQueue
     } = this.props;
 
     const list = tracks.map(track => <TracksIndexItem
@@ -29,7 +32,7 @@ class TracksIndex extends React.Component {
       togglePlayTrack={togglePlayTrack}
       selectTrack={selectTrack}
     />);
-    
+
     return (
       <div className="home-wrapper">
         <div className="home-container">
@@ -55,9 +58,12 @@ class TracksIndex extends React.Component {
             currentTrack = {currentTrack}
             playStatus = {playStatus}
             togglePlayTrack = {togglePlayTrack}
-            queue = {tracks}
+            tracks = {tracks}
             playNextTrack = {playNextTrack}
             playPrevTrack = {playPrevTrack}
+            toggleShuffle = {toggleShuffle}
+            shuffleOn = {shuffleOn}
+            // addToQueue = {addToQueue}
           />
         </div>
       </div>
