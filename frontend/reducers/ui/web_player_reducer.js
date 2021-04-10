@@ -60,7 +60,12 @@ const webPlayerReducer = (oldState = _initialState, action) => {
         newState.currentTrackId = prevTrackId;
         return newState;
       } else if (currentQueueId - 1 < 0) {
-        return _initialState;
+        if (oldState.loopOn) {
+          newState.currentTrackId = action.queue[action.queue.length - 1]["id"];
+          return newState;
+        } else {
+          return _initialState;
+        }
       }
 
     case TOGGLE_SHUFFLE:
