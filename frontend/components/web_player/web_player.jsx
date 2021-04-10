@@ -1,6 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlayCircle, faPauseCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlayCircle, 
+  faPauseCircle,
+  faStepForward
+ } from "@fortawesome/free-solid-svg-icons";
 
 class WebPlayer extends React.Component {
   constructor(props) {
@@ -36,7 +40,7 @@ class WebPlayer extends React.Component {
   render() {
     const { currentTrack, playStatus } = this.props;
 
-    let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} />
+    let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playNext} />
 
     if (currentTrack) {
       this.player.src = currentTrack.trackUrl;
@@ -56,7 +60,7 @@ class WebPlayer extends React.Component {
 
         {playPauseIcon}
 
-        <button onClick={this.playNext}>next</button>
+        <FontAwesomeIcon icon={faStepForward} onClick={this.playNext}/>
 
         <audio ref={ref => this.player = ref}>
           Your browser does not support the audio element.
