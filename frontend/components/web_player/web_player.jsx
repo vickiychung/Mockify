@@ -10,14 +10,15 @@ import {
 class WebPlayer extends React.Component {
   constructor(props) {
     super(props);
-
+    
+    // local state for shuffling tracks
     this.state = { queue: [] };
 
     this.playPause = this.playPause.bind(this);
     this.playNext = this.playNext.bind(this);
     this.playPrev = this.playPrev.bind(this);
-
     this.toggleShuffle = this.toggleShuffle.bind(this);
+    this.toggleLoop = this.toggleLoop.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -64,20 +65,17 @@ class WebPlayer extends React.Component {
 
     const _ = require("lodash");
     let _tracks = this.props.tracks;
-    // let _tracks = this.props.tracks.map(track => this.props.tracks.indexOf(track));
-
     let shuffledTracks = _.shuffle(_tracks);
     this.setState({ queue: shuffledTracks });
   }
 
-  render() {
-    const { tracks, currentTrack, playStatus, shuffleOn } = this.props;
-  console.log(this.state);
+  toggleLoop(e) {
+    e.preventDefault();
+    this.props.toggleLoop();
+  }
 
-    // if (tracks) {
-    //   addToQueue(tracks);
-    //   console.log(tracks);
-    // }
+  render() {
+    const { currentTrack, playStatus } = this.props;
 
     // play first track on initial click
     let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playNext}/>
@@ -105,6 +103,8 @@ class WebPlayer extends React.Component {
         <FontAwesomeIcon icon={faStepForward} onClick={this.playNext}/>
 
         <button onClick={this.toggleShuffle}>shuffle</button>
+
+        <button onClick={this.toggleLoop}>loop</button>
 
         <audio ref={ref => this.player = ref}>
           Your browser does not support the audio element.

@@ -22,8 +22,9 @@ class TracksIndex extends React.Component {
       playNextTrack,
       playPrevTrack,
       toggleShuffle,
-      shuffleOn
-      // addToQueue
+      shuffleOn,
+      toggleLoop,
+      loopOn
     } = this.props;
 
     const list = tracks.map(track => <TracksIndexItem
@@ -63,7 +64,8 @@ class TracksIndex extends React.Component {
             playPrevTrack = {playPrevTrack}
             toggleShuffle = {toggleShuffle}
             shuffleOn = {shuffleOn}
-            // addToQueue = {addToQueue}
+            toggleLoop = {toggleLoop}
+            loopOn = {loopOn}
           />
         </div>
       </div>

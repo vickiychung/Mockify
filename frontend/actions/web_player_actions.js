@@ -3,6 +3,7 @@ export const SELECT_TRACK = "SELECT_TRACK";
 export const PLAY_NEXT = "PLAY_NEXT";
 export const PLAY_PREV = "PLAY_PREV";
 export const TOGGLE_SHUFFLE = "TOGGLE_SHUFFLE";
+export const TOGGLE_LOOP = "TOGGLE_LOOP";
 
 export const togglePlayTrack = () => {
   return {
@@ -34,5 +35,11 @@ export const playPrevTrack = queue => {
 export const toggleShuffle = () => {
   return {
     type: TOGGLE_SHUFFLE
+  };
+};
+
+export const toggleLoop = () => {
+  return {
+    type: TOGGLE_LOOP
   };
 };
