@@ -13,6 +13,7 @@ const _initialState = Object.freeze({
 const webPlayerReducer = (oldState = _initialState, action) => {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
+  let currentTrack, currentQueueId;
 
   switch (action.type) {
     case TOGGLE_PLAY:
@@ -24,8 +25,8 @@ const webPlayerReducer = (oldState = _initialState, action) => {
       return newState;
 
     case PLAY_NEXT:
-      let currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrackId);
-      let currentQueueId = action.queue.indexOf(currentTrack);
+      currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrackId);
+      currentQueueId = action.queue.indexOf(currentTrack);
       let nextQueueId, nextTrack, nextTrackId;
 
       if (currentQueueId + 1 < action.queue.length) {
@@ -39,8 +40,8 @@ const webPlayerReducer = (oldState = _initialState, action) => {
       }
 
     case PLAY_PREV:
-      let currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrackId);
-      let currentQueueId = action.queue.indexOf(currentTrack);
+      currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrackId);
+      currentQueueId = action.queue.indexOf(currentTrack);
       let prevQueueId, prevTrack, prevTrackId;
 
       if (currentQueueId - 1 >= 0) {

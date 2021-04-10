@@ -13,6 +13,7 @@ class WebPlayer extends React.Component {
 
     this.playPause = this.playPause.bind(this);
     this.playNext = this.playNext.bind(this);
+    this.playPrev = this.playPrev.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -38,6 +39,11 @@ class WebPlayer extends React.Component {
     this.props.playNextTrack(this.props.queue);
   }
 
+  playPrev(e) {
+    e.preventDefault();
+    this.props.playPrevTrack(this.props.queue);
+  }
+
   render() {
     const { currentTrack, playStatus } = this.props;
 
@@ -60,7 +66,7 @@ class WebPlayer extends React.Component {
       <div>
         <p>this is web player</p>
 
-        <FontAwesomeIcon icon={faStepBackward}/>
+        <FontAwesomeIcon icon={faStepBackward} onClick={this.playPrev}/>
 
         {playPauseIcon}
 
