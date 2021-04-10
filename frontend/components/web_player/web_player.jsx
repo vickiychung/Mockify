@@ -25,11 +25,11 @@ class WebPlayer extends React.Component {
     this.playPrev = this.playPrev.bind(this);
     this.toggleShuffle = this.toggleShuffle.bind(this);
     this.toggleLoop = this.toggleLoop.bind(this);
+    this.handleProgress = this.handleProgress.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.currentTrack !== prevProps.currentTrack) {
-
       if (this.props.currentTrack) {
         if (this.props.playStatus === false) {
           this.props.togglePlayTrack();
@@ -94,13 +94,44 @@ class WebPlayer extends React.Component {
     }
   }
 
+  handleProgress() {
+    let player = document.getElementById("player");
+    let endTime = document.getElementById('endTime')
+    let startTime = document.getElementById('startTime')
+
+    player.addEventListener("loadedmetadata", () => {
+      let duration = player.duration;
+      let durationMin = Math.floor(duration / 60);
+      let durationSec = Math.round(duration - (durationMin * 60));
+
+      if (durationSec < 10) {
+        endTime.innerHTML = `${durationMin}:0${durationSec}`;
+      } else {
+        endTime.innerHTML = `${durationMin}:${durationSec}`;
+      }
+    })
+
+    player.addEventListener("timeupdate", () => {
+      let currentTime = player.currentTime;
+      let currentMin = Math.floor(currentTime / 60);
+      let currentSec = Math.round(currentTime - (currentMin * 60));
+
+      if (currentSec < 10) {
+        startTime.innerHTML = `${currentMin}:0${currentSec}`;
+      } else {
+        startTime.innerHTML = `${currentMin}:${currentSec}`;
+      }
+    })
+  }
+
   render() {
     const { currentTrack, playStatus } = this.props;
 
     // play first track on initial click
     let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} 
       onClick={this.playNext}/>
-
+    
+    // set up player
     if (currentTrack) {
       this.player.src = currentTrack.trackUrl;
       
@@ -110,6 +141,10 @@ class WebPlayer extends React.Component {
       } else {
         playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playPause}/>
         this.player.pause();
+      }
+
+      if (this.player) {
+        this.handleProgress();
       }
     } 
 
@@ -129,7 +164,13 @@ class WebPlayer extends React.Component {
         <FontAwesomeIcon icon={faRetweet} className={this.looping} 
           onClick={this.toggleLoop} />
 
-        <audio ref={ref => this.player = ref}>
+        <div>
+          <p>progress here</p>
+          <p id='startTime'>0:00</p>
+          <p id='endTime'></p>
+        </div>
+
+        <audio id="player" ref={ref => this.player = ref}>
           Your browser does not support the audio element.
         </audio>        
       </div>
