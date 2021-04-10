@@ -6,6 +6,7 @@ class WebPlayer extends React.Component {
   constructor(props) {
     super(props);
 
+    this.playPause = this.playPause.bind(this);
     this.playNext = this.playNext.bind(this);
   }
 
@@ -22,6 +23,11 @@ class WebPlayer extends React.Component {
     } 
   }
 
+  playPause(e) {
+    e.preventDefault();
+    this.props.togglePlayTrack();
+  }
+
   playNext(e) {
     e.preventDefault();
     this.props.playNextTrack(this.props.queue);
@@ -36,10 +42,10 @@ class WebPlayer extends React.Component {
       this.player.src = currentTrack.trackUrl;
       
       if (playStatus === true) {
-        playPauseIcon = <FontAwesomeIcon icon={faPauseCircle} />
+        playPauseIcon = <FontAwesomeIcon icon={faPauseCircle} onClick={this.playPause} />
         this.player.play();
       } else {
-        playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} />
+        playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playPause} />
         this.player.pause();
       }
     } 
