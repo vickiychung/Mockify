@@ -2,6 +2,7 @@ export const TOGGLE_PLAY = "TOGGLE_PLAY";
 export const SELECT_TRACK = "SELECT_TRACK";
 export const PLAY_NEXT = "PLAY_NEXT";
 export const PLAY_PREV = "PLAY_PREV";
+export const ADD_TO_QUEUE = "ADD_TO_QUEUE";
 
 export const togglePlayTrack = () => {
   return {
@@ -27,5 +28,12 @@ export const playPrevTrack = queue => {
   return {
     type: PLAY_PREV,
     queue
-  }
-}
+  };
+};
+
+export const addToQueue = tracks => {
+  return {
+    type: ADD_TO_QUEUE,
+    tracks
+  };
+};

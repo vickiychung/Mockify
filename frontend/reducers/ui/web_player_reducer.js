@@ -2,12 +2,14 @@ import {
   TOGGLE_PLAY,
   SELECT_TRACK,
   PLAY_NEXT,
-  PLAY_PREV
+  PLAY_PREV,
+  ADD_TO_QUEUE
 } from '../../actions/web_player_actions';
 
 const _initialState = Object.freeze({
   currentTrackId: null,
-  playStatus: false
+  playStatus: false,
+  queue: []
 });
 
 const webPlayerReducer = (oldState = _initialState, action) => {
@@ -53,6 +55,10 @@ const webPlayerReducer = (oldState = _initialState, action) => {
       } else if (currentQueueId - 1 < 0) {
         return _initialState;
       }
+
+    case ADD_TO_QUEUE:
+      newState.queue = action.tracks;
+      return newState;
 
     default:
       return oldState;

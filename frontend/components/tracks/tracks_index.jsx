@@ -20,7 +20,7 @@ class TracksIndex extends React.Component {
       togglePlayTrack, 
       selectTrack, 
       playNextTrack,
-      playPrevTrack
+      playPrevTrack,
     } = this.props;
 
     const list = tracks.map(track => <TracksIndexItem

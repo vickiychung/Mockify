@@ -5,7 +5,8 @@ import {
   togglePlayTrack, 
   selectTrack, 
   playNextTrack,
-  playPrevTrack
+  playPrevTrack,
+  addToQueue
 } from '../../actions/web_player_actions';
 import TracksIndex from './tracks_index';
 
@@ -28,7 +29,8 @@ const mapDispatchToProps = dispatch => {
     togglePlayTrack: () => dispatch(togglePlayTrack()),
     selectTrack: trackId => dispatch(selectTrack(trackId)),
     playNextTrack: queue => dispatch(playNextTrack(queue)),
-    playPrevTrack: queue => dispatch(playPrevTrack(queue))
+    playPrevTrack: queue => dispatch(playPrevTrack(queue)),
+    addToQueue: tracks => dispatch(addToQueue(tracks))
   };
 };
 
