@@ -26,6 +26,8 @@ class WebPlayer extends React.Component {
     this.toggleShuffle = this.toggleShuffle.bind(this);
     this.toggleLoop = this.toggleLoop.bind(this);
     this.handleProgress = this.handleProgress.bind(this);
+    this.handleSeekBar = this.handleSeekBar.bind(this);
+    this.handleVolume = this.handleVolume.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -33,11 +35,23 @@ class WebPlayer extends React.Component {
       if (this.props.currentTrack) {
         if (this.props.playStatus === false) {
           this.props.togglePlayTrack();
-        }
+        } 
       } else {
         this.player.pause();
+  console.log(this.player.currentTime);
       }
     } 
+    else if (this.props.currentTrack === prevProps.currentTrack) {
+      if (this.props.currentTrack) {
+        if (this.props.playStatus === false) {
+          this.player.pause();
+  console.log(this.player.currentTime);
+        } else {
+          this.player.play();
+  console.log(this.player.currentTime);
+        }
+      }
+    }
   }
 
   playPause(e) {
@@ -96,11 +110,15 @@ class WebPlayer extends React.Component {
 
   handleProgress() {
     let player = document.getElementById("player");
+    let seekBar = document.getElementById("seekBar");
     let endTime = document.getElementById('endTime')
     let startTime = document.getElementById('startTime')
-
+    
     player.addEventListener("loadedmetadata", () => {
       let duration = player.duration;
+
+      seekBar.max = duration;
+
       let durationMin = Math.floor(duration / 60);
       let durationSec = Math.round(duration - (durationMin * 60));
 
@@ -124,8 +142,18 @@ class WebPlayer extends React.Component {
     })
   }
 
+  handleSeekBar(e) {
+    this.player.currentTime = e.target.value;
+  }
+
+  handleVolume(e) {
+    this.player.volume = e.target.value;
+  }
+
   render() {
     const { currentTrack, playStatus } = this.props;
+    const player = document.getElementById("player");
+    let currentTrackName;
 
     // play first track on initial click
     let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} 
@@ -133,24 +161,43 @@ class WebPlayer extends React.Component {
     
     // set up player
     if (currentTrack) {
-      this.player.src = currentTrack.trackUrl;
+      player.src = currentTrack.trackUrl;
+      currentTrackName = currentTrack.name;
       
       if (playStatus === true) {
         playPauseIcon = <FontAwesomeIcon icon={faPauseCircle} onClick={this.playPause}/>
-        this.player.play();
+        player.play();
+  console.log(this.player.currentTime);
       } else {
         playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playPause}/>
-        this.player.pause();
+        player.pause();
+  console.log(this.player.currentTime);
       }
 
-      if (this.player) {
+      if (player) {
         this.handleProgress();
       }
     } 
 
     return (
-      <div>
-        <p>this is web player</p>
+      <div className="webplayer-wrapper">
+
+        <div className="webplayer-info">
+          <div className="webplayer-album">
+            <p>album photo</p>
+          </div>
+
+          <div className="webplayer-details">
+            <div className="webplayer-track-name">
+              {currentTrackName}
+            </div>
+
+            <div className="webplayer-artist">
+              <p>artist name</p>
+            </div>
+          </div>
+        </div>
+
 
         <FontAwesomeIcon icon={faRandom} className={this.shuffling} 
           onClick={this.toggleShuffle}/>
@@ -165,10 +212,14 @@ class WebPlayer extends React.Component {
           onClick={this.toggleLoop} />
 
         <div>
-          <p>progress here</p>
           <p id='startTime'>0:00</p>
+          <input id="seekBar" type="range" min="0" max="100" defaultValue="0" onChange={this.handleSeekBar}></input>
           <p id='endTime'></p>
         </div>
+
+
+        <p>volume slider</p>
+        <input id="volumeSlider" type="range" min="0" max="1" step=".01" defaultValue={this.player ? this.player.volume : 0.5} onChange={e => this.handleVolume(e)}></input>
 
         <audio id="player" ref={ref => this.player = ref}>
           Your browser does not support the audio element.
