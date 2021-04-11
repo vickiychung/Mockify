@@ -16,5 +16,5 @@ class Album < ApplicationRecord
     foreign_key: :album_id,
     class_name: "Track"
 
-  has_one_attached :cover
+  has_one_attached :cover_photo
 end
