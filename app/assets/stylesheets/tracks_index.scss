@@ -1,14 +1,11 @@
 .home-wrapper {
-  background-color: black;
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-  color: white;
   font-size: 25px;
 }
 
 .home-container {
-  background-color: green;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -22,20 +19,23 @@
 }
 
 .sidebar-container {
-  background-color: rgba(4, 68, 36, 0.137);
+  background-color: black;
+  color: white;
   width: 15%;
 }
 
 .tracks-container {
   display: flex;
   flex-direction: column;
-  background-color: pink;
+  background-image: linear-gradient(rgba(0,0,0,.6),#121212);
   font-size: 16px;
   overflow-y: scroll;
 }
 
 .album-photo {
   background-color: rgb(73, 3, 3);
+  color: white;
+  height: 150px;
 }
 
 .single-track-container {
