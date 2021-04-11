@@ -12,7 +12,7 @@
 class Track < ApplicationRecord
   validates :album_id, :name, :length, presence: true
 
-  belongs_to :album
+  belongs_to :album,
     foreign_key: :album_id,
     class_name: "Album"
 

@@ -9,11 +9,26 @@ require "open-uri"
 
 User.destroy_all
 Track.destroy_all
+Album.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('tracks')
+ActiveRecord::Base.connection.reset_pk_sequence!('albums')
 
+# users seed
 guest = User.create!(username: "guest", password: "password")
 
+# albums seed
+# REMINDER: Change arist_id after creating artists table
+album_1 = Album.create!(artist_id: 1, title: "Dangerous", year: "1991")
+
+# aws albums seed
+# REMEMBER TO CHANGE FILE PATHS BEFORE DEPLOYING TO PROD
+album_1.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_dangerous/dangerous_album_cover.jpeg'), filename: "dangerous_album_cover.jpeg")
+
+# REAL ALBUMS SEEDS HERE
+# album_1.cover_photo.attach(io: URI.open('https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/dangerous_album_cover.jpg'), filename: "dangerous_album_cover.jpeg")
+
+# tracks seed
 # REMINDER: Change album_id for tracks after creating albums table
 track_1 = Track.create!(album_id: 1, name: "Jam", length: 5.39)
 track_2 = Track.create!(album_id: 1, name: "Why You Wanna Trip on Me", length: 5.25)
@@ -47,7 +62,7 @@ track_12.track_file.attach(io: File.open('/Users/vickiychung/Documents/appAcadem
 track_13.track_file.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_dangerous/13_gone_too_soon.mp3'), filename: "gone_too_soon.mp3")
 track_14.track_file.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_dangerous/14_dangerous.mp3'), filename: "dangerous.mp3")
 
-# REAL SEEDS HERE
+# REAL TRACKS SEEDS HERE
 # track_1.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/01_jam.mp3"), filename: "jam.mp3")
 # track_2.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/02_why_you_wanna_trip_on_me.mp3"), filename: "why_you_wanna_trip_on_me.mp3")
 # track_3.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/03_in_the_closet.mp3"), filename: "in_the_closet.mp3")
