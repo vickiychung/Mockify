@@ -6,7 +6,8 @@ import {
   faStepForward,
   faStepBackward,
   faRandom,
-  faRetweet
+  faRetweet,
+  faVolumeUp
  } from "@fortawesome/free-solid-svg-icons";
 
 class WebPlayer extends React.Component {
@@ -198,28 +199,56 @@ class WebPlayer extends React.Component {
           </div>
         </div>
 
+        <div className="controls-container">
+          <div className="buttons-container">
+            <div className="control-buttons-left">
+              <p>
+                <FontAwesomeIcon icon={faRandom} className={this.shuffling} 
+                  onClick={this.toggleShuffle}/>
+              </p>
 
-        <FontAwesomeIcon icon={faRandom} className={this.shuffling} 
-          onClick={this.toggleShuffle}/>
+              <p>
+                <FontAwesomeIcon icon={faStepBackward} onClick={this.playPrev} />
+              </p>
+            </div>
 
-        <FontAwesomeIcon icon={faStepBackward} onClick={this.playPrev}/>
+            <div className="play-pause-button">
+              {playPauseIcon}
+            </div>
 
-        {playPauseIcon}
+            <div className="control-buttons-right">
+              <p>
+                <FontAwesomeIcon icon={faStepForward} onClick={this.playNext} />
+              </p>
 
-        <FontAwesomeIcon icon={faStepForward} onClick={this.playNext}/>
+              <p>
+                <FontAwesomeIcon icon={faRetweet} className={this.looping}
+                  onClick={this.toggleLoop} />
+              </p>
+            </div>
+          </div>
 
-        <FontAwesomeIcon icon={faRetweet} className={this.looping} 
-          onClick={this.toggleLoop} />
+          <div className="seekbar-container">
+            <p id='startTime'>0:00</p>
 
-        <div>
-          <p id='startTime'>0:00</p>
-          <input id="seekBar" type="range" min="0" max="100" defaultValue="0" onChange={this.handleSeekBar}></input>
-          <p id='endTime'></p>
+            <input id="seekBar" type="range" min="0" max="100" defaultValue="0" 
+              onChange={this.handleSeekBar}>
+            </input>
+
+            <p id='endTime'></p>
+          </div>
         </div>
 
+        <div className="volume-container">
+          <p>
+            <FontAwesomeIcon icon={faVolumeUp} />
+          </p>
 
-        <p>volume slider</p>
-        <input id="volumeSlider" type="range" min="0" max="1" step=".01" defaultValue={this.player ? this.player.volume : 0.5} onChange={e => this.handleVolume(e)}></input>
+          <input type="range" min="0" max="1" step=".01" 
+            defaultValue={this.player ? this.player.volume : 0.5} 
+            onChange={e => this.handleVolume(e)}>
+          </input>
+        </div>
 
         <audio id="player" ref={ref => this.player = ref}>
           Your browser does not support the audio element.
