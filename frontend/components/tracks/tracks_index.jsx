@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import TracksIndexItem from './tracks_index_item';
+import WebPlayer from '../web_player/web_player';
 
 class TracksIndex extends React.Component {
   constructor(props) {
@@ -9,10 +11,29 @@ class TracksIndex extends React.Component {
   componentDidMount() {
     this.props.fetchTracks();
   }
-  
+
   render() {
-    const { tracks } = this.props;
-    
+    const {
+      tracks, 
+      currentTrack, 
+      playStatus, 
+      togglePlayTrack, 
+      selectTrack, 
+      playNextTrack,
+      playPrevTrack,
+      toggleShuffle,
+      shuffleOn,
+      toggleLoop,
+      loopOn
+    } = this.props;
+
+    const list = tracks.map(track => <TracksIndexItem
+      key={track.id}
+      track={track}
+      togglePlayTrack={togglePlayTrack}
+      selectTrack={selectTrack}
+    />);
+
     return (
       <div className="home-wrapper">
         <div className="home-container">
@@ -23,25 +44,29 @@ class TracksIndex extends React.Component {
           <div className="main-container">
             <div className="album-photo">
               <p>album photo can be here</p>
-              <p>how do I have background color adjusts with the photo accordingly?</p>
+              <Link to="/">temporary link to go back to home</Link>
             </div>
 
             <ul className="tracks-container">
-              {tracks.map(track => <TracksIndexItem 
-                  key = {track.id}
-                  track = {track}
-                  trackUrl = {track.trackUrl}
-                />)}
+              {list}
             </ul>
           </div>
           <br/>
-
         </div>
 
         <div className="webplayer-container">
-          <p>I will be webplayer</p>
-          <br/>
-          <p>thank you walker!</p>
+          <WebPlayer
+            currentTrack = {currentTrack}
+            playStatus = {playStatus}
+            togglePlayTrack = {togglePlayTrack}
+            tracks = {tracks}
+            playNextTrack = {playNextTrack}
+            playPrevTrack = {playPrevTrack}
+            toggleShuffle = {toggleShuffle}
+            shuffleOn = {shuffleOn}
+            toggleLoop = {toggleLoop}
+            loopOn = {loopOn}
+          />
         </div>
       </div>
     );

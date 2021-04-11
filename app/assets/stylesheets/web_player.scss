@@ -1,0 +1,116 @@
+.shuffle-on, .loop-on {
+  color: #1ed760;
+}
+
+.webplayer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  color: white;
+}
+
+.webplayer-info {
+  display: flex;
+  align-items: center;
+  width: 400px;
+}
+
+.webplayer-album {
+  width: 56px;
+  height: 56px;
+  background-color: lightgray;
+  color: black;
+}
+
+.webplayer-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.webplayer-track-name {
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.webplayer-artist {
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.controls-container {
+  width: 500px;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.control-buttons-left, .control-buttons-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.control-buttons-left {
+  justify-content: flex-end;
+}
+
+.control-buttons-right {
+  justify-content: flex-start;
+}
+
+.control-buttons-left p {
+  margin-left: 20px;
+}
+
+.control-buttons-right p {
+  margin-right: 20px;
+}
+
+.play-pause-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.play-pause-button:hover {
+  transform: scale(1.1) perspective(0.1px);
+}
+
+.seekbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 16px;
+
+  input {
+    min-width: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.volume-container {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+}
+
+.volume-container p {
+  margin-right: 20px;
+}
