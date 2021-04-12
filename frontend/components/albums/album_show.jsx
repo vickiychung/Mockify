@@ -33,14 +33,23 @@ export class AlbumShow extends React.Component {
       loopOn
     } = this.props;
 
-    const list = tracks.map(track => <TracksIndexItem
-      key={track.id}
-      track={track}
-      togglePlayTrack={togglePlayTrack}
-      selectTrack={selectTrack}
-    />);
-
+    // const list = tracks.map(track => <TracksIndexItem
+    //   key={track.id}
+    //   track={track}
+    //   togglePlayTrack={togglePlayTrack}
+    //   selectTrack={selectTrack}
+    // />);
+    
     if (album) {
+      const albumTracks = album.tracks;
+
+      const list = albumTracks.map(albumTrack => <TracksIndexItem
+        key={albumTrack.id}
+        track={albumTrack}
+        togglePlayTrack={togglePlayTrack}
+        selectTrack={selectTrack}
+      />);
+      
       return (
         <div className="signed-in-home-container">
             <div className="sidebar-container">
