@@ -10,12 +10,17 @@ require "open-uri"
 User.destroy_all
 Track.destroy_all
 Album.destroy_all
+Artist.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('tracks')
 ActiveRecord::Base.connection.reset_pk_sequence!('albums')
+ActiveRecord::Base.connection.reset_pk_sequence!('artists')
 
 # users seed
 guest = User.create!(username: "guest", password: "password")
+
+# artists seed
+artist_1 = Artist.create!(name: "Michael Jackson", description: "~26,301,866 monthly listeners")
 
 # albums seed
 # REMINDER: Change arist_id after creating artists table

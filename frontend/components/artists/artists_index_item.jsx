@@ -3,7 +3,15 @@ import React from 'react';
 class ArtistsIndexItem extends React.Component {
 
   render() {
-    return null;
+    const { artist } = this.props;
+
+    return(
+      <div>
+        <li>
+          <p>{artist.name}</p>
+        </li>
+      </div>
+    )
   }
 }
 
