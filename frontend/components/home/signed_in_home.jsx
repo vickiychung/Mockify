@@ -1,9 +1,11 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { ProtectedRoute } from '../../util/route_util';
+
 import HeaderBarContainer from '../header_bar/header_bar_container';
 import SideBar from '../side_bar/side_bar';
 import ArtistsIndexContainer from '../artists/artists_index_container';
 import AlbumsIndexContainer from '../albums/albums_index_container';
-
 import WebPlayer from '../web_player/web_player';
 
 class SignedInHome extends React.Component {
@@ -29,26 +31,23 @@ class SignedInHome extends React.Component {
     } = this.props;
 
     return (
-      <div className="home-wrapper">
-        <div className="home-container">
-          <div className="sidebar-container">
-            <SideBar />
+      <div className="signed-in-home-container">
+        <div className="sidebar-container">
+          <SideBar />
+        </div>
+
+        <div className="header-bar-container">
+          <HeaderBarContainer />
+        </div>
+
+        <div className="main-container">
+
+          <div className="artists-index">
+            <ArtistsIndexContainer />
           </div>
 
-          <div className="main-container">
-            <div className="header-container">
-              <HeaderBarContainer />
-            </div>
-
-            <div className="featured-container">
-              <div className="artists-index">
-                <ArtistsIndexContainer />
-              </div>
-
-              <div className="albums-index">
-                <AlbumsIndexContainer />
-              </div>
-            </div>
+          <div className="albums-index">
+            <AlbumsIndexContainer />
           </div>
         </div>
 
