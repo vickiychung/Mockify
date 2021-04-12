@@ -1,4 +1,5 @@
 import { RECEIVE_TRACK, RECEIVE_TRACKS } from '../../actions/tracks_actions';
+import { RECEIVE_ALBUM } from '../../actions/albums_actions';
 
 const tracksReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -11,6 +12,9 @@ const tracksReducer = (oldState = {}, action) => {
       
     case RECEIVE_TRACKS:
       return action.tracks;
+
+    case RECEIVE_ALBUM:
+      return action.album.tracks;
   
     default:
       return oldState;
