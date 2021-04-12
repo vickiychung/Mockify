@@ -5,7 +5,7 @@ import SignedInHome from './signed_in_home';
 const Home = ({ currentUser, signOut }) => {
   const signedIn = () => {
     return (
-      <SignedInHome signOut={signOut}/>
+      <SignedInHome currentUser={currentUser} signOut={signOut} />
     );
   };
 
