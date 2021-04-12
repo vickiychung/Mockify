@@ -8,9 +8,9 @@ class AlbumShow extends React.Component {
   }
 
   render() {
-    const { album, tracks, currentUser } = this.props;
+    const { album, currentUser } = this.props;
 
-    if (this.props.album) {
+    if (album) {
       return (
         <div>
           <p>{currentUser.username}</p>

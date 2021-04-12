@@ -6,10 +6,9 @@ class ArtistShow extends React.Component {
   }
 
   render() {
-    const { artist, albums, currentUser } = this.props;
+    const { artist, currentUser } = this.props;
     
     if (artist) {
-      console.log(albums);
       return (
         <div>
           <p>{currentUser.username}</p>
