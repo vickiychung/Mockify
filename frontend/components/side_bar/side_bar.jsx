@@ -5,9 +5,7 @@ class SideBar extends React.Component {
   render() {
     return (
       <div>
-        <Link to="/artists">go to artists index</Link>
-        <br />
-        <Link to="/albums">go to albums index</Link>
+        <img id="sidebar-logo" src={window.logoDarkURL} alt="mockify_logo"/>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signOut } from '../../actions/session_actions';
+// import { signOut } from '../../actions/session_actions';
 import { fetchTracks } from '../../actions/tracks_actions';
 import {
   togglePlayTrack,
