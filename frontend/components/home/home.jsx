@@ -8,11 +8,11 @@ class Home extends React.Component {
   }
 
   render() {
-    const { currentUser, signOut } = this.props;
+    const { currentUser } = this.props;
 
     const signedIn = () => {
       return (
-        <SignedInHome currentUser={currentUser} signOut={signOut} />
+        <SignedInHome />
       );
     };
 

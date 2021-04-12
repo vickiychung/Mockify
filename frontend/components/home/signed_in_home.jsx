@@ -6,27 +6,7 @@ import AlbumsIndexContainer from '../albums/albums_index_container';
 import WebPlayerContainer from '../web_player/web_player_container';
 
 class SignedInHome extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    const {
-      currentUser, 
-      signOut,
-      tracks,
-      currentTrack,
-      playStatus,
-      togglePlayTrack,
-      selectTrack,
-      playNextTrack,
-      playPrevTrack,
-      toggleShuffle,
-      shuffleOn,
-      toggleLoop,
-      loopOn
-    } = this.props;
-
     return (
       <div className="signed-in-home-container">
         <div className="sidebar-container">
@@ -49,18 +29,6 @@ class SignedInHome extends React.Component {
         </div>
 
         <div className="webplayer-container">
-          {/* <WebPlayer
-            currentTrack={currentTrack}
-            playStatus={playStatus}
-            togglePlayTrack={togglePlayTrack}
-            tracks={tracks}
-            playNextTrack={playNextTrack}
-            playPrevTrack={playPrevTrack}
-            toggleShuffle={toggleShuffle}
-            shuffleOn={shuffleOn}
-            toggleLoop={toggleLoop}
-            loopOn={loopOn}
-          /> */}
           <WebPlayerContainer />
         </div>
       </div>
