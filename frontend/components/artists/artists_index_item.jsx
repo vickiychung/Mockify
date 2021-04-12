@@ -8,8 +8,8 @@ class ArtistsIndexItem extends React.Component {
     return(
       <div>
         <li>
+          <img id="artist-photo" src={artist.photoUrl} alt="artist-photo"/>
           <Link to={`/artists/${artist.id}`}>{artist.name}</Link>
-          <img src={artist.photoUrl} alt="artist-photo"/>
         </li>
       </div>
     )

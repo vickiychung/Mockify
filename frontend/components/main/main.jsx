@@ -13,9 +13,16 @@ class Main extends React.Component {
           <p>{currentUser.username}</p>
           <button onClick={signOut}>Log out</button>
         </div>
+        
+        <div className="main-body">
+          <div className="artists-index">
+            <ArtistsIndexContainer />
+          </div>
 
-        <ArtistsIndexContainer />
-        <AlbumsIndexContainer />
+          <div className="albums-index">
+            <AlbumsIndexContainer />
+          </div>
+        </div>
       </div>
     );
   }
