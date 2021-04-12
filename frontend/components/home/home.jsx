@@ -7,26 +7,8 @@ class Home extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchTracks();
-  }
-
   render() {
-    const {
-      currentUser,
-      signOut,
-      tracks,
-      currentTrack,
-      playStatus,
-      togglePlayTrack,
-      selectTrack,
-      playNextTrack,
-      playPrevTrack,
-      toggleShuffle,
-      shuffleOn,
-      toggleLoop,
-      loopOn
-    } = this.props;
+    const { currentUser, signOut } = this.props;
 
     const signedIn = () => {
       return (

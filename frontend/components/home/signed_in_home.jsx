@@ -1,12 +1,9 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { ProtectedRoute } from '../../util/route_util';
-
 import HeaderBarContainer from '../header_bar/header_bar_container';
 import SideBar from '../side_bar/side_bar';
 import ArtistsIndexContainer from '../artists/artists_index_container';
 import AlbumsIndexContainer from '../albums/albums_index_container';
-import WebPlayer from '../web_player/web_player';
+import WebPlayerContainer from '../web_player/web_player_container';
 
 class SignedInHome extends React.Component {
   constructor(props) {
@@ -52,7 +49,7 @@ class SignedInHome extends React.Component {
         </div>
 
         <div className="webplayer-container">
-          <WebPlayer
+          {/* <WebPlayer
             currentTrack={currentTrack}
             playStatus={playStatus}
             togglePlayTrack={togglePlayTrack}
@@ -63,7 +60,8 @@ class SignedInHome extends React.Component {
             shuffleOn={shuffleOn}
             toggleLoop={toggleLoop}
             loopOn={loopOn}
-          />
+          /> */}
+          <WebPlayerContainer />
         </div>
       </div>
     );
