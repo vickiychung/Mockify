@@ -9,6 +9,7 @@ import TracksIndexContainer from './tracks/tracks_index_container';
 import AlbumsIndexContainer from './albums/albums_index_container';
 import AlbumShowContainer from './albums/album_show_container';
 import ArtistsIndexContainer from './artists/artists_index_container';
+import ArtistShowContainer from './artists/artist_show_container';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <ProtectedRoute exact path="/albums" component={AlbumsIndexContainer} />
         <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
         <ProtectedRoute exact path="/artists" component={ArtistsIndexContainer} />
+        <ProtectedRoute exact path="/artists/:artistId" component={ArtistShowContainer} />
         <Route exact path="/" component={HomeContainer} />
         <Redirect to="/" />
       </Switch>
