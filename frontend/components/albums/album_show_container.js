@@ -3,16 +3,49 @@ import { connect } from 'react-redux';
 import { fetchAlbum } from '../../actions/albums_actions';
 import AlbumShow from './album_show';
 
+//TracksIndexContainer
+import { fetchTracks } from '../../actions/tracks_actions';
+import {
+  togglePlayTrack,
+  selectTrack,
+  playNextTrack,
+  playPrevTrack,
+  toggleShuffle,
+  toggleLoop
+} from '../../actions/web_player_actions';
+//
+
 const mapStateToProps = (state, ownProps) => {
+  let selectedTrackId;
+  if (state.ui.webPlayer.currentTrackId) {
+    selectedTrackId = state.ui.webPlayer.currentTrackId;
+  }
+  
   return {
     album: state.entities.albums[ownProps.match.params.albumId],
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+
+    //TracksIndex
+    tracks: Object.values(state.entities.tracks),
+    currentTrack: state.entities.tracks[selectedTrackId],
+    playStatus: state.ui.webPlayer.playStatus,
+    shuffleOn: state.ui.webPlayer.shuffleOn,
+    loopOn: state.ui.webPlayer.loopOn
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchAlbum: albumId => dispatch(fetchAlbum(albumId))
+    fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
+
+    //TracksIndex
+    fetchTracks: () => dispatch(fetchTracks()),
+    togglePlayTrack: () => dispatch(togglePlayTrack()),
+    selectTrack: trackId => dispatch(selectTrack(trackId)),
+    playNextTrack: queue => dispatch(playNextTrack(queue)),
+    playPrevTrack: queue => dispatch(playPrevTrack(queue)),
+    toggleShuffle: () => dispatch(toggleShuffle()),
+    toggleLoop: () => dispatch(toggleLoop())
   };
 };
 
