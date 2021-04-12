@@ -5,10 +5,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import HomeContainer from './home/home_container';
 import SignInFormContainer from './session/sign_in_form_container';
 import SignUpFormContainer from './session/sign_up_form_container';
-
-// maybe temp
 import TracksIndexContainer from './tracks/tracks_index_container';
-// maybe temp
+import AlbumsIndexContainer from './albums/albums_index_container';
 
 const App = () => {
   return (
@@ -17,6 +15,7 @@ const App = () => {
         <AuthRoute exact path="/signin" component={SignInFormContainer} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/tracks" component={TracksIndexContainer} />
+        <ProtectedRoute exact path="/albums" component={AlbumsIndexContainer} />
         <Route exact path="/" component={HomeContainer} />
         <Redirect to="/" />
       </Switch>
