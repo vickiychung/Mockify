@@ -1,6 +1,5 @@
 import React from 'react';
 import SideBar from '../side_bar/side_bar';
-// import Main from '../main/main';
 import ArtistsIndexContainer from '../artists/artists_index_container';
 import AlbumsIndexContainer from '../albums/albums_index_container';
 
@@ -41,7 +40,7 @@ class SignedInHome extends React.Component {
               <button onClick={signOut}>Log out</button>
             </div>
 
-            <div className="main-wrapper">
+            <div className="featured-container">
               <div className="artists-index">
                 <ArtistsIndexContainer />
               </div>
