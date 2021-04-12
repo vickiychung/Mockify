@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SideBar from '../side_bar/side_bar';
+import Main from '../main/main';
 import WebPlayer from '../web_player/web_player';
 
 class SignedInHome extends React.Component {
@@ -9,7 +9,6 @@ class SignedInHome extends React.Component {
   }
 
   render() {
-    // const { currentUser, signOut } = this.props;
     const {
       currentUser, 
       signOut,
@@ -30,21 +29,14 @@ class SignedInHome extends React.Component {
       <div className="home-wrapper">
         <div className="home-container">
           <div className="sidebar-container">
-            <SideBar 
-              currentUser={currentUser}
-              signOut={signOut}
-            />
+            <SideBar />
           </div>
 
           <div className="main-container">
-            <div className="album-photo">
-              <p>album photo can be here</p>
-              <Link to="/">temporary link to go back to home</Link>
-            </div>
-
-            <ul className="tracks-container">
-              {/* {list} */}
-            </ul>
+            <Main 
+              currentUser={currentUser}
+              signOut={signOut}
+            />
           </div>
           <br />
         </div>
