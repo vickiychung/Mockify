@@ -33,10 +33,12 @@ class SignedInHome extends React.Component {
           </div>
 
           <div className="main-container">
-            <Main 
-              currentUser={currentUser}
-              signOut={signOut}
-            />
+            <div className="header-container">
+              <p>{currentUser.username}</p>
+              <button onClick={signOut}>Log out</button>
+            </div>
+
+            <Main />
           </div>
           <br />
         </div>
