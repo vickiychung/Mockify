@@ -14,6 +14,7 @@ class ArtistShow extends React.Component {
           <p>{currentUser.username}</p>
 
           <h1>{artist.name}</h1>
+
         </div>
       );
     } else {

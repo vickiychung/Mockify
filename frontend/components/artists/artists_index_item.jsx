@@ -4,7 +4,6 @@ class ArtistsIndexItem extends React.Component {
 
   render() {
     const { artist } = this.props;
-
     return(
       <div>
         <li>

@@ -22,6 +22,13 @@ guest = User.create!(username: "guest", password: "password")
 # artists seed
 artist_1 = Artist.create!(name: "Michael Jackson", description: "~26,301,866 monthly listeners")
 
+# aws artists seed
+# REMEMBER TO CHANGE THESE
+artist_1.profile_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/artists/michael_jackson.jpeg'), filename: "michael_jackson.jpeg")
+
+# REAL ARTISTS SEED HERE
+# album_1.cover_photo.attach(io: URI.open('https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/michael_jackson.jpeg'), filename: "michael_jackson.jpeg")
+
 # albums seed
 # REMINDER: Change arist_id after creating artists table
 album_1 = Album.create!(artist_id: 1, title: "Dangerous", year: "1991")
