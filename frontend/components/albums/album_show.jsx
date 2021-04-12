@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from "@fortawesome/free-solid-svg-icons";
-
-//TracksIndex
-import { Link } from 'react-router-dom';
+import HeaderBarContainer from '../header_bar/header_bar_container';
+import SideBar from '../side_bar/side_bar';
 import TracksIndexItem from '../tracks/tracks_index_item';
 import WebPlayer from '../web_player/web_player';
 
@@ -20,7 +20,6 @@ export class AlbumShow extends React.Component {
   render() {
     const {
       album,
-      currentUser,
       tracks,
       currentTrack,
       playStatus,
@@ -43,10 +42,13 @@ export class AlbumShow extends React.Component {
 
     if (album) {
       return (
-        <div className="home-wrapper">
-          <div className="home-container">
+        <div className="signed-in-home-container">
             <div className="sidebar-container">
-              <p>Sidebarrrr</p>
+              <SideBar />
+            </div>
+
+            <div className="header-bar-container">
+              <HeaderBarContainer />
             </div>
 
             <div className="main-container">
@@ -59,8 +61,6 @@ export class AlbumShow extends React.Component {
                 {list}
               </ul>
             </div>
-            <br />
-          </div>
 
           <div className="webplayer-container">
             <WebPlayer

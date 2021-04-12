@@ -4,7 +4,7 @@ import { fetchAlbum } from '../../actions/albums_actions';
 import AlbumShow from './album_show';
 
 //TracksIndexContainer
-import { fetchTracks } from '../../actions/tracks_actions';
+import { fetchTracks, fetchTrack } from '../../actions/tracks_actions';
 import {
   togglePlayTrack,
   selectTrack,
@@ -23,7 +23,6 @@ const mapStateToProps = (state, ownProps) => {
   
   return {
     album: state.entities.albums[ownProps.match.params.albumId],
-    currentUser: state.entities.users[state.session.id],
 
     //TracksIndex
     tracks: Object.values(state.entities.tracks),
@@ -38,7 +37,6 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
 
-    //TracksIndex
     fetchTracks: () => dispatch(fetchTracks()),
     togglePlayTrack: () => dispatch(togglePlayTrack()),
     selectTrack: trackId => dispatch(selectTrack(trackId)),

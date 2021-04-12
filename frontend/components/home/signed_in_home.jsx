@@ -18,7 +18,6 @@ class SignedInHome extends React.Component {
         </div>
 
         <div className="main-container">
-
           <div className="artists-index">
             <ArtistsIndexContainer />
           </div>

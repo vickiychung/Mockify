@@ -1,3 +1,8 @@
+.signed-in-home-container {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+}
+
 #sidebar-logo {
   width: 80%;
 }
@@ -6,10 +11,22 @@
   height: 200px;
 }
 
-.signed-in-home-container {
-  
-}
-
 .header-bar-container {
   background-color: pink;
+}
+
+.webplayer-container {
+  background-color: #181818;
+  border-top: 1px solid #282828;
+  height: 90px;
+  width: 100%;
+  min-width: 620px;
+  position: fixed;
+  bottom: 0;
+  font-size: 16px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

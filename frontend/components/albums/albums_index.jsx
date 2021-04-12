@@ -7,7 +7,7 @@ class AlbumsIndex extends React.Component {
   }
   
   render() {
-    const { albums, fetchAlbums } = this.props;
+    const { albums } = this.props;
 
     return (
       <div>
