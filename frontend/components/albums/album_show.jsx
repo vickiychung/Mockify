@@ -14,12 +14,10 @@ export class AlbumShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchAlbum(this.props.match.params.albumId);
-    //TracksIndex
     this.props.fetchTracks();
   }
 
   render() {
-    // const { album, currentUser } = this.props;
     const {
       album,
       currentUser,
