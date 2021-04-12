@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ArtistsIndexItem extends React.Component {
 
@@ -7,7 +8,8 @@ class ArtistsIndexItem extends React.Component {
     return(
       <div>
         <li>
-          <p>{artist.name}</p>
+          <Link to={`/artists/${artist.id}`}>{artist.name}</Link>
+          <img src={artist.photoUrl} alt="artist-photo"/>
         </li>
       </div>
     )
