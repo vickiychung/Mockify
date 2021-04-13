@@ -52,8 +52,13 @@ export class AlbumShow extends React.Component {
 
             <div className="main-container">
               <div className="album-photo">
-                <p>album photo can be here</p>
                 <Link to="/">temporary link to go back to home</Link>
+              </div>
+
+              <div className="tracks-header">
+                <p>#</p>
+                <p>TITLE</p>
+                <p> <FontAwesomeIcon icon={faClock} /> </p>
               </div>
 
               <ul className="tracks-container">
@@ -67,11 +72,7 @@ export class AlbumShow extends React.Component {
         </div>
 
         // <div>
-        //   <p>{currentUser.username}</p>
-
         //   <img src={album.coverUrl} alt="album_cover"/>
-
-        //   <p>ALBUM</p>
 
         //   <h1>{album.title}</h1>
 

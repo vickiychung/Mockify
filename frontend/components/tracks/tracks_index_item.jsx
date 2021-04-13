@@ -18,9 +18,9 @@ class TracksIndexItem extends React.Component {
     return (
       <div>
         <li className="single-track-container">
+          <button className="track-button" onClick={() => this.handlePlay(track.id)}>Play</button>
           <p className="track-name">{track.name}</p>
           <p className="track-length">{track.length.toFixed(2)}</p>
-          <button className="track-button" onClick={() => this.handlePlay(track.id)}>Play</button>
         </li>
       </div>
     );

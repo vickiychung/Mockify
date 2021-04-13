@@ -1,6 +1,6 @@
 .single-track-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -14,6 +14,14 @@
   transition-timing-function: linear;
 }
 
+.track-button {
+  margin-right: 15px;
+}
+
+.track-button:hover {
+  cursor: pointer;
+}
+
 .track-name {
   color: white;
   width: 225px;
@@ -22,9 +30,6 @@
 
 .track-length {
   color: white;
-  padding-left: 0;
-}
-
-.track-button:hover {
-  cursor: pointer;
+  position: absolute;
+  right: 40px;
 }

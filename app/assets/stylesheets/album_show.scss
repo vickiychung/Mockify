@@ -5,5 +5,27 @@
   font-size: 16px;
   overflow-y: scroll;
   padding-top: 15px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
+  padding: 0 25px;
+}
+
+.tracks-header {
+  color: white;
+  border-bottom: 1px solid #4e4e4e;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 25px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.tracks-header p:first-child {
+  margin-left: 15px;
+  margin-right: 45px;
+}
+
+.tracks-header p:last-child {
+  position: absolute;
+  right: 50px;
 }
