@@ -28,7 +28,11 @@
 }
 
 .header-bar-container {
-  background-color: pink;
+  // background-color: transparent;
+  // background: linear-gradient(transparent,rgba(0,0,0,.5));
+  background-image: linear-gradient(black, rgb(24, 24, 24));
+  color: white;
+  
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -41,6 +45,7 @@
   top: 0;
   left: 15%;
   z-index: 2;
+  opacity: 0.5;
 }
 
 .main-container {

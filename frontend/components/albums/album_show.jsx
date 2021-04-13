@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import HeaderBarContainer from '../header_bar/header_bar_container';
@@ -14,22 +13,16 @@ export class AlbumShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchAlbum(this.props.match.params.albumId);
+    this.props.fetchArtists();
   }
 
   render() {
     const {
       album,
       tracks,
-      // currentTrack,
-      // playStatus,
+      artists,
       togglePlayTrack,
       selectTrack
-      // playNextTrack,
-      // playPrevTrack,
-      // toggleShuffle,
-      // shuffleOn,
-      // toggleLoop,
-      // loopOn
     } = this.props;
     
     if (album) {
@@ -51,7 +44,11 @@ export class AlbumShow extends React.Component {
             </div>
 
             <div className="main-container">
-              <div className="album-photo">
+              <div className="album-info">
+                <img src={album.coverUrl} alt="album_cover" />
+                <h1>{album.title}</h1>
+                <p>{artists[album.artistId]["name"]}</p>
+                <p>{album.year}</p>
               </div>
 
               <div className="tracks-header">
@@ -69,17 +66,6 @@ export class AlbumShow extends React.Component {
             <WebPlayerContainer tracks={tracks} album={album} />
           </div>
         </div>
-
-        // <div>
-        //   <img src={album.coverUrl} alt="album_cover"/>
-
-        //   <h1>{album.title}</h1>
-
-        //   <p>{album.artistId}</p>
-
-        //   <p>{album.year}</p>
-
-        // </div>
       );
     } else {
       return null;
