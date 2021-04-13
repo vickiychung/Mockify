@@ -33,17 +33,7 @@ class WebPlayer extends React.Component {
     this.handleVolume = this.handleVolume.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchArtist(this.props.album.artistId);
-  }
-
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.artist) {
-      let artistArr = Object.values(this.props.artist)
-      let currentArtist = artistArr[0];
-      this.currentArtist = currentArtist.name;
-    }
-
     if (this.props.currentTrack !== prevProps.currentTrack) {
       if (this.props.currentTrack) {
         if (this.props.playStatus === false) {
@@ -163,7 +153,7 @@ class WebPlayer extends React.Component {
   }
 
   render() {
-    const { currentTrack, playStatus } = this.props;
+    const { currentTrack, playStatus, album } = this.props;
     const player = document.getElementById("player");
     let currentTrackName;
 
@@ -196,7 +186,7 @@ class WebPlayer extends React.Component {
 
         <div className="webplayer-info">
           <div className="webplayer-album">
-            <p>album photo</p>
+            {album ? <img src={album.coverUrl} alt="album_cover" /> : null}
           </div>
 
           <div className="webplayer-details">
@@ -205,7 +195,7 @@ class WebPlayer extends React.Component {
             </div>
 
             <div className="webplayer-artist">
-              <p>{this.currentArtist}</p>
+              <p>{currentTrack ? currentTrack.artistName : ""}</p>
             </div>
           </div>
         </div>
