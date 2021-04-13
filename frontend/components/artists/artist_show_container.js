@@ -6,6 +6,7 @@ import ArtistShow from './artist_show';
 const mapStateToProps = (state, ownProps) => {
   return {
     artist: state.entities.artists[ownProps.match.params.artistId],
+    albums: Object.values(state.entities.albums),
     currentUser: state.entities.users[state.session.id]
   };
 };

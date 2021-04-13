@@ -28,7 +28,7 @@
 }
 
 .header-bar-container {
-  background-image: linear-gradient(black, rgb(24, 24, 24));
+  background: linear-gradient(120deg, #1db954, #191414);
   color: white;
   display: flex;
   justify-content: flex-end;
@@ -89,7 +89,6 @@
   border-radius: 10px;
   margin: 0 auto;
   z-index: 1;
-  opacity: 0.8;
   cursor: pointer;
 }
 

@@ -32,7 +32,7 @@ export class AlbumShow extends React.Component {
         togglePlayTrack={togglePlayTrack}
         selectTrack={selectTrack}
       />);
-      
+
       return (
         <div className="signed-in-home-container">
             <div className="sidebar-container">
