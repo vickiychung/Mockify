@@ -8,9 +8,9 @@ class AlbumsIndexItem extends React.Component {
 
     return(
       <div>
-        <li>
+        <li className="single-album-container">
           <img id="album-photo" src={album.coverUrl} alt="dangerous_cover"/>
-          <Link to={`/albums/${album.id}`}>{album.title}</Link>
+          <Link className="link" to={`/albums/${album.id}`}>{album.title}</Link>
         </li>
       </div>
     );
