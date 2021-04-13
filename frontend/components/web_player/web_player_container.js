@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { fetchTracks } from '../../actions/tracks_actions';
 import {
   togglePlayTrack,
   selectTrack,
@@ -9,7 +8,6 @@ import {
   toggleShuffle,
   toggleLoop
 } from '../../actions/web_player_actions';
-// import TracksIndex from './tracks_index';
 import WebPlayer from './web_player';
 
 const mapStateToProps = state => {

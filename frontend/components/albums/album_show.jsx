@@ -5,7 +5,7 @@ import { faClock } from "@fortawesome/free-solid-svg-icons";
 import HeaderBarContainer from '../header_bar/header_bar_container';
 import SideBar from '../side_bar/side_bar';
 import TracksIndexItem from '../tracks/tracks_index_item';
-import WebPlayer from '../web_player/web_player';
+import WebPlayerContainer from '../web_player/web_player_container';
 
 export class AlbumShow extends React.Component {
   constructor(props) {
@@ -62,18 +62,7 @@ export class AlbumShow extends React.Component {
             </div>
 
           <div className="webplayer-container">
-            <WebPlayer
-              currentTrack={currentTrack}
-              playStatus={playStatus}
-              togglePlayTrack={togglePlayTrack}
-              tracks={tracks}
-              playNextTrack={playNextTrack}
-              playPrevTrack={playPrevTrack}
-              toggleShuffle={toggleShuffle}
-              shuffleOn={shuffleOn}
-              toggleLoop={toggleLoop}
-              loopOn={loopOn}
-            />
+            <WebPlayerContainer tracks={tracks} />
           </div>
         </div>
 
