@@ -14,7 +14,6 @@ class TracksIndexItem extends React.Component {
 
   render() {
     const { track } = this.props;
-    
     return (
       <div>
         <li className="single-track-container">

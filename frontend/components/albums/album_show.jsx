@@ -14,7 +14,7 @@ export class AlbumShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchAlbum(this.props.match.params.albumId);
-    this.props.fetchTracks();
+    // this.props.fetchTracks();
   }
 
   render() {
@@ -41,7 +41,8 @@ export class AlbumShow extends React.Component {
     // />);
     
     if (album) {
-      const albumTracks = album.tracks;
+      // const albumTracks = album.tracks;
+      const albumTracks = tracks;
 
       const list = albumTracks.map(albumTrack => <TracksIndexItem
         key={albumTrack.id}

@@ -39,17 +39,16 @@ class WebPlayer extends React.Component {
         } 
       } else {
         this.player.pause();
-  console.log(this.player.currentTime);
+  // console.log(this.player.currentTime);
       }
     } 
     else if (this.props.currentTrack === prevProps.currentTrack) {
       if (this.props.currentTrack) {
         if (this.props.playStatus === false) {
           this.player.pause();
-  console.log(this.player.currentTime);
         } else {
           this.player.play();
-  console.log(this.player.currentTime);
+  // console.log(this.player.currentTime);
         }
       }
     }
@@ -168,11 +167,11 @@ class WebPlayer extends React.Component {
       if (playStatus === true) {
         playPauseIcon = <FontAwesomeIcon icon={faPauseCircle} onClick={this.playPause}/>
         player.play();
-  console.log(this.player.currentTime);
+  // console.log(this.player.currentTime);
       } else {
         playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playPause}/>
         player.pause();
-  console.log(this.player.currentTime);
+  // console.log(this.player.currentTime);
       }
 
       if (player) {

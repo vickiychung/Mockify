@@ -10,10 +10,11 @@ const receiveAlbums = albums => {
   };
 };
 
-const receiveAlbum = album => {
+const receiveAlbum = payload => {
   return {
     type: RECEIVE_ALBUM,
-    album
+    album: payload.album,
+    tracks: payload.tracks
   };
 };
 
