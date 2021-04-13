@@ -61,6 +61,7 @@
   justify-content: flex-end;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 
 .control-buttons-left {
@@ -90,6 +91,7 @@
 
 .play-pause-button:hover {
   transform: scale(1.1) perspective(0.1px);
+  cursor: pointer;
 }
 
 .seekbar-container {
@@ -126,3 +128,7 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.seekbar-container input[type=range]:hover, .volume-container input[type=range]:hover {
+  cursor: pointer;
+} 

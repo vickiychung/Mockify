@@ -1,0 +1,30 @@
+.single-track-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.single-track-container:hover {
+  background-color: rgb(59, 59, 59);
+  transition-duration: .2s;
+  transition-timing-function: linear;
+}
+
+.track-name {
+  color: white;
+  width: 225px;
+  padding-left: 15px;
+}
+
+.track-length {
+  color: white;
+  padding-left: 0;
+}
+
+.track-button:hover {
+  cursor: pointer;
+}

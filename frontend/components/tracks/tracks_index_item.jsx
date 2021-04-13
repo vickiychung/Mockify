@@ -20,7 +20,7 @@ class TracksIndexItem extends React.Component {
         <li className="single-track-container">
           <p className="track-name">{track.name}</p>
           <p className="track-length">{track.length.toFixed(2)}</p>
-          <button onClick={() => this.handlePlay(track.id)}>Play</button>
+          <button className="track-button" onClick={() => this.handlePlay(track.id)}>Play</button>
         </li>
       </div>
     );

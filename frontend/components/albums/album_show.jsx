@@ -62,7 +62,7 @@ export class AlbumShow extends React.Component {
             </div>
 
           <div className="webplayer-container">
-            <WebPlayerContainer tracks={tracks} />
+            <WebPlayerContainer tracks={tracks} album={album} />
           </div>
         </div>
 

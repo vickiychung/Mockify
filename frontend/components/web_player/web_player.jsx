@@ -17,6 +17,8 @@ class WebPlayer extends React.Component {
     // local state for shuffling tracks
     this.state = { queue: [] };
 
+    this.currentArtist = "";
+
     // class name var for css
     this.shuffling = "";
     this.looping = "";
@@ -31,7 +33,17 @@ class WebPlayer extends React.Component {
     this.handleVolume = this.handleVolume.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchArtist(this.props.album.artistId);
+  }
+
   componentDidUpdate(prevProps, prevState) {
+    if (this.props.artist) {
+      let artistArr = Object.values(this.props.artist)
+      let currentArtist = artistArr[0];
+      this.currentArtist = currentArtist.name;
+    }
+
     if (this.props.currentTrack !== prevProps.currentTrack) {
       if (this.props.currentTrack) {
         if (this.props.playStatus === false) {
@@ -193,7 +205,7 @@ class WebPlayer extends React.Component {
             </div>
 
             <div className="webplayer-artist">
-              <p>artist name</p>
+              <p>{this.currentArtist}</p>
             </div>
           </div>
         </div>
