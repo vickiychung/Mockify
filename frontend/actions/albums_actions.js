@@ -2,6 +2,7 @@ import * as AlbumsAPIUtil from '../util/albums_api_util';
 
 export const RECEIVE_ALBUMS = "RECEIVE_ALBUMS";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
+export const CLEAR_ALBUMS = "CLEAR_ALBUMS";
 
 const receiveAlbums = albums => {
   return {
@@ -15,6 +16,12 @@ const receiveAlbum = payload => {
     type: RECEIVE_ALBUM,
     album: payload.album,
     tracks: payload.tracks
+  };
+};
+
+export const clearAlbums = () => {
+  return {
+    type: CLEAR_ALBUMS
   };
 };
 

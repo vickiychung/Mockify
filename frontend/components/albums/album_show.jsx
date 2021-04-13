@@ -20,16 +20,16 @@ export class AlbumShow extends React.Component {
     const {
       album,
       tracks,
-      currentTrack,
-      playStatus,
+      // currentTrack,
+      // playStatus,
       togglePlayTrack,
-      selectTrack,
-      playNextTrack,
-      playPrevTrack,
-      toggleShuffle,
-      shuffleOn,
-      toggleLoop,
-      loopOn
+      selectTrack
+      // playNextTrack,
+      // playPrevTrack,
+      // toggleShuffle,
+      // shuffleOn,
+      // toggleLoop,
+      // loopOn
     } = this.props;
     
     if (album) {
@@ -79,12 +79,6 @@ export class AlbumShow extends React.Component {
 
         //   <p>{album.year}</p>
 
-        //   <p>#</p>
-        //   <p>TITLE</p>
-        //   <p>
-        //     <FontAwesomeIcon icon={faClock}/>
-        //   </p>
-        
         // </div>
       );
     } else {

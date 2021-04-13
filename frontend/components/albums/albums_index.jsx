@@ -5,6 +5,10 @@ class AlbumsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchAlbums();
   }
+
+  componentWillUnmount() {
+    this.props.clearAlbums();
+  }
   
   render() {
     const { albums } = this.props;

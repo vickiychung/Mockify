@@ -1,4 +1,4 @@
-import { RECEIVE_ALBUMS, RECEIVE_ALBUM } from '../../actions/albums_actions';
+import { RECEIVE_ALBUMS, RECEIVE_ALBUM, CLEAR_ALBUMS } from '../../actions/albums_actions';
 
 const albumsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -11,6 +11,9 @@ const albumsReducer = (oldState = {}, action) => {
     case RECEIVE_ALBUM:
       newState[action.album.id] = action.album;
       return newState;
+
+    case CLEAR_ALBUMS:
+      return {};
 
     default:
       return oldState;
