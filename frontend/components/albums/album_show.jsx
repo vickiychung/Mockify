@@ -52,7 +52,6 @@ export class AlbumShow extends React.Component {
 
             <div className="main-container">
               <div className="album-photo">
-                <Link to="/">temporary link to go back to home</Link>
               </div>
 
               <div className="tracks-header">
