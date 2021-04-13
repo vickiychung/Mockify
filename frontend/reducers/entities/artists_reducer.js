@@ -1,4 +1,4 @@
-import { RECEIVE_ARTISTS, RECEIVE_ARTIST } from '../../actions/artists_actions';
+import { RECEIVE_ARTISTS, RECEIVE_ARTIST, CLEAR_ARTISTS } from '../../actions/artists_actions';
 
 const artistsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -11,6 +11,9 @@ const artistsReducer = (oldState = {}, action) => {
     case RECEIVE_ARTIST:
       newState[action.artist.id] = action.artist;
       return newState;
+
+    case CLEAR_ARTISTS:
+      return {};
 
     default:
       return oldState;
