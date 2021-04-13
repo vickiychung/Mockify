@@ -14,7 +14,6 @@ export class AlbumShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchAlbum(this.props.match.params.albumId);
-    // this.props.fetchTracks();
   }
 
   render() {
@@ -32,21 +31,11 @@ export class AlbumShow extends React.Component {
       toggleLoop,
       loopOn
     } = this.props;
-
-    // const list = tracks.map(track => <TracksIndexItem
-    //   key={track.id}
-    //   track={track}
-    //   togglePlayTrack={togglePlayTrack}
-    //   selectTrack={selectTrack}
-    // />);
     
     if (album) {
-      // const albumTracks = album.tracks;
-      const albumTracks = tracks;
-
-      const list = albumTracks.map(albumTrack => <TracksIndexItem
-        key={albumTrack.id}
-        track={albumTrack}
+      const list = tracks.map(track => <TracksIndexItem
+        key={track.id}
+        track={track}
         togglePlayTrack={togglePlayTrack}
         selectTrack={selectTrack}
       />);

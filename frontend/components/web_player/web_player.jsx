@@ -251,7 +251,7 @@ class WebPlayer extends React.Component {
 
         <audio id="player" ref={ref => this.player = ref}>
           Your browser does not support the audio element.
-        </audio>        
+        </audio>      
       </div>
     );
   }

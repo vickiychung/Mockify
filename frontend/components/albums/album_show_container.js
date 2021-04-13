@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAlbum } from '../../actions/albums_actions';
-import { fetchTracks, fetchTrack } from '../../actions/tracks_actions';
-import AlbumShow from './album_show';
 import {
   togglePlayTrack,
   selectTrack,
@@ -11,6 +9,7 @@ import {
   toggleShuffle,
   toggleLoop
 } from '../../actions/web_player_actions';
+import AlbumShow from './album_show';
 
 const mapStateToProps = (state, ownProps) => {
   let selectedTrackId;
@@ -31,7 +30,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
-    fetchTracks: () => dispatch(fetchTracks()),
     togglePlayTrack: () => dispatch(togglePlayTrack()),
     selectTrack: trackId => dispatch(selectTrack(trackId)),
     playNextTrack: queue => dispatch(playNextTrack(queue)),
