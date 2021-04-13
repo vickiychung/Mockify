@@ -8,7 +8,6 @@ import {
   toggleShuffle,
   toggleLoop
 } from '../../actions/web_player_actions';
-import { fetchArtist } from '../../actions/artists_actions';
 import WebPlayer from './web_player';
 
 const mapStateToProps = state => {
@@ -18,7 +17,7 @@ const mapStateToProps = state => {
   }
 
   return {
-    artist: state.entities.artists,
+    // artist: state.entities.artists,
     currentTrack: state.entities.tracks[selectedTrackId],
     playStatus: state.ui.webPlayer.playStatus,
     shuffleOn: state.ui.webPlayer.shuffleOn,
@@ -28,7 +27,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchArtist: artistId => dispatch(fetchArtist(artistId)),
     togglePlayTrack: () => dispatch(togglePlayTrack()),
     selectTrack: trackId => dispatch(selectTrack(trackId)),
     playNextTrack: queue => dispatch(playNextTrack(queue)),

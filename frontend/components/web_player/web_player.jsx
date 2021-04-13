@@ -17,8 +17,6 @@ class WebPlayer extends React.Component {
     // local state for shuffling tracks
     this.state = { queue: [] };
 
-    this.currentArtist = "";
-
     // class name var for css
     this.shuffling = "";
     this.looping = "";
