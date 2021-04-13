@@ -11,6 +11,7 @@ class AlbumsIndexItem extends React.Component {
         <li className="single-album-container">
           <img id="album-photo" src={album.coverUrl} alt="dangerous_cover"/>
           <Link className="link" to={`/albums/${album.id}`}>{album.title}</Link>
+          <p>{album.year}</p>
         </li>
       </div>
     );
