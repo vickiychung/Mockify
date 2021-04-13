@@ -46,9 +46,16 @@ export class AlbumShow extends React.Component {
             <div className="main-container">
               <div className="album-info">
                 <img src={album.coverUrl} alt="album_cover" />
-                <h1>{album.title}</h1>
-                <p>{artists[album.artistId]["name"]}</p>
-                <p>{album.year}</p>
+
+                <div className="album-details">
+                  <p>ALBUM</p>
+                  <h1>{album.title}</h1>
+                  <span>
+                    <p>{artists[album.artistId]["name"]}</p>
+                    <p>{`\u2022`}</p>
+                    <p>{album.year}</p>
+                  </span>
+                </div>
               </div>
 
               <div className="tracks-header">
