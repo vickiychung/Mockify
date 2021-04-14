@@ -23,7 +23,7 @@ class HeaderBar extends React.Component {
     return (
       <div className="header-bar-wrapper">
         <button className="header-name" onClick={this.toggleDropdown}>
-          {currentUser.username}
+          {`${currentUser.username} \u25be`}
         </button>
 
         <div className={`header-dropdown ${this.state.dropdown}`}>
