@@ -26,11 +26,12 @@ export class AlbumShow extends React.Component {
     } = this.props;
     
     if (album) {
-      const list = tracks.map(track => <TracksIndexItem
+      const list = tracks.map((track, idx) => <TracksIndexItem
         key={track.id}
         track={track}
         togglePlayTrack={togglePlayTrack}
         selectTrack={selectTrack}
+        idx={idx}
       />);
 
       return (
