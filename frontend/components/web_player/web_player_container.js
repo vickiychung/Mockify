@@ -17,7 +17,8 @@ const mapStateToProps = state => {
   }
 
   return {
-    // artist: state.entities.artists,
+    tracks: Object.values(state.entities.tracks),
+    albums: state.entities.albums,
     currentTrack: state.entities.tracks[selectedTrackId],
     playStatus: state.ui.webPlayer.playStatus,
     shuffleOn: state.ui.webPlayer.shuffleOn,

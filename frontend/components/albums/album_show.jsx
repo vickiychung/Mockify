@@ -1,10 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from "@fortawesome/free-solid-svg-icons";
-// import HeaderBarContainer from '../header_bar/header_bar_container';
-// import SideBar from '../side_bar/side_bar';
 import TracksIndexItem from '../tracks/tracks_index_item';
-// import WebPlayerContainer from '../web_player/web_player_container';
 
 export class AlbumShow extends React.Component {
   constructor(props) {
@@ -13,7 +10,6 @@ export class AlbumShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchAlbum(this.props.match.params.albumId);
-    // this.props.fetchArtists();
   }
 
   render() {
@@ -36,14 +32,6 @@ export class AlbumShow extends React.Component {
 
       return (
         <div className="signed-in-home-container">
-            {/* <div className="sidebar-container">
-              <SideBar />
-            </div>
-
-            <div className="header-bar-container">
-              <HeaderBarContainer />
-            </div> */}
-
             <div className="main-container">
               <div className="album-info">
                 <img src={album.coverUrl} alt="album_cover" />
@@ -69,10 +57,6 @@ export class AlbumShow extends React.Component {
                 {list}
               </ul>
             </div>
-
-          {/* <div className="webplayer-container">
-            <WebPlayerContainer tracks={tracks} album={album} />
-          </div> */}
         </div>
       );
     } else {

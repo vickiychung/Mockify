@@ -149,10 +149,9 @@ class WebPlayer extends React.Component {
   }
 
   render() {
-    const { currentTrack, playStatus, album } = this.props;
-
+    const { currentTrack, playStatus, albums } = this.props;
     const player = document.getElementById("player");
-    let currentTrackName;
+    let currentTrackName, album;
 
     // play first track on initial click
     let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} 
@@ -160,6 +159,8 @@ class WebPlayer extends React.Component {
     
     // set up player
     if (currentTrack) {
+      album = albums[currentTrack.albumId];
+
       if (player.src !== window.location.origin.concat(currentTrack.trackUrl)) {
         player.src = currentTrack.trackUrl;
       }
