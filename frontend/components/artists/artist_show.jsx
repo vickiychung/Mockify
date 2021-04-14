@@ -17,7 +17,6 @@ class ArtistShow extends React.Component {
         key={album.id}
         album={album}
       />)
-      // console.log(list);
       
       return (
         <div className="signed-in-home-container">

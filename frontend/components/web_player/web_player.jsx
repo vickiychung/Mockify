@@ -31,15 +31,21 @@ class WebPlayer extends React.Component {
     this.handleVolume = this.handleVolume.bind(this);
   }
 
+  // componentDidMount() {
+    // if (this.player) {
+    //   this.handleProgress();
+    // }
+  // }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.props.currentTrack !== prevProps.currentTrack) {
       if (this.props.currentTrack) {
         if (this.props.playStatus === false) {
           this.props.togglePlayTrack();
-        } 
-      } else {
-        this.player.pause();
-  // console.log(this.player.currentTime);
+        } else {
+          // this.player.src = this.props.currentTrack.trackUrl;
+          this.player.play();
+        }
       }
     } 
     else if (this.props.currentTrack === prevProps.currentTrack) {
@@ -48,7 +54,6 @@ class WebPlayer extends React.Component {
           this.player.pause();
         } else {
           this.player.play();
-  // console.log(this.player.currentTime);
         }
       }
     }
@@ -113,14 +118,14 @@ class WebPlayer extends React.Component {
     let seekBar = document.getElementById("seekBar");
     let endTime = document.getElementById('endTime')
     let startTime = document.getElementById('startTime')
-    
-    player.addEventListener("loadedmetadata", () => {
-      let duration = player.duration;
+    // debugger
+    player.addEventListener("loadeddata", () => {
+      this.duration = player.duration;
+console.log("loaded");
+      seekBar.max = this.duration;
 
-      seekBar.max = duration;
-
-      let durationMin = Math.floor(duration / 60);
-      let durationSec = Math.round(duration - (durationMin * 60));
+      let durationMin = Math.floor(this.duration / 60);
+      let durationSec = Math.round(this.duration - (durationMin * 60));
 
       if (durationSec < 10) {
         endTime.innerHTML = `${durationMin}:0${durationSec}`;
@@ -130,6 +135,7 @@ class WebPlayer extends React.Component {
     })
 
     player.addEventListener("timeupdate", () => {
+  console.log("timeupdate");
       let currentTime = player.currentTime;
       let currentMin = Math.floor(currentTime / 60);
       let currentSec = Math.round(currentTime - (currentMin * 60));
@@ -139,6 +145,7 @@ class WebPlayer extends React.Component {
       } else {
         startTime.innerHTML = `${currentMin}:${currentSec}`;
       }
+      seekBar.value = (currentTime / this.duration) * 100;
     })
   }
 
@@ -152,6 +159,9 @@ class WebPlayer extends React.Component {
 
   render() {
     const { currentTrack, playStatus, album } = this.props;
+
+    // if (!currentTrack) return null;
+
     const player = document.getElementById("player");
     let currentTrackName;
 
@@ -161,17 +171,18 @@ class WebPlayer extends React.Component {
     
     // set up player
     if (currentTrack) {
-      player.src = currentTrack.trackUrl;
+      if (player.src !== currentTrack.trackUrl) {
+        player.src = currentTrack.trackUrl;
+      }
+
       currentTrackName = currentTrack.name;
       
       if (playStatus === true) {
         playPauseIcon = <FontAwesomeIcon icon={faPauseCircle} onClick={this.playPause}/>
-        player.play();
-  // console.log(this.player.currentTime);
+        // player.play();
       } else {
         playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playPause}/>
-        player.pause();
-  // console.log(this.player.currentTime);
+        // player.pause();
       }
 
       if (player) {
@@ -244,12 +255,17 @@ class WebPlayer extends React.Component {
           </p>
 
           <input type="range" min="0" max="1" step=".01" 
-            defaultValue={this.player ? this.player.volume : 0.5} 
+            defaultValue={this.player ? this.player.volume : 0.3} 
             onChange={e => this.handleVolume(e)}>
           </input>
         </div>
 
-        <audio id="player" ref={ref => this.player = ref}>
+        <audio 
+        // key={currentTrack ? currentTrack.id : null} 
+          id="player" 
+          ref={ref => this.player = ref} 
+          // src={currentTrack ? currentTrack.trackUrl : ""}
+          >
           Your browser does not support the audio element.
         </audio>      
       </div>

@@ -25,7 +25,7 @@ const App = () => {
         <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
         <ProtectedRoute exact path="/artists" component={ArtistsIndexContainer} />
         <ProtectedRoute exact path="/artists/:artistId" component={ArtistShowContainer} />
-        <Route exact path="/" component={HomeContainer} />
+        <Route  path="/" component={HomeContainer} />
         <Redirect to="/" />
       </Switch>
     </div>
