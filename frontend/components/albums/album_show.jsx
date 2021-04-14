@@ -20,6 +20,10 @@ export class AlbumShow extends React.Component {
       togglePlayTrack,
       selectTrack
     } = this.props;
+
+    let artistName;
+
+   
     
     if (album) {
       const list = tracks.map((track, idx) => <TracksIndexItem
@@ -29,6 +33,10 @@ export class AlbumShow extends React.Component {
         selectTrack={selectTrack}
         idx={idx}
       />);
+
+      if (artists) {
+        artistName = artists[album.artistId]["name"];
+      }
 
       return (
         <div className="signed-in-home-container">
@@ -40,7 +48,7 @@ export class AlbumShow extends React.Component {
                   <p>ALBUM</p>
                   <h1>{album.title}</h1>
                   <span>
-                    <p>{artists[album.artistId]["name"]}</p>
+                    <p>{artistName}</p>
                     <p>{`\u2022`}</p>
                     <p>{album.year}</p>
                   </span>
