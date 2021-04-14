@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { signOut } from '../../actions/session_actions';
 import Home from './home';
 
 const mapStateToProps = state => {
@@ -8,10 +7,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    signOut: () => dispatch(signOut())
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, null)(Home);

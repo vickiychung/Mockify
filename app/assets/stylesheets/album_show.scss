@@ -1,0 +1,90 @@
+.tracks-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(26, 25, 25);
+  font-size: 16px;
+  overflow-y: scroll;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding: 0 25px;
+}
+
+.tracks-header {
+  color: white;
+  border-bottom: 1px solid #4e4e4e;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 25px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.tracks-header p:first-child {
+  margin-left: 20px;
+  margin-right: 35px;
+}
+
+.tracks-header p:last-child {
+  position: absolute;
+  right: 50px;
+}
+
+.album-info {
+  margin-top: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  display: flex;
+  color: white;
+  background: linear-gradient(120deg, #1db954, #191414);
+
+  img {
+    box-shadow: 
+      0 1px 1px rgba(0, 0, 0, 0.15),
+      0 2px 2px rgba(0, 0, 0, 0.15),
+      0 4px 4px rgba(0, 0, 0, 0.15),
+      0 8px 8px rgba(0, 0, 0, 0.15),
+      0 16px 16px rgba(0, 0, 0, 0.15),
+      0 32px 32px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.album-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-left: 20px;
+
+  p {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  p:first-child {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 5px;
+  }
+
+  p:last-child {
+    font-weight: 400;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: -.04em;
+    margin-bottom: 15px;
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+  }
+}

@@ -1,16 +1,14 @@
-//not in use
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchTracks } from '../../actions/tracks_actions';
 import {
-  togglePlayTrack, 
-  selectTrack, 
+  togglePlayTrack,
+  selectTrack,
   playNextTrack,
   playPrevTrack,
   toggleShuffle,
   toggleLoop
 } from '../../actions/web_player_actions';
-import TracksIndex from './tracks_index';
+import WebPlayer from './web_player';
 
 const mapStateToProps = state => {
   let selectedTrackId;
@@ -19,7 +17,7 @@ const mapStateToProps = state => {
   }
 
   return {
-    tracks: Object.values(state.entities.tracks),
+    // artist: state.entities.artists,
     currentTrack: state.entities.tracks[selectedTrackId],
     playStatus: state.ui.webPlayer.playStatus,
     shuffleOn: state.ui.webPlayer.shuffleOn,
@@ -29,7 +27,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTracks: () => dispatch(fetchTracks()),
     togglePlayTrack: () => dispatch(togglePlayTrack()),
     selectTrack: trackId => dispatch(selectTrack(trackId)),
     playNextTrack: queue => dispatch(playNextTrack(queue)),
@@ -39,4 +36,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TracksIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(WebPlayer);

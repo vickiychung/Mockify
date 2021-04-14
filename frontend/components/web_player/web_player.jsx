@@ -39,17 +39,16 @@ class WebPlayer extends React.Component {
         } 
       } else {
         this.player.pause();
-  console.log(this.player.currentTime);
+  // console.log(this.player.currentTime);
       }
     } 
     else if (this.props.currentTrack === prevProps.currentTrack) {
       if (this.props.currentTrack) {
         if (this.props.playStatus === false) {
           this.player.pause();
-  console.log(this.player.currentTime);
         } else {
           this.player.play();
-  console.log(this.player.currentTime);
+  // console.log(this.player.currentTime);
         }
       }
     }
@@ -152,7 +151,7 @@ class WebPlayer extends React.Component {
   }
 
   render() {
-    const { currentTrack, playStatus } = this.props;
+    const { currentTrack, playStatus, album } = this.props;
     const player = document.getElementById("player");
     let currentTrackName;
 
@@ -168,11 +167,11 @@ class WebPlayer extends React.Component {
       if (playStatus === true) {
         playPauseIcon = <FontAwesomeIcon icon={faPauseCircle} onClick={this.playPause}/>
         player.play();
-  console.log(this.player.currentTime);
+  // console.log(this.player.currentTime);
       } else {
         playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playPause}/>
         player.pause();
-  console.log(this.player.currentTime);
+  // console.log(this.player.currentTime);
       }
 
       if (player) {
@@ -185,7 +184,7 @@ class WebPlayer extends React.Component {
 
         <div className="webplayer-info">
           <div className="webplayer-album">
-            <p>album photo</p>
+            {album ? <img src={album.coverUrl} alt="album_cover" /> : null}
           </div>
 
           <div className="webplayer-details">
@@ -194,7 +193,7 @@ class WebPlayer extends React.Component {
             </div>
 
             <div className="webplayer-artist">
-              <p>artist name</p>
+              <p>{currentTrack ? currentTrack.artistName : ""}</p>
             </div>
           </div>
         </div>
@@ -252,7 +251,7 @@ class WebPlayer extends React.Component {
 
         <audio id="player" ref={ref => this.player = ref}>
           Your browser does not support the audio element.
-        </audio>        
+        </audio>      
       </div>
     );
   }
