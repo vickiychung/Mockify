@@ -136,6 +136,12 @@
   }
 }
 
+.artists-index:hover, .albums-index:hover {
+  background-color: rgb(59, 59, 59);
+  transition-duration: .2s;
+  transition-timing-function: linear;
+}
+
 .albums-index-container, .artists-index-container {
   display: flex;
   flex-direction: row;
