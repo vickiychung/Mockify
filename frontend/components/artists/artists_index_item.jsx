@@ -7,9 +7,13 @@ class ArtistsIndexItem extends React.Component {
     const { artist } = this.props;
     return(
       <div>
-        <li>
-          <img id="artist-photo" src={artist.photoUrl} alt="artist-photo"/>
-          <Link to={`/artists/${artist.id}`}>{artist.name}</Link>
+        <li className="single-artist-container">
+          <Link to={`/artists/${artist.id}`}>
+            <img id="artist-photo" src={artist.photoUrl} alt="artist-photo"/>
+          </Link>
+          <br/>
+
+          <Link className="link" to={`/artists/${artist.id}`}>{artist.name}</Link>
         </li>
       </div>
     )

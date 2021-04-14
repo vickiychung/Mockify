@@ -120,3 +120,24 @@
   align-items: center;
   z-index: 3;
 }
+
+.artists-index, .albums-index {
+  margin-top: 70px;
+  padding: 10px;
+  padding-left: 20px;
+  color: white;
+
+  h1 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -.04em;
+    margin-bottom: 15px;
+  }
+}
+
+.albums-index-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

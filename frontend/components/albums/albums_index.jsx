@@ -17,7 +17,7 @@ class AlbumsIndex extends React.Component {
       <div>
         <h1>Featured albums</h1>
         
-        <ul>
+        <ul className="albums-index-container">
           {albums.map(album => <AlbumsIndexItem 
             key={album.id}
             album={album}
