@@ -1,7 +1,7 @@
 import React from 'react';
-import SideBar from '../side_bar/side_bar';
-import HeaderBarContainer from '../header_bar/header_bar_container';
-import WebPlayerContainer from '../web_player/web_player_container';
+// import SideBar from '../side_bar/side_bar';
+// import HeaderBarContainer from '../header_bar/header_bar_container';
+// import WebPlayerContainer from '../web_player/web_player_container';
 import AlbumsIndexItem from '../albums/albums_index_item';
 
 class ArtistShow extends React.Component {
@@ -20,13 +20,13 @@ class ArtistShow extends React.Component {
       
       return (
         <div className="signed-in-home-container">
-          <div className="sidebar-container">
-            <SideBar />
-          </div>
+           {/* <div className="sidebar-container">
+             <SideBar />
+           </div>
 
-          <div className="header-bar-container">
-            <HeaderBarContainer />
-          </div>
+           <div className="header-bar-container">
+             <HeaderBarContainer />
+           </div> */}
 
           <div className="main-container">
             <div className="artist-info">
@@ -43,9 +43,9 @@ class ArtistShow extends React.Component {
             </ul>
           </div>
 
-          <div className="webplayer-container">
+          {/* <div className="webplayer-container">
             <WebPlayerContainer />
-          </div>
+          </div> */}
         </div>
       );
     } else {

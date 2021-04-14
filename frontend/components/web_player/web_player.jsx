@@ -31,19 +31,12 @@ class WebPlayer extends React.Component {
     this.handleVolume = this.handleVolume.bind(this);
   }
 
-  // componentDidMount() {
-    // if (this.player) {
-    //   this.handleProgress();
-    // }
-  // }
-
   componentDidUpdate(prevProps, prevState) {
     if (this.props.currentTrack !== prevProps.currentTrack) {
       if (this.props.currentTrack) {
         if (this.props.playStatus === false) {
           this.props.togglePlayTrack();
         } else {
-          // this.player.src = this.props.currentTrack.trackUrl;
           this.player.play();
         }
       }
@@ -118,10 +111,9 @@ class WebPlayer extends React.Component {
     let seekBar = document.getElementById("seekBar");
     let endTime = document.getElementById('endTime')
     let startTime = document.getElementById('startTime')
-    // debugger
+
     player.addEventListener("loadeddata", () => {
       this.duration = player.duration;
-console.log("loaded");
       seekBar.max = this.duration;
 
       let durationMin = Math.floor(this.duration / 60);
@@ -135,7 +127,6 @@ console.log("loaded");
     })
 
     player.addEventListener("timeupdate", () => {
-  console.log("timeupdate");
       let currentTime = player.currentTime;
       let currentMin = Math.floor(currentTime / 60);
       let currentSec = Math.round(currentTime - (currentMin * 60));
@@ -160,8 +151,6 @@ console.log("loaded");
   render() {
     const { currentTrack, playStatus, album } = this.props;
 
-    // if (!currentTrack) return null;
-
     const player = document.getElementById("player");
     let currentTrackName;
 
@@ -171,7 +160,7 @@ console.log("loaded");
     
     // set up player
     if (currentTrack) {
-      if (player.src !== currentTrack.trackUrl) {
+      if (player.src !== window.location.origin.concat(currentTrack.trackUrl)) {
         player.src = currentTrack.trackUrl;
       }
 
@@ -179,10 +168,8 @@ console.log("loaded");
       
       if (playStatus === true) {
         playPauseIcon = <FontAwesomeIcon icon={faPauseCircle} onClick={this.playPause}/>
-        // player.play();
       } else {
         playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playPause}/>
-        // player.pause();
       }
 
       if (player) {
@@ -260,12 +247,7 @@ console.log("loaded");
           </input>
         </div>
 
-        <audio 
-        // key={currentTrack ? currentTrack.id : null} 
-          id="player" 
-          ref={ref => this.player = ref} 
-          // src={currentTrack ? currentTrack.trackUrl : ""}
-          >
+        <audio id="player" ref={ref => this.player = ref}>
           Your browser does not support the audio element.
         </audio>      
       </div>

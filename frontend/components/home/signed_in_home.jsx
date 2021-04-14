@@ -1,14 +1,16 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
+import { ProtectedRoute } from '../../util/route_util';
+
 import HeaderBarContainer from '../header_bar/header_bar_container';
 import SideBar from '../side_bar/side_bar';
-import ArtistsIndexContainer from '../artists/artists_index_container';
-import AlbumsIndexContainer from '../albums/albums_index_container';
+import Featured from './featured';
 import AlbumShowContainer from '../albums/album_show_container';
+import ArtistShowContainer from '../artists/artist_show_container';
 import WebPlayerContainer from '../web_player/web_player_container';
 
-
 class SignedInHome extends React.Component {
+
   render() {
     return (
       <div className="signed-in-home-container">
@@ -21,18 +23,13 @@ class SignedInHome extends React.Component {
         </div>
 
         <div className="main-container">
-          <div className="artists-index">
-            <ArtistsIndexContainer />
-          </div>
-
-          <div className="albums-index">
-            <AlbumsIndexContainer />
-          </div>
+          <Switch>
+            <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />
+            <ProtectedRoute path="/artists/:artistId" component={ArtistShowContainer} />
+            <Route exact path="/" component={Featured} />
+            <Redirect to="/" />
+          </Switch>
         </div>
-
-        {/* <div className="main-container">
-          <Route path="/albums/:albumId" component={AlbumShowContainer}/>
-        </div> */}
 
         <div className="webplayer-container">
           <WebPlayerContainer />
