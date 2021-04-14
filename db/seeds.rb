@@ -29,8 +29,8 @@ artist_2 = Artist.create!(name: "Jolin Tsai", description: "~1,673,894 monthly l
 # artist_2.profile_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/artists/jolin_tsai.jpeg'), filename: "jolin_tsai.jpeg")
 
 # REAL ARTISTS SEED HERE
-artist_1.profile_photo.attach(io: URI.open('https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/michael_jackson.jpeg'), filename: "michael_jackson.jpeg")
-artist_2.profile_photo.attach(io: URI.open('https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/jolin_tsai.jpeg'), filename: "jolin_tsai.jpeg")
+artist_1.profile_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/michael_jackson.jpeg"), filename: "michael_jackson.jpeg")
+artist_2.profile_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/jolin_tsai.jpeg"), filename: "jolin_tsai.jpeg")
 
 # albums seed
 # REMINDER: Change arist_id after creating artists table
@@ -43,8 +43,8 @@ album_2 = Album.create!(artist_id: 2, title: "Ugly Beauty", year: "2018")
 # album_2.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/jolin_tsai_ugly_beauty/ugly_beauty_cover.jpeg'), filename: "ugly_beauty_cover.jpeg")
 
 # REAL ALBUMS SEEDS HERE
-album_1.cover_photo.attach(io: URI.open('https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/dangerous_album_cover.jpg'), filename: "dangerous_album_cover.jpeg")
-album_2.cover_photo.attach(io: URI.open('https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/jolin_tsai_ugly_beauty/ugly_beauty_cover.jpeg'), filename: "ugly_beauty_cover.jpeg")
+album_1.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/dangerous_album_cover.jpg"), filename: "dangerous_album_cover.jpeg")
+album_2.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/jolin_tsai_ugly_beauty/ugly_beauty_cover.jpeg"), filename: "ugly_beauty_cover.jpeg")
 
 # tracks seed
 # REMINDER: Change album_id for tracks after creating albums table
