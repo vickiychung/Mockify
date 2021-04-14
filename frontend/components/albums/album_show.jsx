@@ -40,31 +40,29 @@ export class AlbumShow extends React.Component {
 
       return (
         <div className="signed-in-home-container">
-            <div className="main-container">
-              <div className="album-info">
-                <img src={album.coverUrl} alt="album_cover" />
+          <div className="album-info">
+            <img src={album.coverUrl} alt="album_cover" />
 
-                <div className="album-details">
-                  <p>ALBUM</p>
-                  <h1>{album.title}</h1>
-                  <span>
-                    <p>{artistName}</p>
-                    <p>{`\u2022`}</p>
-                    <p>{album.year}</p>
-                  </span>
-                </div>
-              </div>
-
-              <div className="tracks-header">
-                <p>#</p>
-                <p>TITLE</p>
-                <p> <FontAwesomeIcon icon={faClock} /> </p>
-              </div>
-
-              <ul className="tracks-container">
-                {list}
-              </ul>
+            <div className="album-details">
+              <p>ALBUM</p>
+              <h1>{album.title}</h1>
+              <span>
+                <p>{artistName}</p>
+                <p>{`\u2022`}</p>
+                <p>{album.year}</p>
+              </span>
             </div>
+          </div>
+
+          <div className="tracks-header">
+            <p>#</p>
+            <p>TITLE</p>
+            <p> <FontAwesomeIcon icon={faClock} /> </p>
+          </div>
+
+          <ul className="tracks-container">
+            {list}
+          </ul>
         </div>
       );
     } else {
