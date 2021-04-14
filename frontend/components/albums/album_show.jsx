@@ -22,8 +22,6 @@ export class AlbumShow extends React.Component {
     } = this.props;
 
     let artistName;
-
-   
     
     if (album) {
       const list = tracks.map((track, idx) => <TracksIndexItem
