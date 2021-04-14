@@ -25,12 +25,12 @@ artist_2 = Artist.create!(name: "Jolin Tsai", description: "~1,673,894 monthly l
 
 # aws artists seed
 # REMEMBER TO CHANGE THESE
-artist_1.profile_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/artists/michael_jackson.jpeg'), filename: "michael_jackson.jpeg")
-artist_2.profile_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/artists/jolin_tsai.jpeg'), filename: "jolin_tsai.jpeg")
+# artist_1.profile_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/artists/michael_jackson.jpeg'), filename: "michael_jackson.jpeg")
+# artist_2.profile_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/artists/jolin_tsai.jpeg'), filename: "jolin_tsai.jpeg")
 
 # REAL ARTISTS SEED HERE
-# album_1.cover_photo.attach(io: URI.open('https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/michael_jackson.jpeg'), filename: "michael_jackson.jpeg")
-# album_1.cover_photo.attach(io: URI.open('https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/jolin_tsai.jpeg'), filename: "jolin_tsai.jpeg")
+artist_1.profile_photo.attach(io: URI.open('https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/michael_jackson.jpeg'), filename: "michael_jackson.jpeg")
+artist_2.profile_photo.attach(io: URI.open('https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/jolin_tsai.jpeg'), filename: "jolin_tsai.jpeg")
 
 # albums seed
 # REMINDER: Change arist_id after creating artists table
