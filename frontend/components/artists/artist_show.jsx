@@ -8,9 +8,14 @@ class ArtistShow extends React.Component {
 
   render() {
     const { artist, albums } = this.props;
-    
+
+    let artistAlbums;
+
     if (artist) {
-      const list = albums.map(album => <AlbumsIndexItem
+
+      artistAlbums = albums.filter(album => album.artistId === artist.id);
+
+      const list = artistAlbums.map(album => <AlbumsIndexItem
         key={album.id}
         album={album}
       />)
