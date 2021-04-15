@@ -31,12 +31,17 @@ class WebPlayer extends React.Component {
     this.handleVolume = this.handleVolume.bind(this);
   }
 
+  componentDidMount() {
+    this.volume.value = 0.3;
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.props.currentTrack !== prevProps.currentTrack) {
       if (this.props.currentTrack) {
         if (this.props.playStatus === false) {
           this.props.togglePlayTrack();
         } else {
+          this.player.volume = this.volume.value;
           this.player.play();
         }
       }
@@ -46,6 +51,7 @@ class WebPlayer extends React.Component {
         if (this.props.playStatus === false) {
           this.player.pause();
         } else {
+          this.player.volume = this.volume.value;
           this.player.play();
         }
       }
@@ -244,7 +250,8 @@ class WebPlayer extends React.Component {
 
           <input type="range" min="0" max="1" step=".01" 
             defaultValue={this.player ? this.player.volume : 0.3} 
-            onChange={e => this.handleVolume(e)}>
+            onChange={e => this.handleVolume(e)}
+            ref={volume => this.volume = volume}>
           </input>
         </div>
 
