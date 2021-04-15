@@ -5,11 +5,7 @@ class ArtistsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchArtists();
   }
-
-  componentWillUnmount() {
-    this.props.clearArtists();
-  }
-
+  
   render() {
     const { artists } = this.props;
 

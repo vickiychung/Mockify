@@ -24,8 +24,8 @@ class SignedInHome extends React.Component {
 
         <div className="main-container">
           <Switch>
-            <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />
-            <ProtectedRoute path="/artists/:artistId" component={ArtistShowContainer} />
+            <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
+            <ProtectedRoute exact path="/artists/:artistId" component={ArtistShowContainer} />
             <Route exact path="/" component={Featured} />
             <Redirect to="/" />
           </Switch>

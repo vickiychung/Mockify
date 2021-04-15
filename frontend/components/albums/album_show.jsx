@@ -21,10 +21,13 @@ export class AlbumShow extends React.Component {
       selectTrack
     } = this.props;
 
-    let artistName;
+    let artistName, albumTracks;
     
     if (album) {
-      const list = tracks.map((track, idx) => <TracksIndexItem
+      
+      albumTracks = tracks.filter(track => track.albumId === album.id);
+
+      const list = albumTracks.map((track, idx) => <TracksIndexItem
         key={track.id}
         track={track}
         togglePlayTrack={togglePlayTrack}

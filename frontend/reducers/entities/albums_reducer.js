@@ -18,6 +18,9 @@ const albumsReducer = (oldState = {}, action) => {
 
     case RECEIVE_ARTIST:
       return action.albums;
+      // for (let i = 0; i < action.albums.length; i++ ) {
+      //   newState[action.albums[i].id] = action.albums[i];
+      // }
 
     default:
       return oldState;
