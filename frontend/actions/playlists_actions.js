@@ -50,7 +50,7 @@ export const fetchPlaylists = () => {
   });
 };
 
-export const receivePlaylist = playlistId => {
+export const fetchPlaylist = playlistId => {
   return (dispatch => {
     return (
       PlaylistsAPIUtil.fetchPlaylist(playlistId)

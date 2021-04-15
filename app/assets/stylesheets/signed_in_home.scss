@@ -120,7 +120,7 @@
   z-index: 3;
 }
 
-.artists-index, .albums-index {
+.artists-index, .albums-index, .playlists-index {
   padding: 10px;
   padding-left: 20px;
   color: white;
@@ -138,7 +138,7 @@
   margin-top: 70px;
 }
 
-.artists-index:hover, .albums-index:hover {
+.artists-index:hover, .albums-index:hover, .playlists-index:hover {
   background-color: rgb(59, 59, 59);
   transition-duration: .2s;
   transition-timing-function: linear;
