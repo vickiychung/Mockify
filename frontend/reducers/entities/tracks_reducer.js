@@ -18,7 +18,7 @@ const tracksReducer = (oldState = {}, action) => {
       return Object.assign(newState, action.tracks);
 
     case RECEIVE_PLAYLIST_TRACK:
-      return oldState;
+      return newState;
 
     case REMOVE_PLAYLIST_TRACK:
       delete newState[action.trackId]

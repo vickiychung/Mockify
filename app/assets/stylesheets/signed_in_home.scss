@@ -21,7 +21,7 @@
     z-index: 3;
   }
 
-  .sidebar-home, .sidebar-library {
+  .sidebar-home, .sidebar-library, .sidebar-create {
     display: flex;
 
     :hover {
@@ -32,13 +32,13 @@
       border-radius: 10px;
     }
   
-    .link {
+    .link, .create-wrapper{
       display: flex;
       align-items: center;
       margin-left: 20px;
     }
     
-    #home-icon, #library-icon {
+    #home-icon, #library-icon, #create-icon {
       color: white;
       margin-right: 15px;
       font-size: 22px;
@@ -46,11 +46,13 @@
 
     #library-icon {
       font-size: 20px;
+      padding-right: 2px;
     }
 
     p {
       font-size: 14px;
       font-weight: 700;
+      color: white;
     }
   }
 
@@ -63,6 +65,16 @@
   .sidebar-library {
     position: absolute;
     top: 160px;
+  }
+
+  .create-wrapper {
+    position: absolute;
+    top: 200px;
+    cursor: pointer;
+    
+    p {
+      margin-left: 4px;
+    }
   }
 }
 

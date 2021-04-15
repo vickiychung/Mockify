@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faBookOpen } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faBookOpen, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
+
+import createPlaylist from '../../actions/playlists_actions';
 
 class SideBar extends React.Component {
+  
   render() {
     return (
       <div>
@@ -23,6 +26,13 @@ class SideBar extends React.Component {
             <FontAwesomeIcon id="library-icon" icon={faBookOpen} />
             <p>Your Library</p>
           </Link>
+        </div>
+
+        <div className="sidebar-create">
+          <div className="create-wrapper">
+            <FontAwesomeIcon id="create-icon" icon={faPlusSquare} />
+            <p>Create Playlist</p>
+          </div>
         </div>
       </div>
     );
