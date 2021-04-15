@@ -5,7 +5,6 @@ import {
   togglePlayTrack,
   selectTrack
 } from '../../actions/web_player_actions';
-import { fetchArtists } from '../../actions/artists_actions';
 import AlbumShow from './album_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,7 +22,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchArtists: () => dispatch(fetchArtists()),
     fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
     togglePlayTrack: () => dispatch(togglePlayTrack()),
     selectTrack: trackId => dispatch(selectTrack(trackId))

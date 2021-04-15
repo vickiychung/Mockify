@@ -31,15 +31,19 @@ class WebPlayer extends React.Component {
     this.handleVolume = this.handleVolume.bind(this);
   }
 
+  componentDidMount() {
+    this.volume.value = 0.3;
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.props.currentTrack !== prevProps.currentTrack) {
       if (this.props.currentTrack) {
         if (this.props.playStatus === false) {
           this.props.togglePlayTrack();
-        } 
-      } else {
-        this.player.pause();
-  // console.log(this.player.currentTime);
+        } else {
+          this.player.volume = this.volume.value;
+          this.player.play();
+        }
       }
     } 
     else if (this.props.currentTrack === prevProps.currentTrack) {
@@ -47,8 +51,8 @@ class WebPlayer extends React.Component {
         if (this.props.playStatus === false) {
           this.player.pause();
         } else {
+          this.player.volume = this.volume.value;
           this.player.play();
-  // console.log(this.player.currentTime);
         }
       }
     }
@@ -113,14 +117,13 @@ class WebPlayer extends React.Component {
     let seekBar = document.getElementById("seekBar");
     let endTime = document.getElementById('endTime')
     let startTime = document.getElementById('startTime')
-    
-    player.addEventListener("loadedmetadata", () => {
-      let duration = player.duration;
 
-      seekBar.max = duration;
+    player.addEventListener("loadeddata", () => {
+      this.duration = player.duration;
+      seekBar.max = this.duration;
 
-      let durationMin = Math.floor(duration / 60);
-      let durationSec = Math.round(duration - (durationMin * 60));
+      let durationMin = Math.floor(this.duration / 60);
+      let durationSec = Math.round(this.duration - (durationMin * 60));
 
       if (durationSec < 10) {
         endTime.innerHTML = `${durationMin}:0${durationSec}`;
@@ -139,6 +142,7 @@ class WebPlayer extends React.Component {
       } else {
         startTime.innerHTML = `${currentMin}:${currentSec}`;
       }
+      seekBar.value = (currentTime / this.duration) * 100;
     })
   }
 
@@ -151,9 +155,9 @@ class WebPlayer extends React.Component {
   }
 
   render() {
-    const { currentTrack, playStatus, album } = this.props;
+    const { currentTrack, playStatus, albums } = this.props;
     const player = document.getElementById("player");
-    let currentTrackName;
+    let currentTrackName, album;
 
     // play first track on initial click
     let playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} 
@@ -161,17 +165,18 @@ class WebPlayer extends React.Component {
     
     // set up player
     if (currentTrack) {
-      player.src = currentTrack.trackUrl;
+      album = albums[currentTrack.albumId];
+
+      if (player.src !== window.location.origin.concat(currentTrack.trackUrl)) {
+        player.src = currentTrack.trackUrl;
+      }
+
       currentTrackName = currentTrack.name;
       
       if (playStatus === true) {
         playPauseIcon = <FontAwesomeIcon icon={faPauseCircle} onClick={this.playPause}/>
-        player.play();
-  // console.log(this.player.currentTime);
       } else {
         playPauseIcon = <FontAwesomeIcon icon={faPlayCircle} onClick={this.playPause}/>
-        player.pause();
-  // console.log(this.player.currentTime);
       }
 
       if (player) {
@@ -244,8 +249,9 @@ class WebPlayer extends React.Component {
           </p>
 
           <input type="range" min="0" max="1" step=".01" 
-            defaultValue={this.player ? this.player.volume : 0.5} 
-            onChange={e => this.handleVolume(e)}>
+            defaultValue={this.player ? this.player.volume : 0.3} 
+            onChange={e => this.handleVolume(e)}
+            ref={volume => this.volume = volume}>
           </input>
         </div>
 
