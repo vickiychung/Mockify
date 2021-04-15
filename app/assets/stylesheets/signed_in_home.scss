@@ -3,19 +3,6 @@
   font-size: 25px;
 }
 
-#sidebar-logo {
-  width: 80%;
-  position: absolute;
-  top: 30px;
-  left: 15px;
-  right: 10px;
-  z-index: 3;
-}
-
-#artist-photo {
-  height: 200px;
-}
-
 .sidebar-container {
   display: flex;
   flex-direction: column;
@@ -24,6 +11,59 @@
   position: fixed;
   background-color: black;
   z-index: 2;
+
+  #sidebar-logo {
+    width: 80%;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    right: 10px;
+    z-index: 3;
+  }
+
+  .sidebar-home, .sidebar-library {
+    display: flex;
+
+    :hover {
+      background-color: rgb(59, 59, 59);
+      transition-duration: .2s;
+      transition-timing-function: linear;
+      padding: 8px;
+      border-radius: 10px;
+    }
+  
+    .link {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    
+    #home-icon, #library-icon {
+      color: white;
+      margin-right: 15px;
+      font-size: 22px;
+    }
+
+    #library-icon {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  .sidebar-home {
+    margin-bottom: 20px;
+    position: absolute;
+    top: 120px;
+  }
+
+  .sidebar-library {
+    position: absolute;
+    top: 160px;
+  }
 }
 
 .header-bar-container {
@@ -157,6 +197,10 @@
   flex-direction: column;
   align-items: center;
   font-size: 16px;
+
+  #artist-photo {
+    height: 200px;
+  }
 
   img {
     padding-bottom: 10px;
