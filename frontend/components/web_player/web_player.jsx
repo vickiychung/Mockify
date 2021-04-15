@@ -142,7 +142,8 @@ class WebPlayer extends React.Component {
       } else {
         startTime.innerHTML = `${currentMin}:${currentSec}`;
       }
-      seekBar.value = (currentTime / this.duration) * 100;
+      
+      seekBar.value = currentTime;
     })
   }
 
