@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import TracksIndexItem from '../tracks/tracks_index_item';
@@ -48,7 +49,9 @@ export class AlbumShow extends React.Component {
               <p>ALBUM</p>
               <h1>{album.title}</h1>
               <span>
-                <p>{artistName}</p>
+                <Link className="link" to={`artists/${album.artistId}`}>
+                  <p id="artist-name" >{artistName}</p>
+                </Link>
                 <p>{`\u2022`}</p>
                 <p>{album.year}</p>
               </span>
