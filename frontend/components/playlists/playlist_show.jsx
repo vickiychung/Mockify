@@ -4,8 +4,6 @@ class PlaylistShow extends React.Component {
   componentDidMount() {
     this.props.fetchPlaylistPayload(this.props.match.params.playlistId);
   }
-
-  handleRemove(trackId, playlistId)
   
   render() {
     const { currentUser, playlist, tracks } = this.props;
@@ -15,7 +13,6 @@ class PlaylistShow extends React.Component {
       list = Object.values(tracks).map(track => (
         <li key={track.id}>
           {track.name}
-          <button>Remove</button>
         </li>
       ))
     }
