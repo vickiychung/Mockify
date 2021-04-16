@@ -4,9 +4,9 @@ import PlaylistsIndexItem from './playlists_index_item';
 class PlaylistsIndex extends React.Component {
 
   render() {
-    const { playlists } = this.props;
+    const { playlists, component } = this.props;
 
-    let list;
+    let list, header;
 
     if (playlists) {
       list = playlists.map(playlist => <PlaylistsIndexItem
@@ -15,11 +15,17 @@ class PlaylistsIndex extends React.Component {
       />);
     }
 
+    if (component !== "sidebar") {
+      header = <h1>Featured playlists</h1>;
+    } else {
+      header = null;
+    }
+
     return (
       <div>
-        <h1>Featured playlists</h1>
+        {header}
 
-        <ul>
+        <ul className="sidebar-playlist-wrapper">
           {list}
         </ul>
       </div>
