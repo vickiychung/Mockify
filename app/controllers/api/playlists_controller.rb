@@ -1,6 +1,6 @@
 class Api::PlaylistsController < ApplicationController
   def index
-    @playlists = Playlist.find_by(user_id: current_user.id)
+    @playlists = Playlist.where(user_id: current_user.id)
     render :index
   end
 
@@ -17,8 +17,8 @@ class Api::PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(playlist_params)
 
-    if @playlist.save
-      render :show
+    if @playlist.save!
+      render '/api/playlists/_playlists'
     else
       render json: @playlist.errors.full_messages, status: 422
     end

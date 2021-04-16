@@ -3,10 +3,11 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 
 import HeaderBarContainer from '../header_bar/header_bar_container';
-import SideBar from '../side_bar/side_bar';
+import SideBarContainer from '../side_bar/side_bar_container';
 import Featured from './featured';
 import AlbumShowContainer from '../albums/album_show_container';
 import ArtistShowContainer from '../artists/artist_show_container';
+import PlaylistShowContainer from '../playlists/playlist_show_container';
 import WebPlayerContainer from '../web_player/web_player_container';
 
 class SignedInHome extends React.Component {
@@ -15,7 +16,7 @@ class SignedInHome extends React.Component {
     return (
       <div className="signed-in-home-container">
         <div className="sidebar-container">
-          <SideBar />
+          <SideBarContainer />
         </div>
 
         <div className="header-bar-container">
@@ -26,6 +27,7 @@ class SignedInHome extends React.Component {
           <Switch>
             <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
             <ProtectedRoute exact path="/artists/:artistId" component={ArtistShowContainer} />
+            <ProtectedRoute exact path="/playlists/:playlistId" component={PlaylistShowContainer} />
             <Route exact path="/" component={Featured} />
             <Redirect to="/" />
           </Switch>

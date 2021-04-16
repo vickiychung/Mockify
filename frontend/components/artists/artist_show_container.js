@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchArtist } from '../../actions/artists_actions';
-import selectAlbumByArtist from '../../selectors/selectAlbumByArtist';
 import ArtistShow from './artist_show';
 
 const mapStateToProps = (state, ownProps) => {

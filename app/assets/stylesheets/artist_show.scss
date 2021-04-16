@@ -47,9 +47,8 @@
   background-color: rgb(26, 25, 25);
   color: white;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   font-size: 16px;
-  // overflow-y: scroll;
   margin-top: 15px;
   padding-bottom: 15px;
   padding: 0 25px;
@@ -66,7 +65,7 @@
 
   img {
     padding-bottom: 10px;
-    width: fit-content;
+    width: 300px;
     max-height: 300px;
   }
 

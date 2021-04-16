@@ -3,27 +3,105 @@
   font-size: 25px;
 }
 
-#sidebar-logo {
-  width: 80%;
-  position: absolute;
-  top: 30px;
-  left: 15px;
-  right: 10px;
-  z-index: 3;
-}
-
-#artist-photo {
-  height: 200px;
-}
-
 .sidebar-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 15%;
   height: 100vh;
   position: fixed;
   background-color: black;
+  color: white;
   z-index: 2;
+
+  #sidebar-logo {
+    width: 80%;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    right: 10px;
+    z-index: 3;
+  }
+
+  .sidebar-home, .sidebar-library, .sidebar-create {
+    display: flex;
+    left: 25px;
+
+    :hover {
+      background-color: rgb(59, 59, 59);
+      transition-duration: .2s;
+      transition-timing-function: linear;
+      padding: 8px;
+      border-radius: 10px;
+    }
+  
+    .link, .create-wrapper{
+      display: flex;
+      align-items: center;
+    }
+
+    .create-wrapper {
+      left: 25px;
+    }
+    
+    #home-icon, #library-icon, #create-icon {
+      color: white;
+      margin-right: 15px;
+      font-size: 22px;
+    }
+
+    #library-icon {
+      font-size: 20px;
+      padding-right: 2px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+    }
+  }
+
+  .sidebar-home {
+    position: absolute;
+    top: 150px;
+  }
+
+  .sidebar-library {
+    position: absolute;
+    top: 200px;
+  }
+
+  .create-wrapper {
+    position: absolute;
+    top: 250px;
+    cursor: pointer;
+    padding-left: 1px;
+    
+    p {
+      margin-left: 4px;
+    }
+  }
+
+  .sidebar-playlists {
+    font-size: 14px;
+  }
+}
+
+.sidebar-playlist-wrapper {
+  border-top: white 1px solid;
+  padding-top: 30px;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  top: 330px;
+  left: 25px;
+
+  li {
+    margin-bottom: 15px;
+  }
 }
 
 .header-bar-container {
@@ -120,9 +198,10 @@
   z-index: 3;
 }
 
-.artists-index, .albums-index {
+.artists-index, .albums-index, .playlists-index {
   padding: 10px;
   padding-left: 20px;
+  padding-top: 20px;
   color: white;
 
   h1 {
@@ -138,7 +217,7 @@
   margin-top: 70px;
 }
 
-.artists-index:hover, .albums-index:hover {
+.artists-index:hover, .albums-index:hover, .playlists-index:hover {
   background-color: rgb(59, 59, 59);
   transition-duration: .2s;
   transition-timing-function: linear;
@@ -157,6 +236,10 @@
   flex-direction: column;
   align-items: center;
   font-size: 16px;
+
+  #artist-photo {
+    height: 200px;
+  }
 
   img {
     padding-bottom: 10px;

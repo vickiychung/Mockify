@@ -36,3 +36,48 @@
   position: absolute;
   right: 40px;
 }
+
+.track-options-container {
+  color: white;
+
+  .track-options{
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .track-dropdown {
+    font-size: 14px;
+    position: absolute;
+    background-color: #282828;
+    box-shadow: 0 16px 24px rgba(0, 0, 0, .3), 0 6px 8px rgba(0,0,0,.2);
+    outline: none;
+    transition: all 1s linear;
+    width: 150px;
+    margin: 0 auto;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #add {
+      font-weight: 600;
+    }
+
+  .track-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 20px;
+    
+    li {
+      padding-bottom: 15px;
+    }
+  }
+}

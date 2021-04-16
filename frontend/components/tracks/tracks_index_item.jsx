@@ -1,15 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import { faPlayCircle, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+
+import { addTrackToPlaylist, removeTrackFromPlaylist } from '../../actions/playlists_actions';
+import PlaylistsHandler from '../playlists/playlists_handler';
 
 class TracksIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { hover: "" }
+    this.state = { hover: "", options: "hidden" }
 
     this.handlePlay = this.handlePlay.bind(this);
     this.handleHover = this.handleHover.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
   handlePlay(trackId) {
@@ -24,8 +29,17 @@ class TracksIndexItem extends React.Component {
     });
   }
 
+  toggleDropdown() {
+    if (this.state.options === "hidden") {
+      this.setState({ options: "show" });
+    } else {
+      this.setState({ options: "hidden" });
+    }
+  }
+
   render() {
-    const { track, idx } = this.props;
+    const { track, idx, playlists, 
+      addTrackToPlaylist, removeTrackFromPlaylist } = this.props;
 
     const trackPlaybutton = <FontAwesomeIcon 
       className="track-button"
@@ -50,10 +64,41 @@ class TracksIndexItem extends React.Component {
           <p className="track-name">{track.name}</p>
 
           <p className="track-length">{track.length.toFixed(2)}</p>
+
+          <div className="track-options-container">
+            <FontAwesomeIcon 
+              className="track-options" 
+              icon={faEllipsisH} 
+              onClick={this.toggleDropdown}
+            />
+
+            <PlaylistsHandler
+              playlists={playlists}
+              trackId={track.id}
+              addTrackToPlaylist={addTrackToPlaylist}
+              removeTrackFromPlaylist={removeTrackFromPlaylist}
+              options={this.state.options}
+            />
+          </div>
         </li>
       </div>
     );
   }
 }
 
-export default TracksIndexItem;
+const mapStateToProps = state => {
+  return {
+    playlists: Object.values(state.entities.playlists)
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addTrackToPlaylist: (trackId, playlistId) => dispatch(
+      addTrackToPlaylist(trackId, playlistId)),
+    removeTrackFromPlaylist: (trackId, playlistId) => dispatch(
+      removeTrackFromPlaylist(trackId, playlistId))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TracksIndexItem);

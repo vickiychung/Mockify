@@ -1,0 +1,28 @@
+.playlist-show-container {
+  background-color: rgb(26, 25, 25);
+  color: white;
+  height: 100vh;
+  overflow-y: scroll;
+  margin-top: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+
+  li {
+    list-style: circle;
+    padding-bottom: 15px;
+  }
+}
+
+.playlist-listing {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+}
