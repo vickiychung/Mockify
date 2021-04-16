@@ -1,5 +1,3 @@
-json.extract! @playlist, :id, :user_id, :name
-
 json.tracks do
   @playlist.playlist_tracks.each_with_index do |play_tracks, i|
     json.set! play_tracks.track.id do

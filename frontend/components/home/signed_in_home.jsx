@@ -4,6 +4,7 @@ import { ProtectedRoute } from '../../util/route_util';
 
 import HeaderBarContainer from '../header_bar/header_bar_container';
 import SideBar from '../side_bar/side_bar';
+import SideBarContainer from '../side_bar/side_bar_container';
 import Featured from './featured';
 import AlbumShowContainer from '../albums/album_show_container';
 import ArtistShowContainer from '../artists/artist_show_container';
@@ -15,7 +16,8 @@ class SignedInHome extends React.Component {
     return (
       <div className="signed-in-home-container">
         <div className="sidebar-container">
-          <SideBar />
+          <SideBarContainer />
+          {/* <SideBar /> */}
         </div>
 
         <div className="header-bar-container">
