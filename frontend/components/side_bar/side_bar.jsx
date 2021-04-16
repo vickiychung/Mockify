@@ -19,7 +19,7 @@ class SideBar extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.playlists !== prevProps.playlists) {
-      this.setState({ name: `My Playlist #${this.props.playlists.length}` });
+      this.setState({ name: `My Playlist #${this.props.playlists.length + 1}` });
     }
   }
 
