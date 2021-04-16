@@ -49,7 +49,7 @@ export class AlbumShow extends React.Component {
               <p>ALBUM</p>
               <h1>{album.title}</h1>
               <span>
-                <Link className="link" to={`artists/${album.artistId}`}>
+                <Link className="link" to={`/artists/${album.artistId}`}>
                   <p id="artist-name" >{artistName}</p>
                 </Link>
                 <p>{`\u2022`}</p>
