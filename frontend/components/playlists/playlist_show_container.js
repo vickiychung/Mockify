@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPlaylistPayload, 
   updatePlaylist, 
-  deletePlaylist } from '../../actions/playlists_actions';
+  deletePlaylist,
+  removeTrackFromPlaylist} from '../../actions/playlists_actions';
 import PlaylistShow from './playlist_show';
 
 const mapStateToProps = (state, ownProps) => {

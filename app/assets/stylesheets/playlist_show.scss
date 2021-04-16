@@ -8,4 +8,20 @@
   padding-bottom: 20px;
   padding-left: 20px;
   display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+
+  li {
+    list-style: circle;
+  }
+}
+
+.playlist-listing {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
 }

@@ -8,15 +8,12 @@ class PlaylistsHandler extends React.Component {
   }
 
   handleAdd(trackId, playlistId) {
-    return (e => {
-      e.preventDefault();
-      this.props.addTrackToPlaylist(trackId, playlistId);
-    });
+    this.props.addTrackToPlaylist(trackId, playlistId);
   }
 
   render() {
     const { playlists, trackId, removeTrackFromPlaylist, options } = this.props;
-    
+
     let playlistsMenu;
 
     if (playlists) {
