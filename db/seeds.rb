@@ -34,9 +34,9 @@ artist_2.profile_photo.attach(io: URI.open("https://active-storage-mockify-dev.s
 
 # albums seed
 # REMINDER: Change arist_id after creating artists table
-# album_1 = Album.create!(artist_id: 1, title: "Dangerous", year: "1991")
-# album_2 = Album.create!(artist_id: 2, title: "Ugly Beauty", year: "2018")
-# album_3 = Album.create!(artist_id: 2, title: "Play", year: "2014")
+album_1 = Album.create!(artist_id: 1, title: "Dangerous", year: "1991")
+album_2 = Album.create!(artist_id: 2, title: "Ugly Beauty", year: "2018")
+album_3 = Album.create!(artist_id: 2, title: "Play", year: "2014")
 
 # aws albums seed
 # REMEMBER TO CHANGE FILE PATHS BEFORE DEPLOYING TO PROD
