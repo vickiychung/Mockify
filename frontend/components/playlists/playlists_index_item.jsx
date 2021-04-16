@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class PlaylistsIndexItem extends React.Component {
 
@@ -8,7 +9,9 @@ class PlaylistsIndexItem extends React.Component {
     return (
       <div>
         <li>
-          <p>{playlist.name}</p>
+          <Link className="link" to={`playlists/${playlist.id}`}>
+            <p>{playlist.name}</p>
+          </Link>
         </li>
       </div>
     );

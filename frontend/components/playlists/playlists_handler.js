@@ -31,8 +31,10 @@ class PlaylistsHandler extends React.Component {
 
     return(
       <ul className={`track-dropdown ${options}`}>
-        <li>Add to Playlist</li>
-        <ul>{playlistsMenu}</ul>
+        <li id="add">Add to Playlist</li>
+        <ul className="track-dropdown-menu">
+          {playlistsMenu}
+        </ul>
       </ul>
     );
   }
