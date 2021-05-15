@@ -9,7 +9,7 @@ class PlaylistsIndexItem extends React.Component {
     return (
       <div>
         <li>
-          <Link className="link" to={`playlists/${playlist.id}`}>
+          <Link className="link" to={`/playlists/${playlist.id}`}>
             <p>{playlist.name}</p>
           </Link>
         </li>
