@@ -4,6 +4,12 @@ class PlaylistShow extends React.Component {
   componentDidMount() {
     this.props.fetchPlaylistPayload(this.props.match.params.playlistId);
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.match.params.playlistId !== this.props.match.params.playlistId) {
+      this.props.fetchPlaylistPayload(this.props.match.params.playlistId);
+    } 
+  }
   
   render() {
     const { currentUser, playlist, tracks } = this.props;
