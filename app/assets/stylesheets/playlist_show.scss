@@ -33,12 +33,15 @@
 
   p:first-child {
     margin-left: 13px;
-    margin-right: 35px;
+    width: 40px;
+  }
+
+  p:nth-child(2) {
+    width: 400px;
   }
 
   p:nth-child(3) {
-    margin-left: 190px;
-    margin-right: 200px;
+    width: 300px;
   }
 
   p:last-child {
@@ -48,9 +51,14 @@
 }
 
 .playlist-track-id {
-  margin-right: 20px;
+  width: 40px;
+}
+
+.playlist-track-name {
+  color: white;
+  width: 400px;
 }
 
 .playlist-album-name {
-  margin-right: 160px;
+  width: 300px;
 }
