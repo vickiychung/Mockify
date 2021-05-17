@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.entities.users[state.session.id],
     playlist: state.entities.playlists[ownProps.match.params.playlistId],
     tracks: state.entities.tracks,
-    albums: Object.values(state.entities.albums)
+    albums: state.entities.albums
   };
 }
 

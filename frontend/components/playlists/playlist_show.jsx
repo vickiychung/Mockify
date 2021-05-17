@@ -19,7 +19,7 @@ class PlaylistShow extends React.Component {
       list = Object.values(tracks).map(track => (
         <li key={track.id}>
           <p className="track-name">{track.name}</p>
-          {/* <p>{albums[track.albumId]}</p> */}
+          <p>{albums[track.albumId]["title"]}</p>
           <p>{track.artistName}</p>
           <p className="track-length">{track.length.toFixed(2)}</p>
         </li>
