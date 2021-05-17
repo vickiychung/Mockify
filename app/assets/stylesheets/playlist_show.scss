@@ -1,9 +1,8 @@
 .playlist-show-container {
   background-color: rgb(26, 25, 25);
   color: white;
-  // height: 100vh;
-  height: 70vh;
-  // overflow-y: scroll;
+  height: 80vh;
+  overflow-y: scroll;
   margin-top: 70px;
   padding-top: 20px;
   // padding-bottom: 20px;
@@ -14,7 +13,6 @@
   h1 {
     font-weight: 600;
     margin-bottom: 50px;
-    // position: sticky;
   }
 
   li {
@@ -23,7 +21,7 @@
 }
 
 .playlist-tracks-wrapper {
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 
 .playlist-tracks-header {
@@ -54,8 +52,9 @@
   }
 
   p:last-child {
-    position: absolute;
-    right: 55px;
+    width: 33px;
+    display: flex;
+    justify-content: center;
   }
 }
 
