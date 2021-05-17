@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 class PlaylistShow extends React.Component {
   componentDidMount() {
@@ -16,8 +18,9 @@ class PlaylistShow extends React.Component {
     let list;
 
     if (tracks) {
-      list = Object.values(tracks).map(track => (
-        <li key={track.id}>
+      list = Object.values(tracks).map((track, idx) => (
+        <li key={track.id} className="single-track-container">
+          <p>{idx + 1}</p>
           <p className="track-name">{track.name}</p>
           <p>{albums[track.albumId]["title"]}</p>
           <p>{track.artistName}</p>
@@ -33,9 +36,17 @@ class PlaylistShow extends React.Component {
         <div className="playlist-show-container">
           <h1>{playlist.name}</h1>
 
-          <ol className="playlist-listing" type="1">
+          <div className="tracks-header">
+            <p>#</p>
+            <p>TITLE</p>
+            <p>ALBUM</p>
+            <p>ARTIST</p>
+            <p> <FontAwesomeIcon icon={faClock} /> </p>
+          </div>
+
+          <ul className="tracks-container">
             {list}
-          </ol>
+          </ul>
         </div>
       </div>
     );
