@@ -9,7 +9,6 @@ class PlaylistsIndex extends React.Component {
     let list, header;
 
     if (playlists) {
-      
       list = playlists.map(playlist => <PlaylistsIndexItem
         key={playlist.id}
         playlist={playlist}
