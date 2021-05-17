@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
-import { addTrackToPlaylist, removeTrackFromPlaylist } from '../../actions/playlists_actions';
+import { addTrackToPlaylist } from '../../actions/playlists_actions';
 import PlaylistsHandler from '../playlists/playlists_handler';
 
 class TracksIndexItem extends React.Component {
@@ -38,8 +38,7 @@ class TracksIndexItem extends React.Component {
   }
 
   render() {
-    const { track, idx, playlists, 
-      addTrackToPlaylist, removeTrackFromPlaylist } = this.props;
+    const { track, idx, playlists, addTrackToPlaylist } = this.props;
 
     const trackPlaybutton = <FontAwesomeIcon 
       className="track-button"
@@ -76,7 +75,6 @@ class TracksIndexItem extends React.Component {
               playlists={playlists}
               trackId={track.id}
               addTrackToPlaylist={addTrackToPlaylist}
-              removeTrackFromPlaylist={removeTrackFromPlaylist}
               options={this.state.options}
             />
           </div>
@@ -95,9 +93,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     addTrackToPlaylist: (trackId, playlistId) => dispatch(
-      addTrackToPlaylist(trackId, playlistId)),
-    removeTrackFromPlaylist: (trackId, playlistId) => dispatch(
-      removeTrackFromPlaylist(trackId, playlistId))
+      addTrackToPlaylist(trackId, playlistId))
   };
 };
 

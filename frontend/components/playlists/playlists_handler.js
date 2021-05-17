@@ -12,7 +12,7 @@ class PlaylistsHandler extends React.Component {
   }
 
   render() {
-    const { playlists, trackId, removeTrackFromPlaylist, options } = this.props;
+    const { playlists, trackId, options } = this.props;
 
     let playlistsMenu;
 
