@@ -71,8 +71,9 @@
   }
 
   #add {
-      font-weight: 600;
-    }
+    font-weight: 600;
+    cursor: default;
+  }
 
   .track-dropdown-menu {
     display: flex;
@@ -81,7 +82,21 @@
     padding-top: 20px;
     
     li {
-      padding-bottom: 15px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      width: 100%;
+    }
+
+    li:first-child {
+      margin-top: 0px;
+    }
+
+    li:last-child {
+      padding-bottom: 10px;
+    }
+
+    li:hover {
+      background-color: rgb(59, 59, 59);
     }
   }
 }
