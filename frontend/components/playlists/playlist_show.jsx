@@ -20,9 +20,9 @@ class PlaylistShow extends React.Component {
     if (tracks) {
       list = Object.values(tracks).map((track, idx) => (
         <li key={track.id} className="single-track-container">
-          <p>{idx + 1}</p>
+          <p className="playlist-track-id">{idx + 1}</p>
           <p className="track-name">{track.name}</p>
-          <p>{albums[track.albumId]["title"]}</p>
+          <p className="playlist-album-name">{albums[track.albumId]["title"]}</p>
           <p>{track.artistName}</p>
           <p className="track-length">{track.length.toFixed(2)}</p>
         </li>
@@ -36,7 +36,7 @@ class PlaylistShow extends React.Component {
         <div className="playlist-show-container">
           <h1>{playlist.name}</h1>
 
-          <div className="tracks-header">
+          <div className="playlist-tracks-header">
             <p>#</p>
             <p>TITLE</p>
             <p>ALBUM</p>
