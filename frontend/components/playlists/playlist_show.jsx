@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faTrashAlt, faMusic } from "@fortawesome/free-solid-svg-icons";
 
 class PlaylistShow extends React.Component {
   constructor(props) {
@@ -79,15 +79,24 @@ class PlaylistShow extends React.Component {
 
     if (!playlist) return null;
     
-    return(
+    return (
       <div className="signed-in-home-container">
         <div className="playlist-show-container">
           <div className="playlist-info">
+            <div className="playlist-art">
+              {Object.values(albums).length < 4 ?
+                <FontAwesomeIcon icon={faMusic} /> :
+                <ul>
+                  {Object.values(albums).slice(0, 4).map(album => <li><img src={album.coverUrl} /></li>)}
+                </ul>
+              }
+            </div>
 
             <div className="playlist-details">
               <p>PLAYLIST</p>
               <h1>{playlist.name}</h1>
-
+              <p>{`${count} songs`}</p>
+              <p>{`${hr}hr ${min}min ${sec}sec`}</p>
             </div>
           </div>
 
