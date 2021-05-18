@@ -7,7 +7,6 @@ import PlaylistShow from './playlist_show';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    // currentUser: state.entities.users[state.session.id],
     playlist: state.entities.playlists[ownProps.match.params.playlistId],
     tracks: state.entities.tracks,
     albums: state.entities.albums

@@ -29,14 +29,14 @@ class PlaylistShow extends React.Component {
 
           <p className="playlist-track-name">{track.name}</p>
 
-          <Link className="playlist-album-name" to={`/albums/${albums[track.albumId]["id"]}`}>
+          <Link className="playlist-album-name link" to={`/albums/${albums[track.albumId]["id"]}`}>
             {albums[track.albumId]["title"]}
           </Link>
 
-          <Link className="playlist-artist-name" to={`/artists/${albums[track.albumId]["artistId"]}`}>
+          <Link className="playlist-artist-name link" to={`/artists/${albums[track.albumId]["artistId"]}`}>
             {track.artistName}
           </Link>
-          
+
           <p className="playlist-track-length">{track.length.toFixed(2)}</p>
         </li>
       ));
