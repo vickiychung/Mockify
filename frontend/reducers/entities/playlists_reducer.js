@@ -16,15 +16,11 @@ const playlistsReducer = (oldState = {}, action) => {
     case RECEIVE_PLAYLIST:
       newState[action.playlist.id] = action.playlist
       return newState;
-      // return action.playlist;
     
     case REMOVE_PLAYLIST:
       delete newState[action.playlistId];
       return newState;
 
-    // case RECEIVE_PLAYLIST_PAYLOAD:
-    //   return action.
-  
     default:
       return oldState;
   }

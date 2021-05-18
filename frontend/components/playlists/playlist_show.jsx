@@ -10,8 +10,6 @@ class PlaylistShow extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.match.params.playlistId !== this.props.match.params.playlistId) {
       this.props.fetchPlaylistPayload(this.props.match.params.playlistId);
-      this.props.fetchPlaylist(this.props.match.params.playlistId);
-
     } 
   }
   
@@ -23,6 +21,7 @@ class PlaylistShow extends React.Component {
       list = Object.values(tracks).map((track, idx) => (
         <li key={track.id} className="single-track-container">
           <p className="playlist-track-id">{idx + 1}</p>
+          <img className="playlist-album-art" src={albums[track.albumId]["coverUrl"]} alt="album_cover" />
           <p className="playlist-track-name">{track.name}</p>
           <p className="playlist-album-name">{albums[track.albumId]["title"]}</p>
           <p className="playlist-artist-name">{track.artistName}</p>

@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPlaylistPayload, 
   updatePlaylist, 
-  deletePlaylist,
-  fetchPlaylist } from '../../actions/playlists_actions';
+  deletePlaylist } from '../../actions/playlists_actions';
 import PlaylistShow from './playlist_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,8 +18,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchPlaylistPayload: playlistId => dispatch(fetchPlaylistPayload(playlistId)),
     updatePlaylist: playlist => dispatch(updatePlaylist(playlist)),
-    deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
-    fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId))
+    deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId))
   };
 }
 
