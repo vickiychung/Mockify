@@ -40,7 +40,7 @@
   }
 
   p:nth-child(2) {
-    width: 420px;
+    width: 410px;
   }
 
   p:nth-child(3) {
@@ -48,13 +48,13 @@
   }
 
   p:nth-child(4) {
-    width: 340px;
+    width: 280px;
   }
 
   p:last-child {
-    width: 35px;
+    width: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 
@@ -77,5 +77,13 @@
 }
 
 .playlist-artist-name {
-  width: 350px;
+  width: 280px;
+}
+
+.playlist-track-length {
+  width: 100px;
+}
+
+.playlist-track-delete {
+  cursor: pointer;
 }

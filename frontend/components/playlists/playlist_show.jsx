@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 class PlaylistShow extends React.Component {
   componentDidMount() {
@@ -38,6 +38,8 @@ class PlaylistShow extends React.Component {
           </Link>
 
           <p className="playlist-track-length">{track.length.toFixed(2)}</p>
+
+          <p className="playlist-track-delete"> <FontAwesomeIcon icon={faTrashAlt} /> </p>
         </li>
       ));
     }
