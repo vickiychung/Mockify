@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 
@@ -21,10 +22,21 @@ class PlaylistShow extends React.Component {
       list = Object.values(tracks).map((track, idx) => (
         <li key={track.id} className="single-track-container">
           <p className="playlist-track-id">{idx + 1}</p>
-          <img className="playlist-album-art" src={albums[track.albumId]["coverUrl"]} alt="album_cover" />
+
+          <img className="playlist-album-art" 
+            src={albums[track.albumId]["coverUrl"]} 
+            alt="album_cover" />
+
           <p className="playlist-track-name">{track.name}</p>
-          <p className="playlist-album-name">{albums[track.albumId]["title"]}</p>
-          <p className="playlist-artist-name">{track.artistName}</p>
+
+          <Link className="playlist-album-name" to={`/albums/${albums[track.albumId]["id"]}`}>
+            {albums[track.albumId]["title"]}
+          </Link>
+
+          <Link className="playlist-artist-name" to={`/artists/${albums[track.albumId]["artistId"]}`}>
+            {track.artistName}
+          </Link>
+          
           <p className="playlist-track-length">{track.length.toFixed(2)}</p>
         </li>
       ));
