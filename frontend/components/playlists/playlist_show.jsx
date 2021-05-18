@@ -4,6 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 class PlaylistShow extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+  
   componentDidMount() {
     this.props.fetchPlaylistPayload(this.props.match.params.playlistId);
   }
@@ -12,6 +18,11 @@ class PlaylistShow extends React.Component {
     if (prevProps.match.params.playlistId !== this.props.match.params.playlistId) {
       this.props.fetchPlaylistPayload(this.props.match.params.playlistId);
     } 
+  }
+
+  handleDelete(trackId, playlistId) {
+    // console.log(trackId, playlistId)
+    this.props.removeTrackFromPlaylist(trackId, playlistId);
   }
   
   render() {
@@ -29,17 +40,22 @@ class PlaylistShow extends React.Component {
 
           <p className="playlist-track-name">{track.name}</p>
 
-          <Link className="playlist-album-name link" to={`/albums/${albums[track.albumId]["id"]}`}>
-            {albums[track.albumId]["title"]}
+          <Link className="playlist-album-name link" 
+            to={`/albums/${albums[track.albumId]["id"]}`}>
+              {albums[track.albumId]["title"]}
           </Link>
 
-          <Link className="playlist-artist-name link" to={`/artists/${albums[track.albumId]["artistId"]}`}>
-            {track.artistName}
+          <Link className="playlist-artist-name link" 
+            to={`/artists/${albums[track.albumId]["artistId"]}`}>
+              {track.artistName}
           </Link>
 
           <p className="playlist-track-length">{track.length.toFixed(2)}</p>
 
-          <p className="playlist-track-delete"> <FontAwesomeIcon icon={faTrashAlt} /> </p>
+          <p className="playlist-track-delete" 
+            onClick={() => this.handleDelete(track.id, playlist.id)}>
+              <FontAwesomeIcon icon={faTrashAlt} />
+          </p>
         </li>
       ));
     }
