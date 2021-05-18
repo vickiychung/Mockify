@@ -21,13 +21,12 @@ class PlaylistShow extends React.Component {
   }
 
   handleDelete(trackId, playlistId) {
-    // console.log(trackId, playlistId)
     this.props.removeTrackFromPlaylist(trackId, playlistId);
   }
   
   render() {
     const { playlist, tracks, albums } = this.props;
-    let list;
+    let list, count, length = 0, hr, min, sec;
 
     if (tracks) {
       list = Object.values(tracks).map((track, idx) => (
@@ -58,6 +57,24 @@ class PlaylistShow extends React.Component {
           </p>
         </li>
       ));
+
+      count = Object.values(tracks).length;
+
+      Object.values(tracks).forEach((track, i) => {
+        length += track.length;
+      })
+
+      sec = (length % 1).toFixed(2) * 100;
+      min = Math.floor(length);
+      hr = Math.floor(min / 60);
+
+      if (sec >= 60) {
+        sec -= 60;
+        min += 1;
+      } else if (min >= 60) {
+        min -= 60;
+        hr += 1;
+      }
     }
 
     if (!playlist) return null;
@@ -65,21 +82,26 @@ class PlaylistShow extends React.Component {
     return(
       <div className="signed-in-home-container">
         <div className="playlist-show-container">
-          <h1>{playlist.name}</h1>
+          <div className="playlist-info">
 
-          <div className="playlist-tracks-wrapper">
-            <div className="playlist-tracks-header">
-              <p>#</p>
-              <p>TITLE</p>
-              <p>ALBUM</p>
-              <p>ARTIST</p>
-              <p> <FontAwesomeIcon icon={faClock} /> </p>
+            <div className="playlist-details">
+              <p>PLAYLIST</p>
+              <h1>{playlist.name}</h1>
+
             </div>
-
-            <ul className="tracks-container">
-              {list}
-            </ul>
           </div>
+
+          <div className="playlist-tracks-header">
+            <p>#</p>
+            <p>TITLE</p>
+            <p>ALBUM</p>
+            <p>ARTIST</p>
+            <p> <FontAwesomeIcon icon={faClock} /> </p>
+          </div>
+
+          <ul className="tracks-container">
+            {list}
+          </ul>
         </div>
       </div>
     );
