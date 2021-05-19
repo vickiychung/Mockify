@@ -30,6 +30,29 @@
   background: linear-gradient(120deg, #1db954, #191414);
 }
 
+.playlist-art {
+  width: 225px;
+  height: 225px;
+  background-color: grey;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.15),
+    0 2px 2px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.15),
+    0 8px 8px rgba(0, 0, 0, 0.15),
+    0 16px 16px rgba(0, 0, 0, 0.15),
+    0 32px 32px rgba(0, 0, 0, 0.15);
+
+  #playlist-default {
+    color: black;
+    font-size: 70px;
+  }
+}
+
 .playlist-tracks-header {
   color: white;
   border-bottom: 1px solid #4e4e4e;

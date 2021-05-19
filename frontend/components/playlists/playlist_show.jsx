@@ -85,7 +85,7 @@ class PlaylistShow extends React.Component {
           <div className="playlist-info">
             <div className="playlist-art">
               {Object.values(albums).length < 4 ?
-                <FontAwesomeIcon icon={faMusic} /> :
+                <FontAwesomeIcon id="playlist-default" icon={faMusic} /> :
                 <ul>
                   {Object.values(albums).slice(0, 4).map(
                     (album, i) => <li key={i}><img src={album.coverUrl}/></li>)}
