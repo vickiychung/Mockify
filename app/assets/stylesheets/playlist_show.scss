@@ -78,7 +78,43 @@
 }
 
 .playlist-details {
-  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  // padding-left: 20px;
+  margin-left: 20px;
+
+  p {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  p:first-child {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 5px;
+  }
+
+  p:last-child {
+    font-weight: 400;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: -.04em;
+    margin-bottom: 15px;
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+  }
 }
 
 .playlist-tracks-header {

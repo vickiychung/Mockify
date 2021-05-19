@@ -71,7 +71,9 @@ class PlaylistShow extends React.Component {
       if (sec >= 60) {
         sec -= 60;
         min += 1;
-      } else if (min >= 60) {
+      } 
+      
+      if (min >= 60) {
         min -= 60;
         hr += 1;
       }
@@ -96,8 +98,14 @@ class PlaylistShow extends React.Component {
             <div className="playlist-details">
               <p>PLAYLIST</p>
               <h1>{playlist.name}</h1>
-              <p>{`${count} songs`}</p>
-              <p>{`${hr}hr ${min}min ${sec}sec`}</p>
+              <span>
+                <p>{`${count} songs`}</p>
+                <p>{`\u2022`}</p>
+                {hr === 0 ?  
+                  <p>{`${min} min ${sec} sec`}</p> : 
+                  <p>{`${hr} hr ${min} min ${sec} sec`}</p>
+                }
+              </span>
             </div>
           </div>
 
