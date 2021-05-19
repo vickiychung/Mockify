@@ -2,7 +2,7 @@ import {
   RECEIVE_PLAYLISTS,
   RECEIVE_PLAYLIST,
   REMOVE_PLAYLIST,
-  RECEIVE_PLAYLIST_PAYLOAD
+  UPDATE_PLAYLIST
 } from '../../actions/playlists_actions';
 
 const playlistsReducer = (oldState = {}, action) => {
@@ -19,6 +19,10 @@ const playlistsReducer = (oldState = {}, action) => {
     
     case REMOVE_PLAYLIST:
       delete newState[action.playlistId];
+      return newState;
+
+    case UPDATE_PLAYLIST:
+      newState[action.playlist.id].name = action.playlist.name;
       return newState;
 
     default:

@@ -8,6 +8,7 @@ class PlaylistShow extends React.Component {
     super(props);
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.editPlaylist = this.editPlaylist.bind(this);
   }
   
   componentDidMount() {
@@ -22,6 +23,12 @@ class PlaylistShow extends React.Component {
 
   handleDelete(trackId, playlistId) {
     this.props.removeTrackFromPlaylist(trackId, playlistId);
+  }
+
+  editPlaylist(e) {
+    let updatedPlaylist = Object.assign({}, this.props.playlist);
+    updatedPlaylist.name = e.target.value;
+    // this.props.updatePlaylist(updatedPlaylist);
   }
   
   render() {
@@ -100,11 +107,12 @@ class PlaylistShow extends React.Component {
             <div className="playlist-details">
               <span>
                 <p>PLAYLIST</p>
-                <p> <FontAwesomeIcon id="edit-playlist" icon={faEdit} /> </p>
-                <p> <FontAwesomeIcon id="delete-playlist" icon={faTrashAlt} /> </p>
+                <p><FontAwesomeIcon id="edit-playlist" icon={faEdit} /></p>
+                <p><FontAwesomeIcon id="delete-playlist" icon={faTrashAlt} /></p>
               </span>
 
-              <h1>{playlist.name}</h1>
+              {/* <h1>{playlist.name}</h1> */}
+              <input name="editPlaylistName" type="text" defaultValue={playlist.name} onChange={this.editPlaylist}/>
 
               <span>
                 <p>{`${count} songs`}</p>
