@@ -64,7 +64,7 @@ class PlaylistShow extends React.Component {
         length += track.length;
       })
 
-      sec = (length % 1).toFixed(2) * 100;
+      sec = Math.round((length % 1).toFixed(2) * 100);
       min = Math.floor(length);
       hr = Math.floor(min / 60);
 
