@@ -7,6 +7,8 @@ class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = { name: "" };
+
     this.handleDelete = this.handleDelete.bind(this);
     this.editPlaylist = this.editPlaylist.bind(this);
   }
@@ -18,6 +20,7 @@ class PlaylistShow extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.match.params.playlistId !== this.props.match.params.playlistId) {
       this.props.fetchPlaylistPayload(this.props.match.params.playlistId);
+      this.setState({ name: this.props.playlist.name });
     } 
   }
 
@@ -112,7 +115,11 @@ class PlaylistShow extends React.Component {
               </span>
 
               {/* <h1>{playlist.name}</h1> */}
-              <input name="editPlaylistName" type="text" defaultValue={playlist.name} onChange={this.editPlaylist}/>
+              <input type="text" 
+                placeholder={playlist.name}
+                value={playlist.name} 
+                onChange={this.editPlaylist}
+              />
 
               <span>
                 <p>{`${count} songs`}</p>
