@@ -116,8 +116,7 @@ class PlaylistShow extends React.Component {
 
               {/* <h1>{playlist.name}</h1> */}
               <input type="text" 
-                placeholder={playlist.name}
-                value={playlist.name} 
+                value={this.state.name === "" ? playlist.name : this.state.name} 
                 onChange={this.editPlaylist}
               />
 
