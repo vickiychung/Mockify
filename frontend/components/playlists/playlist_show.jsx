@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, 
-  faTrashAlt, 
-  faMusic, 
-  faPlayCircle, 
-  faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faTrashAlt, faMusic, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
 class PlaylistShow extends React.Component {
   constructor(props) {
