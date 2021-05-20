@@ -32,7 +32,7 @@ class PlaylistShow extends React.Component {
     let updatedPlaylist = Object.assign({}, this.props.playlist);
     updatedPlaylist.name = e.target.value;
     this.setState({ name: updatedPlaylist.name });
-    // this.props.updatePlaylist(updatedPlaylist);
+    this.props.updatePlaylist(updatedPlaylist);
   }
   
   render() {
