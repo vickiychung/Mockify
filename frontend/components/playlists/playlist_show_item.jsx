@@ -43,8 +43,7 @@ class PlaylistShowItem extends React.Component {
     const trackIdButton = <button 
       className="track-button"
       id="playlist-track-button"
-      onClick={() => this.handlePlay(track)}
-      >
+      onClick={() => this.handlePlay(track)}>
         {idx + 1}
     </button>
 

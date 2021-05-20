@@ -17,9 +17,9 @@ class TracksIndexItem extends React.Component {
     this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
-  handlePlay(trackId) {
+  handlePlay(track) {
     this.props.togglePlayTrack();
-    this.props.selectTrack(trackId);
+    this.props.selectTrack(track);
   }
 
   handleHover(value) {
@@ -43,12 +43,12 @@ class TracksIndexItem extends React.Component {
     const trackPlaybutton = <FontAwesomeIcon 
       className="track-button"
       icon={faPlayCircle}
-      onClick={() => this.handlePlay(track.id)}
+      onClick={() => this.handlePlay(track)}
     />
   
     const trackIdButton = <button 
-      className="track-button"
-      onClick={() => this.handlePlay(track.id)}>
+      className="track-button"     
+      onClick={() => this.handlePlay(track)}>
         {idx + 1}
     </button>
 

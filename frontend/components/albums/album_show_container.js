@@ -8,11 +8,6 @@ import {
 import AlbumShow from './album_show';
 
 const mapStateToProps = (state, ownProps) => {
-  let selectedTrackId;
-  if (state.ui.webPlayer.currentTrackId) {
-    selectedTrackId = state.ui.webPlayer.currentTrackId;
-  }
-  
   return {
     album: state.entities.albums[ownProps.match.params.albumId],
     tracks: Object.values(state.entities.tracks),
@@ -24,7 +19,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
     togglePlayTrack: () => dispatch(togglePlayTrack()),
-    selectTrack: trackId => dispatch(selectTrack(trackId))
+    selectTrack: track => dispatch(selectTrack(track))
   };
 };
 

@@ -25,7 +25,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     togglePlayTrack: () => dispatch(togglePlayTrack()),
-    selectTrack: trackId => dispatch(selectTrack(trackId)),
+    selectTrack: track => dispatch(selectTrack(track)),
     playNextTrack: queue => dispatch(playNextTrack(queue)),
     playPrevTrack: queue => dispatch(playPrevTrack(queue)),
     toggleShuffle: () => dispatch(toggleShuffle()),
