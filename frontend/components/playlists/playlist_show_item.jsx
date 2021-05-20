@@ -35,12 +35,14 @@ class PlaylistShowItem extends React.Component {
 
     const trackPlaybutton = <FontAwesomeIcon 
       className="track-button"
+      id="playlist-track-button"
       icon={faPlayCircle}
       onClick={() => this.handlePlay(track.id)}
     />
   
     const trackIdButton = <button 
       className="track-button"
+      id="playlist-track-button"
       onClick={() => this.handlePlay(track.id)}>
         {idx + 1}
     </button>
@@ -48,6 +50,7 @@ class PlaylistShowItem extends React.Component {
     return (
       <div>
         <li className="single-track-container" 
+          id="playlist-track-container"
           onMouseEnter={this.handleHover("hovering")}
           onMouseLeave={this.handleHover("")}>
           

@@ -166,12 +166,16 @@
 }
 
 #playlist-track-button {
-  width: 40px;
+  width: 35px;
+}
+
+#playlist-track-container {
+  padding: 0px;
 }
 
 .playlist-track-name {
   color: white;
-  width: 350px;
+  width: 343px;
 }
 
 .playlist-album-art {
@@ -180,11 +184,11 @@
 }
 
 .playlist-album-name {
-  width: 300px;
+  width: 290px;
 }
 
 .playlist-artist-name {
-  width: 280px;
+  width: 275px;
 }
 
 .playlist-track-length {
