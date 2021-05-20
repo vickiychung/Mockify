@@ -1,17 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faTrashAlt, faMusic } from "@fortawesome/free-solid-svg-icons";
+import { faClock, 
+  faTrashAlt, 
+  faMusic, 
+  faPlayCircle, 
+  faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
 class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { name: "" };
+    this.state = { name: "", hover: "", options: "hidden" };
 
     this.handleDelete = this.handleDelete.bind(this);
     this.editPlaylist = this.editPlaylist.bind(this);
     this.deletePlaylist = this.deletePlaylist.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
+    this.handleHover = this.handleHover.bind(this);
   }
   
   componentDidMount() {
@@ -39,15 +45,45 @@ class PlaylistShow extends React.Component {
   deletePlaylist(playlistId) {
     this.props.deletePlaylist(playlistId);
   }
+
+  handlePlay(trackId) {
+    this.props.togglePlayTrack();
+    this.props.selectTrack(trackId);
+  }
+
+  handleHover(value) {
+    return (e => {
+      e.preventDefault();
+      this.setState({ hover: value });
+    });
+  }
   
   render() {
     const { playlist, tracks, albums } = this.props;
+
     let list, count, length = 0, hr, min, sec;
 
     if (tracks) {
       list = Object.values(tracks).map((track, idx) => (
-        <li key={track.id} className="single-track-container">
-          <p className="playlist-track-id">{idx + 1}</p>
+        <li key={track.id} 
+          className="single-track-container" 
+          onMouseEnter={this.handleHover("hovering")}
+          onMouseLeave={this.handleHover("")}>
+
+          {(this.state.hover === "hovering") ? 
+            <FontAwesomeIcon 
+              className="track-button"
+              id="playlist-track-button"
+              icon={faPlayCircle}
+              onClick={() => this.handlePlay(track.id)}>
+                {idx + 1}
+            </FontAwesomeIcon> : 
+            <button className="track-button"
+              id="playlist-track-button"
+              onClick={() => this.handlePlay(track.id)}>
+                {idx + 1}
+            </button>
+          }
 
           <img className="playlist-album-art" 
             src={albums[track.albumId]["coverUrl"]} 

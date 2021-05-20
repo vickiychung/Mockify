@@ -4,6 +4,10 @@ import { fetchPlaylistPayload,
   updatePlaylist, 
   deletePlaylist,
   removeTrackFromPlaylist } from '../../actions/playlists_actions';
+import {
+  togglePlayTrack,
+  selectTrack
+} from '../../actions/web_player_actions';
 import PlaylistShow from './playlist_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,7 +23,9 @@ const mapDispatchToProps = dispatch => {
     fetchPlaylistPayload: playlistId => dispatch(fetchPlaylistPayload(playlistId)),
     updatePlaylist: playlist => dispatch(updatePlaylist(playlist)),
     deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
-    removeTrackFromPlaylist: (trackId, playlistId) => dispatch(removeTrackFromPlaylist(trackId, playlistId))
+    removeTrackFromPlaylist: (trackId, playlistId) => dispatch(removeTrackFromPlaylist(trackId, playlistId)),
+    togglePlayTrack: () => dispatch(togglePlayTrack()),
+    selectTrack: trackId => dispatch(selectTrack(trackId))
   };
 }
 
