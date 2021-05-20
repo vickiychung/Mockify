@@ -22,7 +22,6 @@ const playlistsReducer = (oldState = {}, action) => {
       return newState;
 
     case UPDATE_PLAYLIST:
-      // console.log(action.playlist)
       newState[action.playlist.id].name = action.playlist.name;
       return newState;
 

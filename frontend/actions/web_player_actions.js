@@ -11,13 +11,6 @@ export const togglePlayTrack = () => {
   };
 };
 
-// export const selectTrack = trackId => {
-//   return {
-//     type: SELECT_TRACK,
-//     trackId
-//   };
-// };
-
 export const selectTrack = track => {
   return {
     type: SELECT_TRACK,

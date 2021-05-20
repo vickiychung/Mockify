@@ -21,7 +21,7 @@ const albumsReducer = (oldState = {}, action) => {
       return Object.assign(newState, action.albums);
 
     case RECEIVE_PLAYLIST_PAYLOAD:
-      return action.albums ? action.albums : {};
+      return Object.assign(newState, action.albums);
 
     default:
       return oldState;
