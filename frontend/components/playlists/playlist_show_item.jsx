@@ -11,6 +11,7 @@ class PlaylistShowItem extends React.Component {
 
     this.handlePlay = this.handlePlay.bind(this);
     this.handleHover = this.handleHover.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handlePlay(trackId) {
@@ -24,9 +25,13 @@ class PlaylistShowItem extends React.Component {
       this.setState({ hover: value });
     });
   }
+
+  handleDelete(trackId, playlistId) {
+    this.props.removeTrackFromPlaylist(trackId, playlistId);
+  }
   
   render() {
-    const { track, idx, togglePlayTrack, selectTrack, playlist, albums } = this.props;
+    const { track, idx, playlist, albums } = this.props;
 
     const trackPlaybutton = <FontAwesomeIcon 
       className="track-button"

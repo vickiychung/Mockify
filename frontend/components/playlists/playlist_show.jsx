@@ -9,7 +9,6 @@ class PlaylistShow extends React.Component {
 
     this.state = { name: ""};
 
-    this.handleDelete = this.handleDelete.bind(this);
     this.editPlaylist = this.editPlaylist.bind(this);
     this.deletePlaylist = this.deletePlaylist.bind(this);
   }
@@ -25,10 +24,6 @@ class PlaylistShow extends React.Component {
     } 
   }
 
-  handleDelete(trackId, playlistId) {
-    this.props.removeTrackFromPlaylist(trackId, playlistId);
-  }
-
   editPlaylist(e) {
     let updatedPlaylist = Object.assign({}, this.props.playlist);
     updatedPlaylist.name = e.target.value;
@@ -41,7 +36,7 @@ class PlaylistShow extends React.Component {
   }
   
   render() {
-    const { playlist, tracks, albums, togglePlayTrack, selectTrack } = this.props;
+    const { playlist, tracks, albums, togglePlayTrack, selectTrack, removeTrackFromPlaylist } = this.props;
 
     let list, count, length = 0, hr, min, sec;
 
@@ -51,6 +46,7 @@ class PlaylistShow extends React.Component {
         track={track}
         togglePlayTrack={togglePlayTrack}
         selectTrack={selectTrack}
+        removeTrackFromPlaylist={removeTrackFromPlaylist}
         idx={idx}
         playlist={playlist}
         albums={albums}
