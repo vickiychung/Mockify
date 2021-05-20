@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 class Playlist < ApplicationRecord
-  validates :user_id, :name, presence: true
+  validates :user_id, presence: true
 
   belongs_to :user,
     foreign_key: :user_id,
