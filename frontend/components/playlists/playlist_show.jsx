@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faTrashAlt, faMusic, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faTrashAlt, faMusic } from "@fortawesome/free-solid-svg-icons";
 
 class PlaylistShow extends React.Component {
   constructor(props) {
@@ -116,7 +116,6 @@ class PlaylistShow extends React.Component {
             <div className="playlist-details">
               <span>
                 <p>PLAYLIST</p>
-                {/* <p><FontAwesomeIcon id="edit-playlist" icon={faEdit} /></p> */}
                 <p onClick={() => this.deletePlaylist(playlist.id)}>
                   <FontAwesomeIcon id="delete-playlist" icon={faTrashAlt} />
                 </p>
