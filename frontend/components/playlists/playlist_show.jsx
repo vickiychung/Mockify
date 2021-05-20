@@ -2,18 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faTrashAlt, faMusic, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import PlaylistShowItem from './playlist_show_item';
 
 class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { name: "", hover: "", options: "hidden" };
+    // this.state = { name: "", hover: "" };
+    this.state = { name: ""};
 
     this.handleDelete = this.handleDelete.bind(this);
     this.editPlaylist = this.editPlaylist.bind(this);
     this.deletePlaylist = this.deletePlaylist.bind(this);
-    this.handlePlay = this.handlePlay.bind(this);
-    this.handleHover = this.handleHover.bind(this);
+    // this.handlePlay = this.handlePlay.bind(this);
+    // this.handleHover = this.handleHover.bind(this);
   }
   
   componentDidMount() {
@@ -42,69 +44,80 @@ class PlaylistShow extends React.Component {
     this.props.deletePlaylist(playlistId);
   }
 
-  handlePlay(trackId) {
-    this.props.togglePlayTrack();
-    this.props.selectTrack(trackId);
-  }
+  // handlePlay(trackId) {
+  //   this.props.togglePlayTrack();
+  //   this.props.selectTrack(trackId);
+  // }
 
-  handleHover(value) {
-    return (e => {
-      e.preventDefault();
-      this.setState({ hover: value });
-    });
-  }
+  // handleHover(value) {
+  //   return (e => {
+  //     e.preventDefault();
+  //     this.setState({ hover: value });
+  //   });
+  // }
   
   render() {
-    const { playlist, tracks, albums } = this.props;
+    console.log(this.state)
+    const { playlist, tracks, albums, togglePlayTrack, selectTrack } = this.props;
 
     let list, count, length = 0, hr, min, sec;
 
     if (tracks) {
-      list = Object.values(tracks).map((track, idx) => (
-        <li key={track.id} 
-          className="single-track-container" 
-          onMouseEnter={this.handleHover("hovering")}
-          onMouseLeave={this.handleHover("")}>
+      list = Object.values(tracks).map((track, idx) => <PlaylistShowItem 
+        key={track.id}
+        track={track}
+        togglePlayTrack={togglePlayTrack}
+        selectTrack={selectTrack}
+        idx={idx}
+        playlist={playlist}
+      />);
 
-          {(this.state.hover === "hovering") ? 
-            <FontAwesomeIcon 
-              className="track-button"
-              id="playlist-track-button"
-              icon={faPlayCircle}
-              onClick={() => this.handlePlay(track.id)}>
-                {idx + 1}
-            </FontAwesomeIcon> : 
-            <button className="track-button"
-              id="playlist-track-button"
-              onClick={() => this.handlePlay(track.id)}>
-                {idx + 1}
-            </button>
-          }
+      // list = Object.values(tracks).map((track, idx) => (
+      //   <li key={track.id} 
+      //     className="single-track-container" 
+      //     onMouseEnter={this.handleHover("hovering")}
+      //     onMouseLeave={this.handleHover("")}>
 
-          <img className="playlist-album-art" 
-            src={albums[track.albumId]["coverUrl"]} 
-            alt="album_cover" />
+      //     {(this.state.hover === "hovering") ? 
+      //       <FontAwesomeIcon 
+      //         className="track-button"
+      //         id="playlist-track-button"
+      //         icon={faPlayCircle}
+      //         onClick={() => this.handlePlay(track.id)}>
+      //           {idx + 1}
+      //       </FontAwesomeIcon> : 
+      //       <button 
+      //         className="track-button"
+      //         id="playlist-track-button"
+      //         onClick={() => this.handlePlay(track.id)}>
+      //           {idx + 1}
+      //       </button>
+      //     }
 
-          <p className="playlist-track-name">{track.name}</p>
+      //     <img className="playlist-album-art" 
+      //       src={albums[track.albumId]["coverUrl"]} 
+      //       alt="album_cover" />
 
-          <Link className="playlist-album-name link" 
-            to={`/albums/${albums[track.albumId]["id"]}`}>
-              {albums[track.albumId]["title"]}
-          </Link>
+      //     <p className="playlist-track-name">{track.name}</p>
 
-          <Link className="playlist-artist-name link" 
-            to={`/artists/${albums[track.albumId]["artistId"]}`}>
-              {track.artistName}
-          </Link>
+      //     <Link className="playlist-album-name link" 
+      //       to={`/albums/${albums[track.albumId]["id"]}`}>
+      //         {albums[track.albumId]["title"]}
+      //     </Link>
 
-          <p className="playlist-track-length">{track.length.toFixed(2)}</p>
+      //     <Link className="playlist-artist-name link" 
+      //       to={`/artists/${albums[track.albumId]["artistId"]}`}>
+      //         {track.artistName}
+      //     </Link>
 
-          <p className="playlist-track-delete" 
-            onClick={() => this.handleDelete(track.id, playlist.id)}>
-              <FontAwesomeIcon icon={faTrashAlt} />
-          </p>
-        </li>
-      ));
+      //     <p className="playlist-track-length">{track.length.toFixed(2)}</p>
+
+      //     <p className="playlist-track-delete" 
+      //       onClick={() => this.handleDelete(track.id, playlist.id)}>
+      //         <FontAwesomeIcon icon={faTrashAlt} />
+      //     </p>
+      //   </li>
+      // ));
 
       count = Object.values(tracks).length;
 
