@@ -11,15 +11,16 @@ import {
 import WebPlayer from './web_player';
 
 const mapStateToProps = state => {
-  let selectedTrackId;
-  if (state.ui.webPlayer.currentTrackId) {
-    selectedTrackId = state.ui.webPlayer.currentTrackId;
-  }
+  // let selectedTrackId;
+  // if (state.ui.webPlayer.currentTrackId) {
+  //   selectedTrackId = state.ui.webPlayer.currentTrackId;
+  // }
 
   return {
     tracks: Object.values(state.entities.tracks),
     albums: state.entities.albums,
-    currentTrack: state.entities.tracks[selectedTrackId],
+    // currentTrack: state.entities.tracks[selectedTrackId],
+    currentTrack: state.ui.webPlayer.currentTrack,
     playStatus: state.ui.webPlayer.playStatus,
     shuffleOn: state.ui.webPlayer.shuffleOn,
     loopOn: state.ui.webPlayer.loopOn

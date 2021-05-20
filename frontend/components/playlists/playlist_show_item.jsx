@@ -14,9 +14,13 @@ class PlaylistShowItem extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  handlePlay(trackId) {
+  // handlePlay(trackId) {
+  //   this.props.togglePlayTrack();
+  //   this.props.selectTrack(trackId);
+  // }
+  handlePlay(track) {
     this.props.togglePlayTrack();
-    this.props.selectTrack(trackId);
+    this.props.selectTrack(track);
   }
 
   handleHover(value) {
@@ -37,13 +41,16 @@ class PlaylistShowItem extends React.Component {
       className="track-button"
       id="playlist-track-button"
       icon={faPlayCircle}
-      onClick={() => this.handlePlay(track.id)}
+      // onClick={() => this.handlePlay(track.id)}
+      onClick={() => this.handlePlay(track)}
     />
   
     const trackIdButton = <button 
       className="track-button"
       id="playlist-track-button"
-      onClick={() => this.handlePlay(track.id)}>
+      // onClick={() => this.handlePlay(track.id)}
+      onClick={() => this.handlePlay(track)}
+      >
         {idx + 1}
     </button>
 
