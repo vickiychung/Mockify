@@ -32,7 +32,6 @@ const receivePlaylistPayload = payload => {
 };
 
 const updatePlaylistName = playlist => {
-  console.log(playlist)
   return {
     type: UPDATE_PLAYLIST,
     playlist

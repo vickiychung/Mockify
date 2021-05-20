@@ -111,11 +111,10 @@ class PlaylistShow extends React.Component {
             <div className="playlist-details">
               <span>
                 <p>PLAYLIST</p>
-                <p><FontAwesomeIcon id="edit-playlist" icon={faEdit} /></p>
+                {/* <p><FontAwesomeIcon id="edit-playlist" icon={faEdit} /></p> */}
                 <p><FontAwesomeIcon id="delete-playlist" icon={faTrashAlt} /></p>
               </span>
 
-              {/* <h1>{playlist.name}</h1> */}
               <input type="text" 
                 value={this.state.name === "" ? playlist.name : this.state.name} 
                 onChange={this.editPlaylist}

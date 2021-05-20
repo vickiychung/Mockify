@@ -99,15 +99,6 @@
     font-weight: 400;
   }
 
-  // h1 {
-  //   font-weight: 700;
-  //   font-size: 72px;
-  //   line-height: 72px;
-  //   letter-spacing: -.04em;
-  //   margin-top: 10px;
-  //   margin-bottom: 20px;
-  // }
-
   input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -120,6 +111,10 @@
     color: white;
     border: none;
     outline: none;
+  }
+
+  input:hover {
+    background-color: rgba(128, 128, 128, 0.685);
   }
 
   span {
