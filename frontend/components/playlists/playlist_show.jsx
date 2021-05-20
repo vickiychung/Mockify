@@ -57,7 +57,6 @@ class PlaylistShow extends React.Component {
   // }
   
   render() {
-    console.log(this.state)
     const { playlist, tracks, albums, togglePlayTrack, selectTrack } = this.props;
 
     let list, count, length = 0, hr, min, sec;
@@ -70,6 +69,7 @@ class PlaylistShow extends React.Component {
         selectTrack={selectTrack}
         idx={idx}
         playlist={playlist}
+        albums={albums}
       />);
 
       // list = Object.values(tracks).map((track, idx) => (

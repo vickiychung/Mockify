@@ -26,7 +26,7 @@ class PlaylistShowItem extends React.Component {
   }
   
   render() {
-    const { track, idx, togglePlayTrack, selectTrack, playlist } = this.props;
+    const { track, idx, togglePlayTrack, selectTrack, playlist, albums } = this.props;
 
     const trackPlaybutton = <FontAwesomeIcon 
       className="track-button"
@@ -49,18 +49,18 @@ class PlaylistShowItem extends React.Component {
           {(this.state.hover === "hovering") ? trackPlaybutton : trackIdButton}
 
           <img className="playlist-album-art" 
-            src={track.albumId.coverUrl} 
+            src={track.coverUrl} 
             alt="album_cover" />
 
           <p className="playlist-track-name">{track.name}</p>
 
           <Link className="playlist-album-name link" 
-            to={`/albums/${track.albumId.id}`}>
-              {track.albumId.title}
+            to={`/albums/${track.albumId}`}>
+              {albums[track.albumId]["title"]}
           </Link>
 
           <Link className="playlist-artist-name link" 
-            to={`/artists/${track.albumId.artistId}`}>
+            to={`/artists/${albums[track.albumId]["artistId"]}`}>
               {track.artistName}
           </Link>
 
