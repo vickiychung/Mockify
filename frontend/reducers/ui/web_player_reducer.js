@@ -31,7 +31,7 @@ const webPlayerReducer = (oldState = _initialState, action) => {
     case PLAY_NEXT:
       currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrack.id);
       currentQueueId = action.queue.indexOf(currentTrack);
-      let nextQueueId, nextTrack, nextTrackId;
+      let nextQueueId, nextTrack;
 
       if (currentQueueId + 1 < action.queue.length) {
         nextQueueId = currentQueueId + 1;
@@ -50,7 +50,7 @@ const webPlayerReducer = (oldState = _initialState, action) => {
     case PLAY_PREV:
       currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrack.id);
       currentQueueId = action.queue.indexOf(currentTrack);
-      let prevQueueId, prevTrack, prevTrackId;
+      let prevQueueId, prevTrack;
 
       if (currentQueueId - 1 >= 0) {
         prevQueueId = currentQueueId - 1;
