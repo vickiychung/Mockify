@@ -29,7 +29,6 @@ class SideBar extends React.Component {
   
   render() {
     const { playlists } = this.props;
-    const component = "sidebar";
 
     return (
       <div>
@@ -63,7 +62,6 @@ class SideBar extends React.Component {
         <div className="sidebar-playlists">
           <PlaylistsIndex 
             playlists={playlists}
-            component={component}
           />
         </div>
       </div>
