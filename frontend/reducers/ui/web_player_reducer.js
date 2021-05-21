@@ -8,7 +8,7 @@ import {
 } from '../../actions/web_player_actions';
 
 const _initialState = Object.freeze({
-  currentTrackId: null,
+  currentTrack: null,
   playStatus: false,
   shuffleOn: false,
   loopOn: false
@@ -25,23 +25,22 @@ const webPlayerReducer = (oldState = _initialState, action) => {
       return newState;
 
     case SELECT_TRACK:
-      newState.currentTrackId = action.trackId
+      newState.currentTrack = action.track;
       return newState;
 
     case PLAY_NEXT:
-      currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrackId);
+      currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrack.id);
       currentQueueId = action.queue.indexOf(currentTrack);
-      let nextQueueId, nextTrack, nextTrackId;
+      let nextQueueId, nextTrack;
 
       if (currentQueueId + 1 < action.queue.length) {
         nextQueueId = currentQueueId + 1;
         nextTrack = action.queue[nextQueueId];
-        nextTrackId = nextTrack.id;
-        newState.currentTrackId = nextTrackId;
+        newState.currentTrack = nextTrack;
         return newState;
       } else if (currentQueueId + 1 === action.queue.length) {
         if (oldState.loopOn) {
-          newState.currentTrackId = action.queue[0]["id"];
+          newState.currentTrack = action.queue[0];
           return newState;
         } else {
           return _initialState;
@@ -49,19 +48,18 @@ const webPlayerReducer = (oldState = _initialState, action) => {
       }
 
     case PLAY_PREV:
-      currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrackId);
+      currentTrack = action.queue.find(trackObj => trackObj.id === oldState.currentTrack.id);
       currentQueueId = action.queue.indexOf(currentTrack);
-      let prevQueueId, prevTrack, prevTrackId;
+      let prevQueueId, prevTrack;
 
       if (currentQueueId - 1 >= 0) {
         prevQueueId = currentQueueId - 1;
         prevTrack = action.queue[prevQueueId];
-        prevTrackId = prevTrack.id;
-        newState.currentTrackId = prevTrackId;
+        newState.currentTrack = prevTrack;
         return newState;
       } else if (currentQueueId - 1 < 0) {
         if (oldState.loopOn) {
-          newState.currentTrackId = action.queue[action.queue.length - 1]["id"];
+          newState.currentTrack = action.queue[action.queue.length - 1];
           return newState;
         } else {
           return _initialState;

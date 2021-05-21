@@ -3,6 +3,7 @@ import * as PlaylistsAPIUtil from '../util/playlists_api_util';
 export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 export const RECEIVE_PLAYLIST_PAYLOAD = "RECEIVE_PLAYLIST_PAYLOAD";
+export const UPDATE_PLAYLIST = "UPDATE_PLAYLIST";
 export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST";
 export const RECEIVE_PLAYLIST_TRACK = "RECEIVE_PLAYLIST_TRACK";
 export const REMOVE_PLAYLIST_TRACK = "REMOVE_PLAYLIST_TRACK";
@@ -27,6 +28,13 @@ const receivePlaylistPayload = payload => {
     tracks: payload.tracks,
     albums: payload.albums,
     artists: payload.artists
+  };
+};
+
+const updatePlaylistName = playlist => {
+  return {
+    type: UPDATE_PLAYLIST,
+    playlist
   };
 };
 
@@ -91,7 +99,7 @@ export const updatePlaylist = playlist => {
   return (dispatch => {
     return (
       PlaylistsAPIUtil.updatePlaylist(playlist)
-        .then(playlist => dispatch(receivePlaylist(playlist)))
+        .then(playlist => dispatch(updatePlaylistName(playlist)))
     );
   });
 };

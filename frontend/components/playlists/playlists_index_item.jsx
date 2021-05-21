@@ -7,13 +7,11 @@ class PlaylistsIndexItem extends React.Component {
     const { playlist } = this.props;
 
     return (
-      <div>
-        <li>
-          <Link className="link" to={`playlists/${playlist.id}`}>
-            <p>{playlist.name}</p>
-          </Link>
-        </li>
-      </div>
+      <li>
+        <Link className="link" to={`/playlists/${playlist.id}`}>
+          <p>{playlist.name}</p>
+        </Link>
+      </li>
     );
   }
 }

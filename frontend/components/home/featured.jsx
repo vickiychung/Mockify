@@ -15,8 +15,8 @@ class Featured extends React.Component {
         <div className="albums-index">
           <AlbumsIndexContainer />
         </div>
-{/* 
-        <div className="playlists-index">
+
+        {/* <div className="playlists-index">
           <PlaylistsIndexContainer />
         </div> */}
       </div>

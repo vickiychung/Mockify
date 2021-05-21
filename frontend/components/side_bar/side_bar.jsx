@@ -29,7 +29,6 @@ class SideBar extends React.Component {
   
   render() {
     const { playlists } = this.props;
-    const component = "sidebar";
 
     return (
       <div>
@@ -45,12 +44,12 @@ class SideBar extends React.Component {
             </Link>
           </div>
 
-          <div className="sidebar-library">
-            <Link className="link" to="/">
+          {/* <div className="sidebar-library">
+            <Link className="link" to="/playlists">
               <FontAwesomeIcon id="library-icon" icon={faBookOpen} />
               <p>Your Library</p>
             </Link>
-          </div>
+          </div> */}
 
           <div className="sidebar-create">
             <div className="create-wrapper" onClick={this.handleCreate}>
@@ -63,7 +62,6 @@ class SideBar extends React.Component {
         <div className="sidebar-playlists">
           <PlaylistsIndex 
             playlists={playlists}
-            component={component}
           />
         </div>
       </div>

@@ -27,7 +27,7 @@
 
 .track-name {
   color: white;
-  width: 225px;
+  width: 300px;
   padding-left: 15px;
 }
 
@@ -53,6 +53,8 @@
   .track-dropdown {
     font-size: 14px;
     position: absolute;
+    right: 25px;
+    bottom: 25px;
     background-color: #282828;
     box-shadow: 0 16px 24px rgba(0, 0, 0, .3), 0 6px 8px rgba(0,0,0,.2);
     outline: none;
@@ -69,17 +71,35 @@
   }
 
   #add {
-      font-weight: 600;
-    }
+    font-weight: 600;
+    cursor: default;
+    padding-left: 5px;
+  }
 
   .track-dropdown-menu {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 20px;
+    padding-top: 15px;
+    margin-right: 8px;
     
     li {
-      padding-bottom: 15px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-left: 5px;
+      width: 100%;
+    }
+
+    li:first-child {
+      margin-top: 0px;
+    }
+
+    li:last-child {
+      padding-bottom: 10px;
+    }
+
+    li:hover {
+      background-color: rgb(59, 59, 59);
     }
   }
 }

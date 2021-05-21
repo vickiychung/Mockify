@@ -25,10 +25,11 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def update
-    @playlist = Playlist.find_by(id: params[:id])
+    @playlist = Playlist.find(params[:id])
+    @playlist.name = params[:playlist][:name]
 
     if @playlist.save
-      render :show
+      render '/api/playlists/_playlists'
     else
       render json: @playlist.errors.full_messages, status: 422
     end

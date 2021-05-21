@@ -11,15 +11,11 @@ import {
 import WebPlayer from './web_player';
 
 const mapStateToProps = state => {
-  let selectedTrackId;
-  if (state.ui.webPlayer.currentTrackId) {
-    selectedTrackId = state.ui.webPlayer.currentTrackId;
-  }
 
   return {
     tracks: Object.values(state.entities.tracks),
     albums: state.entities.albums,
-    currentTrack: state.entities.tracks[selectedTrackId],
+    currentTrack: state.ui.webPlayer.currentTrack,
     playStatus: state.ui.webPlayer.playStatus,
     shuffleOn: state.ui.webPlayer.shuffleOn,
     loopOn: state.ui.webPlayer.loopOn
@@ -29,7 +25,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     togglePlayTrack: () => dispatch(togglePlayTrack()),
-    selectTrack: trackId => dispatch(selectTrack(trackId)),
+    selectTrack: track => dispatch(selectTrack(track)),
     playNextTrack: queue => dispatch(playNextTrack(queue)),
     playPrevTrack: queue => dispatch(playPrevTrack(queue)),
     toggleShuffle: () => dispatch(toggleShuffle()),

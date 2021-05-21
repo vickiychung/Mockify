@@ -2,14 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPlaylistPayload, 
   updatePlaylist, 
-  deletePlaylist,} from '../../actions/playlists_actions';
+  deletePlaylist,
+  removeTrackFromPlaylist } from '../../actions/playlists_actions';
+import {
+  togglePlayTrack,
+  selectTrack
+} from '../../actions/web_player_actions';
 import PlaylistShow from './playlist_show';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.entities.users[state.session.id],
     playlist: state.entities.playlists[ownProps.match.params.playlistId],
-    tracks: state.entities.tracks
+    tracks: state.entities.tracks,
+    albums: state.entities.albums
   };
 }
 
@@ -17,7 +22,10 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchPlaylistPayload: playlistId => dispatch(fetchPlaylistPayload(playlistId)),
     updatePlaylist: playlist => dispatch(updatePlaylist(playlist)),
-    deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId))
+    deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
+    removeTrackFromPlaylist: (trackId, playlistId) => dispatch(removeTrackFromPlaylist(trackId, playlistId)),
+    togglePlayTrack: () => dispatch(togglePlayTrack()),
+    selectTrack: trackId => dispatch(selectTrack(trackId))
   };
 }
 

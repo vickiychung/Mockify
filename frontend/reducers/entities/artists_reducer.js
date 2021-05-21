@@ -1,5 +1,6 @@
 import { RECEIVE_ARTISTS, RECEIVE_ARTIST, CLEAR_ARTISTS } from '../../actions/artists_actions';
 import { RECEIVE_ALBUM } from '../../actions/albums_actions';
+import { RECEIVE_PLAYLIST_PAYLOAD } from '../../actions/playlists_actions';
 
 const artistsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -19,6 +20,9 @@ const artistsReducer = (oldState = {}, action) => {
     case RECEIVE_ALBUM:
       newState[action.album.artist.id] = action.album.artist;
       return newState;
+
+    case RECEIVE_PLAYLIST_PAYLOAD:
+      return action.artists ? action.artists : {};
 
     default:
       return oldState;

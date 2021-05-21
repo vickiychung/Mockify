@@ -1,11 +1,11 @@
 // import React from 'react';
 // import { connect } from 'react-redux';
 // import { fetchPlaylists, createPlaylist } from '../../actions/playlists_actions';
-// import PlaylistsIndex from './playlists_index';
+// import PlaylistsLibrary from './playlists_library';
 
 // const mapStateToProps = state => {
 //   return {
-//     currentUser: state.entities.users[state.session.id],
+//     currentUserId: state.session.id,
 //     playlists: Object.values(state.entities.playlists)
 //   };
 // };
@@ -17,4 +17,4 @@
 //   };
 // };
 
-// export default connect(mapStateToProps, mapDispatchToProps)(PlaylistsIndex);
+// export default connect(mapStateToProps, mapDispatchToProps)(PlaylistsLibrary);
