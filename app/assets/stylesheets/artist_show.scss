@@ -74,6 +74,13 @@
   }
 }
 
+.single-album-container:hover {
+  background-color: rgba(26, 25, 25, 0.61);
+  transition-duration: .2s;
+  transition-timing-function: linear;
+  border-radius: 8px;
+}
+
 .link, .link:visited {
   text-decoration: none;
   color: white;
