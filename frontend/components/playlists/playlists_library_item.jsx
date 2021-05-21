@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class PlaylistsFeaturedItem extends React.Component {
+class PlaylistsLibraryItem extends React.Component {
 
   render() {
     const { playlist } = this.props;
@@ -16,4 +16,4 @@ class PlaylistsFeaturedItem extends React.Component {
   }
 }
 
-export default PlaylistsFeaturedItem;
+export default PlaylistsLibraryItem;

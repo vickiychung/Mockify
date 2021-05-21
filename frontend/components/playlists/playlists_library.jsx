@@ -1,7 +1,7 @@
 import React from 'react';
-import PlaylistsFeaturedItem from './playlists_featured_item';
+import PlaylistsLibraryItem from './playlists_library_item';
 
-class PlaylistsFeatured extends React.Component {
+class PlaylistsLibrary extends React.Component {
 
   render() {
     const { playlists } = this.props;
@@ -9,7 +9,7 @@ class PlaylistsFeatured extends React.Component {
     let list;
 
     if (playlists) {
-      list = playlists.map(playlist => <PlaylistsFeaturedItem
+      list = playlists.map(playlist => <PlaylistsLibraryItem
         key={playlist.id}
         playlist={playlist}
       />);
@@ -27,4 +27,4 @@ class PlaylistsFeatured extends React.Component {
   }
 }
 
-export default PlaylistsFeatured;
+export default PlaylistsLibrary;

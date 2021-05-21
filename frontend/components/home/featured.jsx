@@ -1,7 +1,7 @@
 import React from 'react';
 import ArtistsIndexContainer from '../artists/artists_index_container';
 import AlbumsIndexContainer from '../albums/albums_index_container';
-import PlaylistsIndexContainer from '../playlists/playlists_index_container';
+// import PlaylistsIndexContainer from '../playlists/playlists_index_container';
 
 class Featured extends React.Component {
 
@@ -16,9 +16,9 @@ class Featured extends React.Component {
           <AlbumsIndexContainer />
         </div>
 
-        <div className="playlists-index">
+        {/* <div className="playlists-index">
           <PlaylistsIndexContainer />
-        </div>
+        </div> */}
       </div>
     );
   }
