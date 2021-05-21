@@ -54,7 +54,7 @@ class PlaylistShow extends React.Component {
 
       count = Object.values(tracks).length;
 
-      Object.values(tracks).forEach((track, i) => {
+      Object.values(tracks).forEach(track => {
         length += track.length;
       })
 

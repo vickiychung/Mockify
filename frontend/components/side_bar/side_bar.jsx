@@ -44,12 +44,12 @@ class SideBar extends React.Component {
             </Link>
           </div>
 
-          <div className="sidebar-library">
+          {/* <div className="sidebar-library">
             <Link className="link" to="/playlists">
               <FontAwesomeIcon id="library-icon" icon={faBookOpen} />
               <p>Your Library</p>
             </Link>
-          </div>
+          </div> */}
 
           <div className="sidebar-create">
             <div className="create-wrapper" onClick={this.handleCreate}>
