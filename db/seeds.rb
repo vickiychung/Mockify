@@ -121,8 +121,8 @@ track_39 = Track.create!(album_id: 5, name: "Zutter", length: 3.18)
 track_40 = Track.create!(album_id: 5, name: "Let's Not Fall In Love", length: 3.31)
 
 track_41 = Track.create!(album_id: 6, name: "L.O.V.E.S.H.I.T", length: 3.08)
-track_42 = Track.create!(album_id: 6, name: "after_the_rain.mp3", length: 3.09)
-track_43 = Track.create!(album_id: 6, name: "4am_calls.mp3", length: 3.19)
+track_42 = Track.create!(album_id: 7, name: "after_the_rain.mp3", length: 3.09)
+track_43 = Track.create!(album_id: 8, name: "4am_calls.mp3", length: 3.19)
 
 # aws tracks seed 
 # REMEMBER TO CHANGE THE FILE PATHS BEFORE DEPLOYING TO PRD
