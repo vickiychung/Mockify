@@ -24,6 +24,7 @@ artist_1 = Artist.create!(name: "Michael Jackson", description: "~26,301,866 mon
 artist_2 = Artist.create!(name: "Jolin Tsai", description: "~1,673,894 monthly listeners")
 artist_3 = Artist.create!(name: "Kenshi Yonezu", description: "~3,462,793 monthly listeners")
 artist_4 = Artist.create!(name: "BIGBANG", description: "~2,526,380 monthly listeners")
+artist_5 = Artist.create!(name: "Kimberley Chen", description: "~404,708 monthly listeners")
 
 # aws artists seed
 # REMEMBER TO CHANGE THESE
@@ -31,12 +32,14 @@ artist_4 = Artist.create!(name: "BIGBANG", description: "~2,526,380 monthly list
 # artist_2.profile_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/artists/jolin_tsai.jpeg'), filename: "jolin_tsai.jpeg")
 # artist_3.profile_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/artists/kenshi_yonezu.jpeg'), filename: "kenshi_yonezu.jpeg")
 # artist_4.profile_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/artists/bigbang.jpeg'), filename: "bigbang.jpeg")
+# artist_5.profile_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/artists/kimberley_chen.jpeg'), filename: "kimberley_chen.jpeg")
 
 # REAL ARTISTS SEED HERE
 artist_1.profile_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/michael_jackson.jpeg"), filename: "michael_jackson.jpeg")
 artist_2.profile_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/jolin_tsai.jpeg"), filename: "jolin_tsai.jpeg")
 artist_3.profile_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/kenshi_yonezu.jpeg"), filename: "kenshi_yonezu.jpeg")
 artist_4.profile_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/bigbang.jpeg"), filename: "bigbang.jpeg")
+artist_5.profile_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/artists/kimberley_chen.jpeg"), filename: "kimberley_chen.jpeg")
 
 # albums seed
 # REMINDER: Change arist_id after creating artists table
@@ -45,6 +48,9 @@ album_2 = Album.create!(artist_id: 2, title: "Ugly Beauty", year: "2018")
 album_3 = Album.create!(artist_id: 2, title: "Play", year: "2014")
 album_4 = Album.create!(artist_id: 3, title: "Lemon", year: "2018")
 album_5 = Album.create!(artist_id: 4, title: "E", year: "2015")
+album_6 = Album.create!(artist_id: 5, title: "L.O.V.E.S.H.I.T", year: "2020")
+album_7 = Album.create!(artist_id: 5, title: "After the Rain", year: "2020")
+album_8 = Album.create!(artist_id: 5, title: "4am Calls", year: "2020")
 
 # aws albums seed
 # REMEMBER TO CHANGE FILE PATHS BEFORE DEPLOYING TO PROD
@@ -53,6 +59,9 @@ album_5 = Album.create!(artist_id: 4, title: "E", year: "2015")
 # album_3.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/jolin_tsai_play/play_cover.jpeg'), filename: "play_cover.jpeg")
 # album_4.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_lemon/lemon_cover.png'), filename: "lemon_cover.png")
 # album_5.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/e_cover.jpeg'), filename: "e_cover.jpeg")
+# album_6.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_loveshit/loveshit_cover.jpeg'), filename: "loveshit_cover.jpeg")
+# album_7.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_after_the_rain/after_the_rain_cover.png'), filename: "after_the_rain_cover.png")
+# album_8.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_4am_calls/4am_calls_cover.jpeg'), filename: "4am_calls_cover.jpeg")
 
 # REAL ALBUMS SEEDS HERE
 album_1.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/dangerous_album_cover.jpeg"), filename: "dangerous_album_cover.jpeg")
@@ -60,6 +69,9 @@ album_2.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-u
 album_3.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/jolin_tsai_play/play_cover.jpeg"), filename: "play_cover.jpeg")
 album_4.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_lemon/lemon_cover.png"), filename: "lemon_cover.png")
 album_5.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/e_cover.jpeg"), filename: "e_cover.jpeg")
+album_6.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_loveshit/loveshit_cover.jpeg"), filename: "loveshit_cover.jpeg")
+album_7.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_after_the_rain/after_the_rain_cover.png"), filename: "after_the_rain_cover.png")
+album_8.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_4am_calls/4am_calls_cover.jpeg"), filename: "4am_calls_cover.jpeg")
 
 # tracks seed
 # REMINDER: Change album_id for tracks after creating albums table
@@ -108,6 +120,10 @@ track_38 = Track.create!(album_id: 4, name: "Paper Flower", length: 4.35)
 track_39 = Track.create!(album_id: 5, name: "Zutter", length: 3.18)
 track_40 = Track.create!(album_id: 5, name: "Let's Not Fall In Love", length: 3.31)
 
+track_41 = Track.create!(album_id: 6, name: "L.O.V.E.S.H.I.T", length: 3.08)
+track_42 = Track.create!(album_id: 6, name: "after_the_rain.mp3", length: 3.09)
+track_43 = Track.create!(album_id: 6, name: "4am_calls.mp3", length: 3.19)
+
 # aws tracks seed 
 # REMEMBER TO CHANGE THE FILE PATHS BEFORE DEPLOYING TO PRD
 # track_1.track_file.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_dangerous/01_jam.mp3'), filename: "jam.mp3")
@@ -155,6 +171,10 @@ track_40 = Track.create!(album_id: 5, name: "Let's Not Fall In Love", length: 3.
 # track_39.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/01_zutter.mp3"), filename: "zutter.mp3")
 # track_40.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/02_lets_not_fall_in_love.mp3"), filename: "lets_not_fall_in_love.mp3")
 
+# track_41.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_loveshit/loveshit.mp3"), filename: "loveshit.mp3")
+# track_42.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_after_the_rain/after_the_rain.mp3"), filename: "after_the_rain.mp3")
+# track_43.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_4am_calls/4am_calls.mp3"), filename: "4am_calls.mp3")
+
 # REAL TRACKS SEEDS HERE
 track_1.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/01_jam.mp3"), filename: "jam.mp3")
 track_2.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/02_why_you_wanna_trip_on_me.mp3"), filename: "why_you_wanna_trip_on_me.mp3")
@@ -200,3 +220,7 @@ track_38.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-u
 
 track_39.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/01_zutter.mp3"), filename: "zutter.mp3")
 track_40.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/02_lets_not_fall_in_love.mp3"), filename: "lets_not_fall_in_love.mp3")
+
+track_41.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_loveshit/loveshit.mp3"), filename: "loveshit.mp3")
+track_42.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_after_the_rain/after_the_rain.mp3"), filename: "after_the_rain.mp3")
+track_43.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_4am_calls/4am_calls.mp3"), filename: "4am_calls.mp3")
