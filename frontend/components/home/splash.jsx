@@ -28,11 +28,11 @@ class Splash extends React.Component {
         </div>
 
         <div className="splash-footer">
-          <a href="https://github.com/vickiychung">
+          <a href="https://github.com/vickiychung" target="_blank">
             <img src={window.githubURL} alt="github-logo" />
           </a>
 
-          <a href="https://www.linkedin.com/in/vickiychung/">
+          <a href="https://www.linkedin.com/in/vickiychung/" target="_blank">
             <img src={window.linkedinURL} alt="linkedin-logo" />
           </a>
         </div>
