@@ -46,6 +46,7 @@ class SearchItem extends React.Component {
     return (
       <div>
         <li className="single-track-container"
+          id="search-track-container"
           onMouseEnter={this.handleHover("hovering")}
           onMouseLeave={this.handleHover("")}>
           
@@ -71,7 +72,7 @@ class SearchItem extends React.Component {
           <p className="search-track-length">{track.length.toFixed(2)}</p>
         </li>
       </div>
-    )
+    );
   }
 }
 

@@ -1,7 +1,7 @@
 .search-header {
   margin-top: 70px;
   padding-top: 30px;
-  padding-left: 20px;
+  padding-left: 15px;
 }
 
 .search-bar {
@@ -65,6 +65,10 @@
     display: flex;
     justify-content: flex-start;
   }
+}
+
+#search-track-container {
+  padding: 8px;
 }
 
 .search-album-art {
