@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faSearch } from "@fortawesome/free-solid-svg-icons";
+import SearchItem from './search_item';
 
 class Search extends React.Component {
   constructor(props) {
@@ -13,6 +14,8 @@ class Search extends React.Component {
 
   componentDidMount() {
     this.props.fetchTracks();
+    this.props.fetchAlbums();
+    this.props.fetchArtists();
   }
 
   // componentDidUpdate(prevProps, prevState) {
@@ -30,9 +33,19 @@ class Search extends React.Component {
   }
 
   render() {
+    const { albums, artists, selectTrack, togglePlayTrack } = this.props;
     const { resultTracks } = this.state;
     let list;
-    
+
+    list = resultTracks.map((track, idx) => <SearchItem
+      key={track.id}
+      track={track}
+      idx={idx}
+      albums={albums}
+      artists={artists}
+      selectTrack={selectTrack}
+      togglePlayTrack={togglePlayTrack}
+    />)
 
     return (
       <div className="signed-in-home-container">
@@ -48,7 +61,7 @@ class Search extends React.Component {
         </div>
 
         <ul>
-
+          {list}
         </ul>
 
         <div className="search-tracks-header">
