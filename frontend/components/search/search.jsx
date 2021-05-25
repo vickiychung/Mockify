@@ -14,7 +14,9 @@ class Search extends React.Component {
   render() {
     
     return (
-
+      <div>
+        <FontAwesomeIcon icon={faSearch} />
+      </div>
     );
   }
 }
