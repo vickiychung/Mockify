@@ -16,7 +16,10 @@ class Search extends React.Component {
     return (
       <div className="signed-in-home-container">
         <div className="search-header">
-          <FontAwesomeIcon icon={faSearch} />
+          <div className="search-bar-wrapper">
+            <FontAwesomeIcon icon={faSearch} className="search-icon"/>
+            <input className="search-bar" type="text" placeholder="search by song name" />
+          </div>
         </div>
       </div>
     );
