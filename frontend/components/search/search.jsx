@@ -60,10 +60,6 @@ class Search extends React.Component {
           </div>
         </div>
 
-        <ul>
-          {list}
-        </ul>
-
         <div className="search-tracks-header">
           <p>#</p>
           <p>TITLE</p>
@@ -71,6 +67,10 @@ class Search extends React.Component {
           <p>ARTIST</p>
           <p> <FontAwesomeIcon icon={faClock} /> </p>
         </div>
+
+        <ul>
+          {list}
+        </ul>
       </div>
     );
   }
