@@ -28,6 +28,8 @@ class SearchItem extends React.Component {
   render() {
     const { track, idx, albums, artists } = this.props;
 
+    let album = albums[track.albumId];
+
     const trackPlaybutton = <FontAwesomeIcon 
       className="track-button"
       icon={faPlayCircle}
@@ -57,8 +59,13 @@ class SearchItem extends React.Component {
 
           <Link className="search-album-name link" 
             to={`/albums/${track.albumId}`}>
-              {albums[track.albumId]["title"]}
+              {album.title}
           </Link>
+
+           {/* <Link className="search-artist-name link" 
+            to={`/artists/${albums[track.albumId]["artistId"]}`}>
+              {artists[]}
+          </Link> */}
         </li>
       </div>
     )
