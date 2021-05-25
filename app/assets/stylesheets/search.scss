@@ -1,12 +1,12 @@
 .search-header {
   margin-top: 70px;
-  padding-top: 20px;
+  padding-top: 30px;
   padding-left: 20px;
 }
 
 .search-bar {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 16px;
   text-align: start;
   text-overflow: ellipsis;
@@ -23,4 +23,12 @@
   padding-left: 48px;
   padding-right: 48px;
   border-radius: 30px;
+}
+
+.search-icon {
+  font-size: 23px;
+  position: relative;
+  right: -40px;
+  top: 4px;
+  color: rgb(84, 84, 84);
 }
