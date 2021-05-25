@@ -32,3 +32,37 @@
   right: -40px;
   top: 4px;
 }
+
+.search-tracks-header {
+  color: white;
+  border-bottom: 1px solid #4e4e4e;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 25px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  margin-top: 40px;
+
+  p:first-child {
+    margin-left: 13px;
+    width: 40px;
+  }
+
+  p:nth-child(2) {
+    width: 410px;
+  }
+
+  p:nth-child(3) {
+    width: 290px;
+  }
+
+  p:nth-child(4) {
+    width: 280px;
+  }
+
+  p:last-child {
+    width: 100px;
+    display: flex;
+    justify-content: flex-start;
+  }
+}

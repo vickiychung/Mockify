@@ -22,6 +22,14 @@ class Search extends React.Component {
             <input className="search-bar" type="text" placeholder="search by song name" />
           </div>
         </div>
+
+        <div className="search-tracks-header">
+          <p>#</p>
+          <p>TITLE</p>
+          <p>ALBUM</p>
+          <p>ARTIST</p>
+          <p> <FontAwesomeIcon icon={faClock} /> </p>
+        </div>
       </div>
     );
   }
