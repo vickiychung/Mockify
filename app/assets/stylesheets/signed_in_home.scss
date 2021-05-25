@@ -23,7 +23,7 @@
     z-index: 3;
   }
 
-  .sidebar-home, .sidebar-library, .sidebar-create {
+  .sidebar-home, .sidebar-search, .sidebar-create {
     display: flex;
     left: 25px;
 
@@ -44,16 +44,16 @@
       left: 25px;
     }
     
-    #home-icon, #library-icon, #create-icon {
+    #home-icon, #library-icon, #sidebar-search-icon, #create-icon {
       color: white;
       margin-right: 15px;
       font-size: 22px;
     }
 
-    #library-icon {
-      font-size: 20px;
-      padding-right: 2px;
-    }
+    // #library-icon {
+    //   font-size: 20px;
+    //   padding-right: 2px;
+    // }
 
     p {
       font-size: 14px;
@@ -67,15 +67,18 @@
     top: 150px;
   }
 
-  // .sidebar-library {
-  //   position: absolute;
-  //   top: 200px;
-  // }
+  .sidebar-search {
+    position: absolute;
+    top: 200px;
+
+    p {
+      padding-left: 2px;
+    }
+  }
 
   .create-wrapper {
     position: absolute;
-    // top: 250px;
-    top: 200px;
+    top: 250px;
     cursor: pointer;
     padding-left: 1px;
     
@@ -97,8 +100,7 @@
   flex-direction: column;
   align-items: flex-start;
   position: fixed;
-  // top: 330px;
-  top: 250px;
+  top: 300px;
   left: 25px;
 
   li {
@@ -188,7 +190,6 @@
   width: 85%;
   position: absolute;
   right: 0;
-  // padding-bottom: 100px;
   height: 90vh;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -202,7 +203,6 @@
 .webplayer-container {
   background-color: #181818;
   border-top: 1px solid #282828;
-  // height: 90px;
   height: 10vh;
   width: 100%;
   min-width: 620px;
