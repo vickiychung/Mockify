@@ -51,7 +51,9 @@ class SearchItem extends React.Component {
             src={albums[track.albumId]["coverUrl"]} 
             alt="album_cover" 
           />
-          
+
+          <p className="search-track-name">{track.name}</p>
+
         </li>
       </div>
     )
