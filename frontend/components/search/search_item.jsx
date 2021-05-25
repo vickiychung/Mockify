@@ -33,12 +33,14 @@ class SearchItem extends React.Component {
 
     const trackPlaybutton = <FontAwesomeIcon 
       className="track-button"
+      id="search-track-button"
       icon={faPlayCircle}
       onClick={() => this.handlePlay(track)}
     />
   
     const trackIdButton = <button 
       className="track-button"
+      id="search-track-button"
       onClick={() => this.handlePlay(track)}>
         {idx + 1}
     </button>
