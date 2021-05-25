@@ -47,7 +47,11 @@ class SearchItem extends React.Component {
           
           {(this.state.hover === "hovering") ? trackPlaybutton : trackIdButton}
 
-
+          <img className="search-album-art" 
+            src={albums[track.albumId]["coverUrl"]} 
+            alt="album_cover" 
+          />
+          
         </li>
       </div>
     )
