@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faBookOpen, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faBookOpen, faSearch, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
 import PlaylistsIndex from '../../components/playlists/playlists_index';
 
 class SideBar extends React.Component {
@@ -50,6 +50,13 @@ class SideBar extends React.Component {
               <p>Your Library</p>
             </Link>
           </div> */}
+
+          <div className="sidebar-search">
+            <Link className="link" to="/search">
+              <FontAwesomeIcon id="sidebar-search-icon" icon={faSearch} />
+              <p>Search</p>
+            </Link>
+          </div>
 
           <div className="sidebar-create">
             <div className="create-wrapper" onClick={this.handleCreate}>
