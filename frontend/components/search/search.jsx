@@ -12,6 +12,7 @@ class Search extends React.Component {
   }
 
   render() {
+    const { tracks } = this.props;
     
     return (
       <div className="signed-in-home-container">
