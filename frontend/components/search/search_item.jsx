@@ -67,6 +67,8 @@ class SearchItem extends React.Component {
             to={`/artists/${artist.id}`}>
               {artist.name}
           </Link>
+
+          <p className="search-track-length">{track.length.toFixed(2)}</p>
         </li>
       </div>
     )
