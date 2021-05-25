@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 
@@ -54,6 +55,10 @@ class SearchItem extends React.Component {
 
           <p className="search-track-name">{track.name}</p>
 
+          <Link className="search-album-name link" 
+            to={`/albums/${track.albumId}`}>
+              {albums[track.albumId]["title"]}
+          </Link>
         </li>
       </div>
     )

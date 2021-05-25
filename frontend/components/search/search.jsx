@@ -68,7 +68,7 @@ class Search extends React.Component {
           <p> <FontAwesomeIcon icon={faClock} /> </p>
         </div>
 
-        <ul>
+        <ul className="tracks-container">
           {list}
         </ul>
       </div>
