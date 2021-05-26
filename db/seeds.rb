@@ -64,6 +64,7 @@ album_9 = Album.create!(artist_id: 6, title: "The Longing", year: "2012")
 album_10 = Album.create!(artist_id: 7, title: "Only The Young", year: "2020")
 album_11 = Album.create!(artist_id: 7, title: "Today Was A Fairytale", year: "2010")
 album_12 = Album.create!(artist_id: 8, title: "/// (You, Clouds Rain)", year: "2017")
+album_13 = Album.create!(artist_id: 1, title: "Thriller", year: "1982")
 
 # aws albums seed
 # REMEMBER TO CHANGE FILE PATHS BEFORE DEPLOYING TO PROD
@@ -79,6 +80,7 @@ album_12 = Album.create!(artist_id: 8, title: "/// (You, Clouds Rain)", year: "2
 # album_10.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/taylor_swift_only_the_young/only_the_young_cover.jpeg'), filename: "only_the_young_cover.jpeg")
 # album_11.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/taylor_swift_today_was_a_fairytale/today_was_a_fairytale_cover.jpeg'), filename: "today_was_a_fairytale_cover.jpeg")
 # album_12.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/heize_you_clouds_rain/you_clouds_rain_cover.jpeg'), filename: "you_clouds_rain_cover.jpeg")
+# album_13.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/thriller_cover.jpeg'), filename: "thriller_cover.jpeg")
 
 # REAL ALBUMS SEEDS HERE
 album_1.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/dangerous_album_cover.jpeg"), filename: "dangerous_album_cover.jpeg")
@@ -93,6 +95,7 @@ album_9.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-u
 album_10.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/taylor_swift_only_the_young/only_the_young_cover.jpeg"), filename: "only_the_young_cover.jpeg")
 album_11.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/taylor_swift_today_was_a_fairytale/today_was_a_fairytale_cover.jpeg"), filename: "today_was_a_fairytale_cover.jpeg")
 album_12.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/heize_you_clouds_rain/you_clouds_rain_cover.jpeg"), filename: "you_clouds_rain_cover.jpeg")
+album_13.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/thriller_cover.jpeg"), filename: "thriller_cover.jpeg")
 
 # tracks seed
 # REMINDER: Change album_id for tracks after creating albums table
@@ -161,6 +164,16 @@ track_54 = Track.create!(album_id: 12, name: "rainin' with u", length: 2.16)
 track_55 = Track.create!(album_id: 12, name: "You, Clouds, Rain", length: 3.25)
 track_56 = Track.create!(album_id: 12, name: "Star (Rain ver.)", length: 3.56)
 
+track_57 = Track.create!(album_id: 13, name: "Wanna Be Startin\' Somethin\'", length: 6.05)
+track_58 = Track.create!(album_id: 13, name: "Baby Be Mine", length: 4.22)
+track_59 = Track.create!(album_id: 13, name: "The Girl Is Mine", length: 3.44)
+track_60 = Track.create!(album_id: 13, name: "Thriller", length: 5.58)
+track_61 = Track.create!(album_id: 13, name: "Beat It", length: 4.18)
+track_62 = Track.create!(album_id: 13, name: "Billie Jean", length: 4.54)
+track_63 = Track.create!(album_id: 13, name: "Human Nature", length: 4.08)
+track_64 = Track.create!(album_id: 13, name: "P.Y.T. (Pretty Young Thing)", length: 4.01)
+track_65 = Track.create!(album_id: 13, name: "The Lady in My Life", length: 5.02)
+
 # aws tracks seed 
 # REMEMBER TO CHANGE THE FILE PATHS BEFORE DEPLOYING TO PRD
 # track_1.track_file.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_dangerous/01_jam.mp3'), filename: "jam.mp3")
@@ -228,6 +241,16 @@ track_56 = Track.create!(album_id: 12, name: "Star (Rain ver.)", length: 3.56)
 # track_55.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/heize_you_clouds_rain/04_you_clouds_rain.mp3"), filename: "you_clouds_rain.mp3")
 # track_56.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/heize_you_clouds_rain/05_star.mp3"), filename: "star.mp3")
 
+# track_57.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/01_wanna_be_startin_somethin.mp3"), filename: "wanna_be_startin_somethin.mp3")
+# track_58.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/02_baby_be_mine.mp3"), filename: "baby_be_mine.mp3")
+# track_59.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/03_the_girl_is_mine.mp3"), filename: "the_girl_is_mine.mp3")
+# track_60.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/04_thriller.mp3"), filename: "thriller.mp3")
+# track_61.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/05_beat_it.mp3"), filename: "beat_it.mp3")
+# track_62.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/06_billie_jean.mp3"), filename: "billie_jean.mp3")
+# track_63.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/07_human_nature.mp3"), filename: "human_nature.mp3")
+# track_64.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/08_pyt.mp3"), filename: "pyt.mp3")
+# track_65.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/09_the_lady_in_my_life.mp3"), filename: "the_lady_in_my_life.mp3")
+
 # REAL TRACKS SEEDS HERE
 track_1.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/01_jam.mp3"), filename: "jam.mp3")
 track_2.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/02_why_you_wanna_trip_on_me.mp3"), filename: "why_you_wanna_trip_on_me.mp3")
@@ -293,3 +316,13 @@ track_53.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-u
 track_54.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/heize_you_clouds_rain/03_rainin_with_u.mp3"), filename: "rainin_with_u.mp3")
 track_55.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/heize_you_clouds_rain/04_you_clouds_rain.mp3"), filename: "you_clouds_rain.mp3")
 track_56.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/heize_you_clouds_rain/05_star.mp3"), filename: "star.mp3")
+
+track_57.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/01_wanna_be_startin_somethin.mp3"), filename: "wanna_be_startin_somethin.mp3")
+track_58.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/02_baby_be_mine.mp3"), filename: "baby_be_mine.mp3")
+track_59.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/03_the_girl_is_mine.mp3"), filename: "the_girl_is_mine.mp3")
+track_60.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/04_thriller.mp3"), filename: "thriller.mp3")
+track_61.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/05_beat_it.mp3"), filename: "beat_it.mp3")
+track_62.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/06_billie_jean.mp3"), filename: "billie_jean.mp3")
+track_63.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/07_human_nature.mp3"), filename: "human_nature.mp3")
+track_64.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/08_pyt.mp3"), filename: "pyt.mp3")
+track_65.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/09_the_lady_in_my_life.mp3"), filename: "the_lady_in_my_life.mp3")
