@@ -71,6 +71,7 @@ album_16 = Album.create!(artist_id: 4, title: "A", year: "2015")
 album_17 = Album.create!(artist_id: 4, title: "D", year: "2015")
 album_18 = Album.create!(artist_id: 4, title: "E", year: "2015")
 album_19 = Album.create!(artist_id: 6, title: "Brokenness Aside", year: "2011")
+album_20 = Album.create!(artist_id: 8, title: "We don't talk together", year: "2019")
 
 # aws albums seed
 # REMEMBER TO CHANGE FILE PATHS BEFORE DEPLOYING TO PROD
@@ -93,6 +94,7 @@ album_19 = Album.create!(artist_id: 6, title: "Brokenness Aside", year: "2011")
 # album_17.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_d/d_cover.jpeg'), filename: "d_cover.jpeg")
 # album_18.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/e_cover.jpeg'), filename: "e_cover.jpeg")
 # album_19.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/all_sons_and_daughters_brokenness_aside/brokenness_aside_cover.jpeg'), filename: "brokenness_aside_cover.jpeg")
+# album_20.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/heize_we_dont_talk_together/we_dont_talk_together_cover.jpeg'), filename: "we_dont_talk_together_cover.jpeg")
 
 # REAL ALBUMS SEEDS HERE
 album_1.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/dangerous_album_cover.jpeg"), filename: "dangerous_album_cover.jpeg")
@@ -114,6 +116,7 @@ album_16.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-
 album_17.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_d/d_cover.jpeg"), filename: "d_cover.jpeg")
 album_18.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/e_cover.jpeg"), filename: "e_cover.jpeg")
 album_19.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/all_sons_and_daughters_brokenness_aside/brokenness_aside_cover.jpeg"), filename: "brokenness_aside_cover.jpeg")
+album_20.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/heize_we_dont_talk_together/we_dont_talk_together_cover.jpeg"), filename: "we_dont_talk_together_cover.jpeg")
 
 # tracks seed
 # REMINDER: Change album_id for tracks after creating albums table
@@ -214,6 +217,8 @@ track_79 = Track.create!(album_id: 19, name: "Brokenness Aside", length: 5.53)
 track_80 = Track.create!(album_id: 19, name: "I Am Set Free", length: 4.50)
 track_81 = Track.create!(album_id: 19, name: "Your Glory", length: 6.04)
 
+track_82 = Track.create!(album_id: 20, name: "We don't talk together", length: 3.19)
+
 # aws tracks seed 
 # REMEMBER TO CHANGE THE FILE PATHS BEFORE DEPLOYING TO PRD
 # track_1.track_file.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_dangerous/01_jam.mp3'), filename: "jam.mp3")
@@ -313,6 +318,8 @@ track_81 = Track.create!(album_id: 19, name: "Your Glory", length: 6.04)
 # track_80.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/all_sons_and_daughters_brokenness_aside/05_i_am_set_free.mp3"), filename: "i_am_set_free.mp3")
 # track_81.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/all_sons_and_daughters_brokenness_aside/06_your_glory.mp3"), filename: "your_glory.mp3")
 
+# track_82.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/heize_we_dont_talk_together/we_dont_talk_together.mp3"), filename: "we_dont_talk_together.mp3")
+
 # REAL TRACKS SEEDS HERE
 track_1.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/01_jam.mp3"), filename: "jam.mp3")
 track_2.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/02_why_you_wanna_trip_on_me.mp3"), filename: "why_you_wanna_trip_on_me.mp3")
@@ -410,3 +417,5 @@ track_78.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-u
 track_79.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/all_sons_and_daughters_brokenness_aside/04_brokenness_aside.mp3"), filename: "04_brokenness_aside.mp3")
 track_80.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/all_sons_and_daughters_brokenness_aside/05_i_am_set_free.mp3"), filename: "05_i_am_set_free.mp3")
 track_81.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/all_sons_and_daughters_brokenness_aside/06_your_glory.mp3"), filename: "06_your_glory.mp3")
+
+track_82.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/heize_we_dont_talk_together/we_dont_talk_together.mp3"), filename: "we_dont_talk_together.mp3")
