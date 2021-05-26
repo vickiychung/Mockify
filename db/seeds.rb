@@ -67,7 +67,9 @@ album_12 = Album.create!(artist_id: 8, title: "/// (You, Clouds Rain)", year: "2
 album_13 = Album.create!(artist_id: 1, title: "Thriller", year: "1982")
 album_14 = Album.create!(artist_id: 2, title: "Stars Align", year: "2021")
 album_15 = Album.create!(artist_id: 3, title: "Flamingo", year: "2018")
-album_16 = Album.create!(artist_id: 4, title: "E", year: "2015")
+album_16 = Album.create!(artist_id: 4, title: "A", year: "2015")
+album_17 = Album.create!(artist_id: 4, title: "D", year: "2015")
+album_18 = Album.create!(artist_id: 4, title: "E", year: "2015")
 
 # aws albums seed
 # REMEMBER TO CHANGE FILE PATHS BEFORE DEPLOYING TO PROD
@@ -86,7 +88,9 @@ album_16 = Album.create!(artist_id: 4, title: "E", year: "2015")
 # album_13.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/thriller_cover.jpeg'), filename: "thriller_cover.jpeg")
 # album_14.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/jolin_tsai_stars_align/stars_align_cover.jpeg'), filename: "stars_align_cover.jpeg")
 # album_15.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_flamingo/flamingo_cover.jpeg'), filename: "flamingo_cover.jpeg")
-# album_16.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/e_cover.jpeg'), filename: "e_cover.jpeg")
+# album_16.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_a/a_cover.jpeg'), filename: "a_cover.jpeg")
+# album_17.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_d/d_cover.jpeg'), filename: "d_cover.jpeg")
+# album_18.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/e_cover.jpeg'), filename: "e_cover.jpeg")
 
 # REAL ALBUMS SEEDS HERE
 album_1.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/dangerous_album_cover.jpeg"), filename: "dangerous_album_cover.jpeg")
@@ -104,7 +108,9 @@ album_12.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-
 album_13.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/thriller_cover.jpeg"), filename: "thriller_cover.jpeg")
 album_14.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/jolin_tsai_stars_align/stars_align_cover.jpeg"), filename: "stars_align_cover.jpeg")
 album_15.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_flamingo/flamingo_cover.jpeg"), filename: "flamingo_cover.jpeg")
-album_16.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/e_cover.jpeg"), filename: "e_cover.jpeg")
+album_16.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_a/a_cover.jpeg"), filename: "a_cover.jpeg")
+album_17.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_d/d_cover.jpeg"), filename: "d_cover.jpeg")
+album_18.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/e_cover.jpeg"), filename: "e_cover.jpeg")
 
 # tracks seed
 # REMINDER: Change album_id for tracks after creating albums table
@@ -189,8 +195,14 @@ track_67 = Track.create!(album_id: 15, name: "Flamingo", length: 3.15)
 track_68 = Track.create!(album_id: 15, name: "TEENAGE RIOT", length: 3.49)
 track_69 = Track.create!(album_id: 15, name: "Gomenne", length: 3.32)
 
-track_70 = Track.create!(album_id: 16, name: "Zutter", length: 3.18)
-track_71 = Track.create!(album_id: 16, name: "Let's Not Fall In Love", length: 3.31)
+track_70 = Track.create!(album_id: 16, name: "BANG BANG BANG", length: 3.40)
+track_71 = Track.create!(album_id: 16, name: "WE LIKE 2 PARTY", length: 3.16)
+
+track_72 = Track.create!(album_id: 17, name: "IF YOU", length: 4.24)
+track_73 = Track.create!(album_id: 17, name: "SOBER", length: 3.58)
+
+track_74 = Track.create!(album_id: 18, name: "Zutter", length: 3.18)
+track_75 = Track.create!(album_id: 18, name: "Let's Not Fall In Love", length: 3.31)
 
 # aws tracks seed 
 # REMEMBER TO CHANGE THE FILE PATHS BEFORE DEPLOYING TO PRD
@@ -275,8 +287,14 @@ track_71 = Track.create!(album_id: 16, name: "Let's Not Fall In Love", length: 3
 # track_68.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_flamingo/02_teenage_riot.mp3"), filename: "teenage_riot.mp3")
 # track_69.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_flamingo/03_gomenne.mp3"), filename: "gomenne.mp3")
 
-# track_70.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/01_zutter.mp3"), filename: "zutter.mp3")
-# track_71.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/02_lets_not_fall_in_love.mp3"), filename: "lets_not_fall_in_love.mp3")
+# track_70.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_a/01_bang_bang_bang.mp3"), filename: "bang_bang_bang.mp3")
+# track_71.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_a/02_we_like_2_party.mp3"), filename: "we_like_2_party.mp3")
+
+# track_72.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_d/01_if_you.mp3"), filename: "if_you.mp3")
+# track_73.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_d/02_sober.mp3"), filename: "sober.mp3")
+
+# track_74.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/01_zutter.mp3"), filename: "zutter.mp3")
+# track_75.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/02_lets_not_fall_in_love.mp3"), filename: "lets_not_fall_in_love.mp3")
 
 # REAL TRACKS SEEDS HERE
 track_1.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/01_jam.mp3"), filename: "jam.mp3")
@@ -360,5 +378,11 @@ track_67.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-u
 track_68.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_flamingo/02_teenage_riot.mp3"), filename: "teenage_riot.mp3")
 track_69.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_flamingo/03_gomenne.mp3"), filename: "gomenne.mp3")
 
-track_70.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/01_zutter.mp3"), filename: "zutter.mp3")
-track_71.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/02_lets_not_fall_in_love.mp3"), filename: "lets_not_fall_in_love.mp3")
+track_70.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_a/01_bang_bang_bang.mp3"), filename: "bang_bang_bang.mp3")
+track_71.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_a/02_we_like_2_party.mp3"), filename: "we_like_2_party.mp3")
+
+track_72.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_d/01_if_you.mp3"), filename: "if_you.mp3")
+track_73.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_d/02_sober.mp3"), filename: "sober.mp3")
+
+track_74.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/01_zutter.mp3"), filename: "zutter.mp3")
+track_75.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/02_lets_not_fall_in_love.mp3"), filename: "lets_not_fall_in_love.mp3")
