@@ -56,7 +56,7 @@ album_1 = Album.create!(artist_id: 1, title: "Dangerous", year: "1991")
 album_2 = Album.create!(artist_id: 2, title: "Ugly Beauty", year: "2018")
 album_3 = Album.create!(artist_id: 2, title: "Play", year: "2014")
 album_4 = Album.create!(artist_id: 3, title: "Lemon", year: "2018")
-album_5 = Album.create!(artist_id: 4, title: "E", year: "2015")
+album_5 = Album.create!(artist_id: 4, title: "M", year: "2015")
 album_6 = Album.create!(artist_id: 5, title: "L.O.V.E.S.H.I.T", year: "2020")
 album_7 = Album.create!(artist_id: 5, title: "After the Rain", year: "2020")
 album_8 = Album.create!(artist_id: 5, title: "4am Calls", year: "2020")
@@ -65,6 +65,9 @@ album_10 = Album.create!(artist_id: 7, title: "Only The Young", year: "2020")
 album_11 = Album.create!(artist_id: 7, title: "Today Was A Fairytale", year: "2010")
 album_12 = Album.create!(artist_id: 8, title: "/// (You, Clouds Rain)", year: "2017")
 album_13 = Album.create!(artist_id: 1, title: "Thriller", year: "1982")
+album_14 = Album.create!(artist_id: 2, title: "Stars Align", year: "2021")
+album_15 = Album.create!(artist_id: 3, title: "Flamingo", year: "2018")
+album_16 = Album.create!(artist_id: 4, title: "E", year: "2015")
 
 # aws albums seed
 # REMEMBER TO CHANGE FILE PATHS BEFORE DEPLOYING TO PROD
@@ -72,7 +75,7 @@ album_13 = Album.create!(artist_id: 1, title: "Thriller", year: "1982")
 # album_2.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/jolin_tsai_ugly_beauty/ugly_beauty_cover.jpeg'), filename: "ugly_beauty_cover.jpeg")
 # album_3.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/jolin_tsai_play/play_cover.jpeg'), filename: "play_cover.jpeg")
 # album_4.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_lemon/lemon_cover.png'), filename: "lemon_cover.png")
-# album_5.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/e_cover.jpeg'), filename: "e_cover.jpeg")
+# album_5.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_m/m_cover.jpeg'), filename: "m_cover.jpeg")
 # album_6.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_loveshit/loveshit_cover.jpeg'), filename: "loveshit_cover.jpeg")
 # album_7.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_after_the_rain/after_the_rain_cover.png'), filename: "after_the_rain_cover.png")
 # album_8.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_4am_calls/4am_calls_cover.jpeg'), filename: "4am_calls_cover.jpeg")
@@ -81,13 +84,16 @@ album_13 = Album.create!(artist_id: 1, title: "Thriller", year: "1982")
 # album_11.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/taylor_swift_today_was_a_fairytale/today_was_a_fairytale_cover.jpeg'), filename: "today_was_a_fairytale_cover.jpeg")
 # album_12.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/heize_you_clouds_rain/you_clouds_rain_cover.jpeg'), filename: "you_clouds_rain_cover.jpeg")
 # album_13.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/thriller_cover.jpeg'), filename: "thriller_cover.jpeg")
+# album_14.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/jolin_tsai_stars_align/stars_align_cover.jpeg'), filename: "stars_align_cover.jpeg")
+# album_15.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_flamingo/flamingo_cover.jpeg'), filename: "flamingo_cover.jpeg")
+# album_16.cover_photo.attach(io: File.open('/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/e_cover.jpeg'), filename: "e_cover.jpeg")
 
 # REAL ALBUMS SEEDS HERE
 album_1.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/dangerous_album_cover.jpeg"), filename: "dangerous_album_cover.jpeg")
 album_2.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/jolin_tsai_ugly_beauty/ugly_beauty_cover.jpeg"), filename: "ugly_beauty_cover.jpeg")
 album_3.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/jolin_tsai_play/play_cover.jpeg"), filename: "play_cover.jpeg")
 album_4.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_lemon/lemon_cover.png"), filename: "lemon_cover.png")
-album_5.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/e_cover.jpeg"), filename: "e_cover.jpeg")
+album_5.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_m/m_cover.jpeg"), filename: "m_cover.jpeg")
 album_6.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_loveshit/loveshit_cover.jpeg"), filename: "loveshit_cover.jpeg")
 album_7.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_after_the_rain/after_the_rain_cover.png"), filename: "after_the_rain_cover.png")
 album_8.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_4am_calls/4am_calls_cover.jpeg"), filename: "4am_calls_cover.jpeg")
@@ -96,6 +102,9 @@ album_10.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-
 album_11.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/taylor_swift_today_was_a_fairytale/today_was_a_fairytale_cover.jpeg"), filename: "today_was_a_fairytale_cover.jpeg")
 album_12.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/heize_you_clouds_rain/you_clouds_rain_cover.jpeg"), filename: "you_clouds_rain_cover.jpeg")
 album_13.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/thriller_cover.jpeg"), filename: "thriller_cover.jpeg")
+album_14.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/jolin_tsai_stars_align/stars_align_cover.jpeg"), filename: "stars_align_cover.jpeg")
+album_15.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_flamingo/flamingo_cover.jpeg"), filename: "flamingo_cover.jpeg")
+album_16.cover_photo.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/e_cover.jpeg"), filename: "e_cover.jpeg")
 
 # tracks seed
 # REMINDER: Change album_id for tracks after creating albums table
@@ -141,8 +150,8 @@ track_36 = Track.create!(album_id: 4, name: "Lemon", length: 4.16)
 track_37 = Track.create!(album_id: 4, name: "Cranberry and Pancake", length: 3.31)
 track_38 = Track.create!(album_id: 4, name: "Paper Flower", length: 4.35)
 
-track_39 = Track.create!(album_id: 5, name: "Zutter", length: 3.18)
-track_40 = Track.create!(album_id: 5, name: "Let's Not Fall In Love", length: 3.31)
+track_39 = Track.create!(album_id: 5, name: "Loser", length: 3.39)
+track_40 = Track.create!(album_id: 5, name: "Bae Bae", length: 2.50)
 
 track_41 = Track.create!(album_id: 6, name: "L.O.V.E.S.H.I.T", length: 3.08)
 track_42 = Track.create!(album_id: 7, name: "After the Rain", length: 3.09)
@@ -173,6 +182,15 @@ track_62 = Track.create!(album_id: 13, name: "Billie Jean", length: 4.54)
 track_63 = Track.create!(album_id: 13, name: "Human Nature", length: 4.08)
 track_64 = Track.create!(album_id: 13, name: "P.Y.T. (Pretty Young Thing)", length: 4.01)
 track_65 = Track.create!(album_id: 13, name: "The Lady in My Life", length: 5.02)
+
+track_66 = Track.create!(album_id: 14, name: "Stars Align", length: 2.43)
+
+track_67 = Track.create!(album_id: 15, name: "Flamingo", length: 3.15)
+track_68 = Track.create!(album_id: 15, name: "TEENAGE RIOT", length: 3.49)
+track_69 = Track.create!(album_id: 15, name: "Gomenne", length: 3.32)
+
+track_70 = Track.create!(album_id: 16, name: "Zutter", length: 3.18)
+track_71 = Track.create!(album_id: 16, name: "Let's Not Fall In Love", length: 3.31)
 
 # aws tracks seed 
 # REMEMBER TO CHANGE THE FILE PATHS BEFORE DEPLOYING TO PRD
@@ -218,8 +236,8 @@ track_65 = Track.create!(album_id: 13, name: "The Lady in My Life", length: 5.02
 # track_37.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_lemon/02_cranberry_and_pancake.mp3"), filename: "cranberry_and_pancake.mp3")
 # track_38.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_lemon/03_paper_flower.mp3"), filename: "paper_flower.mp3")
 
-# track_39.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/01_zutter.mp3"), filename: "zutter.mp3")
-# track_40.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/02_lets_not_fall_in_love.mp3"), filename: "lets_not_fall_in_love.mp3")
+# track_39.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_m/01_loser.mp3"), filename: "loser.mp3")
+# track_40.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_m/02_bae_bae.mp3"), filename: "bae_bae.mp3")
 
 # track_41.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_loveshit/loveshit.mp3"), filename: "loveshit.mp3")
 # track_42.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kimberley_chen_after_the_rain/after_the_rain.mp3"), filename: "after_the_rain.mp3")
@@ -250,6 +268,15 @@ track_65 = Track.create!(album_id: 13, name: "The Lady in My Life", length: 5.02
 # track_63.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/07_human_nature.mp3"), filename: "human_nature.mp3")
 # track_64.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/08_pyt.mp3"), filename: "pyt.mp3")
 # track_65.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/michael_jackson_thriller/09_the_lady_in_my_life.mp3"), filename: "the_lady_in_my_life.mp3")
+
+# track_66.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/jolin_tsai_stars_align/stars_align.mp3"), filename: "stars_align.mp3")
+
+# track_67.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_flamingo/01_flamingo.mp3"), filename: "flamingo.mp3")
+# track_68.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_flamingo/02_teenage_riot.mp3"), filename: "teenage_riot.mp3")
+# track_69.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/kenshi_yonezu_flamingo/03_gomenne.mp3"), filename: "gomenne.mp3")
+
+# track_70.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/01_zutter.mp3"), filename: "zutter.mp3")
+# track_71.track_file.attach(io: File.open("/Users/vickiychung/Documents/appAcademy/mockify_track_files/bigbang_e/02_lets_not_fall_in_love.mp3"), filename: "lets_not_fall_in_love.mp3")
 
 # REAL TRACKS SEEDS HERE
 track_1.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_dangerous/01_jam.mp3"), filename: "jam.mp3")
@@ -294,8 +321,8 @@ track_36.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-u
 track_37.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_lemon/02_cranberry_and_pancake.mp3"), filename: "cranberry_and_pancake.mp3")
 track_38.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_lemon/03_paper_flower.mp3"), filename: "paper_flower.mp3")
 
-track_39.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/01_zutter.mp3"), filename: "zutter.mp3")
-track_40.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/02_lets_not_fall_in_love.mp3"), filename: "lets_not_fall_in_love.mp3")
+track_39.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_m/01_loser.mp3"), filename: "loser.mp3")
+track_40.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_m/02_bae_bae.mp3"), filename: "bae_bae.mp3")
 
 track_41.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_loveshit/loveshit.mp3"), filename: "loveshit.mp3")
 track_42.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kimberley_chen_after_the_rain/after_the_rain.mp3"), filename: "after_the_rain.mp3")
@@ -326,3 +353,12 @@ track_62.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-u
 track_63.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/07_human_nature.mp3"), filename: "human_nature.mp3")
 track_64.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/08_pyt.mp3"), filename: "pyt.mp3")
 track_65.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/michael_jackson_thriller/09_the_lady_in_my_life.mp3"), filename: "the_lady_in_my_life.mp3")
+
+track_66.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/jolin_tsai_stars_align/stars_align.mp3"), filename: "stars_align.mp3")
+
+track_67.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_flamingo/01_flamingo.mp3"), filename: "flamingo.mp3")
+track_68.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_flamingo/02_teenage_riot.mp3"), filename: "teenage_riot.mp3")
+track_69.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/kenshi_yonezu_flamingo/03_gomenne.mp3"), filename: "gomenne.mp3")
+
+track_70.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/01_zutter.mp3"), filename: "zutter.mp3")
+track_71.track_file.attach(io: URI.open("https://active-storage-mockify-dev.s3-us-west-1.amazonaws.com/bigbang_e/02_lets_not_fall_in_love.mp3"), filename: "lets_not_fall_in_love.mp3")
